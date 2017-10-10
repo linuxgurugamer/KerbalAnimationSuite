@@ -1,5 +1,8 @@
 1.2.1
-	Adoption
+	Adoption, initial release for 1.2.2
 
 1.2.2
+	Updated for KSP 1.3.0
+
+1.2.3
 	Updated for KSP 1.3.1
