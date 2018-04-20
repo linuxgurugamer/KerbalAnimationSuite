@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using ClickThroughFix;
+
 namespace KerbalAnimation
 {
 	public abstract class Window
@@ -33,7 +35,7 @@ namespace KerbalAnimation
 		}
 		private void DrawMainWindow()
 		{
-			WindowRect = GUILayout.Window (ID, WindowRect, WindowDelegate, WindowTitle, GUILayout.ExpandWidth (ExpandWidth), GUILayout.ExpandHeight (ExpandHeight));
+			WindowRect = ClickThruBlocker.GUILayoutWindow (ID, WindowRect, WindowDelegate, WindowTitle, GUILayout.ExpandWidth (ExpandWidth), GUILayout.ExpandHeight (ExpandHeight));
 		}
 		private void WindowDelegate(int id)
 		{

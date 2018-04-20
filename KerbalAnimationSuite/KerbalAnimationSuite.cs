@@ -7,6 +7,7 @@ using KSP.UI.Screens;
 
 using UnityEngine;
 using UnityEngine.UI;
+using ToolbarControl_NS;
 
 namespace KerbalAnimation
 {
@@ -89,8 +90,9 @@ namespace KerbalAnimation
 		public ManipulationWindow Manipulation;
 		public AnimationWindow Animation;
 
-		//Button
-		private static ApplicationLauncherButton Button;
+        //Button
+        //private static ApplicationLauncherButton Button;
+        ToolbarControl toolbarControl;
 
 		private void Awake()
 		{
@@ -106,7 +108,9 @@ namespace KerbalAnimation
 			Animation = new AnimationWindow ();
 		}
 
-		private void Start()
+        internal const string MODID = "KerbalAnimationsuite_NS";
+        internal const string MODNAME = "Kerbal Animation Suite";
+        private void Start()
 		{
 			//load animation data
 			ConfigurationUtils.LoadAnimationNames ();
@@ -115,16 +119,34 @@ namespace KerbalAnimation
 			//music
 			MusicWrapper = new MusicLogicWrapper ();
 
-			//add AppLauncher button
-			var buttonTexture = GameDatabase.Instance.GetTexture ("KerbalAnimationSuite/Icons/button", false);
+            //add AppLauncher button
+#if false
+            var buttonTexture = GameDatabase.Instance.GetTexture ("KerbalAnimationSuite/Icons/button", false);
 			Button = ApplicationLauncher.Instance.AddModApplication (EnableAnimationSuite, DisableAnimationSuite, null, null, null, null, ApplicationLauncher.AppScenes.FLIGHT, buttonTexture);
-		}
+#endif
+
+            toolbarControl = gameObject.AddComponent<ToolbarControl>();
+            toolbarControl.AddToAllToolbars(EnableAnimationSuite, DisableAnimationSuite,
+                ApplicationLauncher.AppScenes.FLIGHT,
+                MODID,
+                "kerbalAnimationsuiteButton",
+                "KerbalAnimationSuite/Icons/button-38",
+                "KerbalAnimationSuite/Icons/button-24",
+                MODNAME
+            );
+        }
 		private void OnDestroy()
 		{
-
-			//remove AppLauncher button
-			if(Button != null)
+            if (toolbarControl != null)
+            {
+                toolbarControl.OnDestroy();
+                Destroy(toolbarControl);
+            }
+#if false
+            //remove AppLauncher button
+            if (Button != null)
 				ApplicationLauncher.Instance.RemoveModApplication(Button);
+#endif
 		}
 
 		public void EnableAnimationSuite()
@@ -135,7 +157,7 @@ namespace KerbalAnimation
 				ScreenMessages.PostScreenMessage (new ScreenMessage ("<color=" + Colors.DefaultMessageColor + ">Active vessel must be an EVA to use the Animation Suite</color>", 3f, ScreenMessageStyle.UPPER_CENTER));
 
 				//set the button back to false
-				Button.SetFalse (false);
+				toolbarControl.SetFalse (false);
 				return;
 			}
 
@@ -149,8 +171,8 @@ namespace KerbalAnimation
 				AnimationClip = null;
 				CurrentBone = null;
 
-				//set the button back to false if it failed
-				Button.SetFalse (false);
+                //set the button back to false if it failed
+                toolbarControl.SetFalse (false);
 				return;
 			}
 

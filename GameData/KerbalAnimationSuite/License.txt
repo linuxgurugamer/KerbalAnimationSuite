@@ -1,0 +1,8 @@
+GNU GENERAL PUBLIC LICENSE
+
+Full License:    https://gnu.org/licenses/gpl-3.0.txt
+
+NOTE: Software is provided as is, meaning that you run it at your own risk. I (the author) is not liable for any harm done to your computer.
+
+NOTE 2: Code in the API subdirectory is not restricted by this licence, and is in the public domain.
+

@@ -7,10 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KerbalAnimationSuite", "Ker
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{39AE93EB-F3E4-46BA-9B22-C7BD948F4A20}"
 	ProjectSection(SolutionItems) = preProject
-		KerbalAnimationSuite\buildRelease.bat = KerbalAnimationSuite\buildRelease.bat
+		buildRelease.bat = buildRelease.bat
 		ChangeLog.txt = ChangeLog.txt
-		KerbalAnimationSuite\deploy.bat = KerbalAnimationSuite\deploy.bat
-		GameData\KerbalAnimationSuite\KerbalAnimationSuite.version = GameData\KerbalAnimationSuite\KerbalAnimationSuite.version
+		deploy.bat = deploy.bat
+		hierarchy.txt = hierarchy.txt
+		jenkins.txt = jenkins.txt
+		KerbalAnimationSuite.version = KerbalAnimationSuite.version
+		License.txt = License.txt
+		Readme.md = Readme.md
 	EndProjectSection
 EndProject
 Global
