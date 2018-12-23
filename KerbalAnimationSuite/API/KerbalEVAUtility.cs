@@ -11,14 +11,17 @@ using UnityEngine;
 /// </summary>
 public static class KerbalEVAUtility
 {
-	/// <summary>
-	/// Adds a part module to the kerbalEVA and kerbalEVAfemale parts
-	/// </summary>
-	public static void AddPartModule(string moduleName)
+#if false
+    /// <summary>
+    /// Adds a part module to the kerbalEVA and kerbalEVAfemale parts
+    /// </summary>
+    public static void AddPartModule(string moduleName)
 	{
 		AddModule ("kerbalEVA", moduleName);
 		AddModule ("kerbalEVAfemale", moduleName);
-	}
+        AddModule("kerbalEVAVintage", moduleName);
+        AddModule("kerbalEVAfemaleVintage", moduleName);
+    }
 	private static void AddModule(string partName, string moduleName)
 	{
 		Debug.Log ("Adding" + moduleName + " to part " + partName);
@@ -36,6 +39,7 @@ public static class KerbalEVAUtility
 			Debug.Log ("Added " + moduleName + " to part " + partName + " successfully");
 		}
 	}
+#endif
 
 	public static List<KFSMState> GetEVAStates(KerbalEVA eva)
 	{

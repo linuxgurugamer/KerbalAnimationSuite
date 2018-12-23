@@ -78,18 +78,68 @@ namespace KerbalAnimation
 				FSM.AddEvent (exitEvent, state);
 			}
 		}
+        public static Mesh helmetMesh = null;
+        public static Mesh visorMesh = null;
+        public static Mesh flare1Mesh = null;
+        public static Mesh flare2Mesh = null;
 
-		//utility methods
-		private void SetHelmet(bool value)
+        //utility methods
+        private void SetHelmet(bool value)
 		{
-			foreach (var rend in Kerbal.GetComponentsInChildren<Renderer>())
+#if false
+            foreach (var rend in Kerbal.GetComponentsInChildren<Renderer>())
 			{
 				if(rend.name == "helmet" || rend.name == "visor" || rend.name == "flare1" || rend.name == "flare2")
 				{
 					rend.enabled = value;
 				}
 			}
-			_hasHelmet = value;
+#endif
+            foreach (Renderer renderer in Kerbal.GetComponentsInChildren<Renderer>())
+            {
+                var smr = renderer as SkinnedMeshRenderer;
+
+                if (smr != null)
+                {
+                    switch (smr.name)
+                    {
+                        case "helmet":
+                            {
+                                if (helmetMesh == null)
+                                    helmetMesh = smr.sharedMesh;
+
+                                smr.sharedMesh = value ? helmetMesh : null;
+                            }
+                            break;
+                        case "visor":
+                            {
+                                if (visorMesh == null)
+                                    visorMesh = smr.sharedMesh;
+
+                                smr.sharedMesh = value ? visorMesh : null;
+                            }
+                            break;
+
+                        case "flare1":
+                            {
+                                if (flare1Mesh == null)
+                                    visorMesh = smr.sharedMesh;
+
+                                smr.sharedMesh = value ? flare1Mesh : null;
+                            }
+                            break;
+                        case "flare2":
+                            {
+                                if (flare2Mesh == null)
+                                    flare2Mesh = smr.sharedMesh;
+
+                                smr.sharedMesh = value ? flare2Mesh : null;
+                            }
+                            break;
+                    }
+                }
+            }
+            _hasHelmet = value;
 		}
 
 		//returns false if it failed to initialize animation mode

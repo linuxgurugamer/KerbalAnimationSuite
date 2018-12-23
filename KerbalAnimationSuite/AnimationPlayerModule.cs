@@ -7,7 +7,8 @@ using UnityEngine;
 
 namespace KerbalAnimation
 {
-	[KSPAddon(KSPAddon.Startup.MainMenu, true)]
+#if false
+    [KSPAddon(KSPAddon.Startup.MainMenu, true)]
 	public class EVAModuleAdder : MonoBehaviour
 	{
 		void Start()
@@ -15,6 +16,7 @@ namespace KerbalAnimation
 			KerbalEVAUtility.AddPartModule ("AnimationPlayerModule");
 		}
 	}
+#endif
 
 	[KSPAddon(KSPAddon.Startup.Flight, false)]
 	public class AnimationPlayerWindowHost : MonoBehaviour

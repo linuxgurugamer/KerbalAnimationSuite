@@ -11,3 +11,7 @@
 	Updated for 1.4.1
 	Added support for the ToolbarController
 	Added support for the ClickThroughBlocker
+
+1.2.4.1
+	Version bump for 1.5 rebuild
+	Added the vintage kerbals
