@@ -8,11 +8,11 @@ namespace KerbalAnimation
 {
 	public abstract class Window
 	{
-		protected delegate void OnGUICallback ();
+		protected delegate void OnGUICallback();
 
 		protected Window()
 		{
-			OnGUI = new OnGUICallback (DrawMainWindow);
+			OnGUI = new OnGUICallback(DrawMainWindow);
 		}
 
 		protected Rect WindowRect;
@@ -22,7 +22,7 @@ namespace KerbalAnimation
 		protected bool ExpandHeight = false;
 
 		//abstract methods
-		protected abstract void DrawWindow ();
+		protected abstract void DrawWindow();
 		public abstract void Update();
 
 		protected int ID = Guid.NewGuid().ToString().GetHashCode();
@@ -31,17 +31,17 @@ namespace KerbalAnimation
 		public void Draw()
 		{
 			GUI.skin = skin;
-			OnGUI.Invoke ();
+			OnGUI.Invoke();
 		}
 		private void DrawMainWindow()
 		{
-			WindowRect = ClickThruBlocker.GUILayoutWindow (ID, WindowRect, WindowDelegate, WindowTitle, GUILayout.ExpandWidth (ExpandWidth), GUILayout.ExpandHeight (ExpandHeight));
+			WindowRect = ClickThruBlocker.GUILayoutWindow(ID, WindowRect, WindowDelegate, WindowTitle, GUILayout.ExpandWidth(ExpandWidth), GUILayout.ExpandHeight(ExpandHeight));
 		}
 		private void WindowDelegate(int id)
 		{
-			DrawWindow ();
+			DrawWindow();
 			if (AllowDrag)
-				GUI.DragWindow ();
+				GUI.DragWindow();
 		}
 
 		public KerbalAnimationSuite Suite

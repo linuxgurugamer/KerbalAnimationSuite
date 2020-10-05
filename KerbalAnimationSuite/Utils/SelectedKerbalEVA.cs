@@ -19,7 +19,7 @@ namespace KerbalAnimation
 			{
 				if (_animation == null)
 				{
-					_animation = Kerbal.GetComponent<Animation> ();
+					_animation = Kerbal.GetComponent<Animation>();
 				}
 				return _animation;
 			}
@@ -36,7 +36,7 @@ namespace KerbalAnimation
 		public bool HasHelmet
 		{
 			get {return _hasHelmet;}
-			set {SetHelmet (value);}
+			set {SetHelmet(value);}
 		}
 
 		public bool IsAnimating
@@ -49,9 +49,9 @@ namespace KerbalAnimation
 		{
 			Kerbal = eva;
 			Joints01Transform = Part.transform.Find("globalMove01/joints01");
-			States = KerbalEVAUtility.GetEVAStates (eva);
+			States = KerbalEVAUtility.GetEVAStates(eva);
 
-			AddAnimationState ();
+			AddAnimationState();
 
 			//set defaults
 			IsAnimating = false;
@@ -60,22 +60,22 @@ namespace KerbalAnimation
 		//adds an FSM state to show that we are animating
 		private void AddAnimationState()
 		{
-			if (States.Find (k => k.name == "KAS_Animation") == null)
+			if (States.Find(k => k.name == "KAS_Animation") == null)
 			{
-				KFSMState state = new KFSMState ("KAS_Animation");
+				KFSMState state = new KFSMState("KAS_Animation");
 				state.updateMode = KFSMUpdateMode.MANUAL_TRIGGER;
-				FSM.AddState (state);
+				FSM.AddState(state);
 
-				KFSMEvent enterEvent = new KFSMEvent ("Enter KAS_Animation");
+				KFSMEvent enterEvent = new KFSMEvent("Enter KAS_Animation");
 				enterEvent.GoToStateOnEvent = state;
 				enterEvent.updateMode = KFSMUpdateMode.MANUAL_TRIGGER;
-				var idleGrounded = States.Find (k => k.name == "Idle (Grounded)");
-				FSM.AddEvent (enterEvent, idleGrounded);
+				var idleGrounded = States.Find(k => k.name == "Idle(Grounded)");
+				FSM.AddEvent(enterEvent, idleGrounded);
 
-				KFSMEvent exitEvent = new KFSMEvent ("Exit KAS_Animation");
+				KFSMEvent exitEvent = new KFSMEvent("Exit KAS_Animation");
 				exitEvent.GoToStateOnEvent = idleGrounded;
 				exitEvent.updateMode = KFSMUpdateMode.MANUAL_TRIGGER;
-				FSM.AddEvent (exitEvent, state);
+				FSM.AddEvent(exitEvent, state);
 			}
 		}
         public static Mesh helmetMesh = null;
@@ -89,7 +89,7 @@ namespace KerbalAnimation
 #if false
             foreach (var rend in Kerbal.GetComponentsInChildren<Renderer>())
 			{
-				if(rend.name == "helmet" || rend.name == "visor" || rend.name == "flare1" || rend.name == "flare2")
+				if (rend.name == "helmet" || rend.name == "visor" || rend.name == "flare1" || rend.name == "flare2")
 				{
 					rend.enabled = value;
 				}
@@ -101,7 +101,7 @@ namespace KerbalAnimation
 
                 if (smr != null)
                 {
-                    switch (smr.name)
+                    switch(smr.name)
                     {
                         case "helmet":
                             {
@@ -148,33 +148,33 @@ namespace KerbalAnimation
 			//check if we can animate
 			if (TimeWarp.CurrentRate != 1f)
 			{
-				ScreenMessages.PostScreenMessage ("<color=" + Colors.DefaultMessageColor + ">You must not be in time warp to animate</color>", 2.5f, ScreenMessageStyle.UPPER_CENTER);
-				TimeWarp.SetRate (0, true);
+				ScreenMessages.PostScreenMessage("<color=" + Colors.DefaultMessageColor + ">You must not be in time warp to animate</color>", 2.5f, ScreenMessageStyle.UPPER_CENTER);
+				TimeWarp.SetRate(0, true);
 				return false;
 			}
-			if (FSM.CurrentState.name == "Idle (Grounded)")
+			if (FSM.CurrentState.name == "Idle(Grounded)")
 			{
-				var enter = FSM.CurrentState.StateEvents.Find (k => k.name == "Enter KAS_Animation");
+				var enter = FSM.CurrentState.StateEvents.Find(k => k.name == "Enter KAS_Animation");
 				if (enter != null)
 				{
-					FSM.RunEvent (enter);
+					FSM.RunEvent(enter);
 				}
 				else
 				{
-					Debug.LogError ("failed to run event: Enter KAS_Animation");
-					ScreenMessages.PostScreenMessage ("<color=" + Colors.ErrorMessageColor + ">Failed to open Kerbal Animation Suite!</color>", 2.5f, ScreenMessageStyle.UPPER_CENTER);
+					Debug.LogError("failed to run event: Enter KAS_Animation");
+					ScreenMessages.PostScreenMessage("<color=" + Colors.ErrorMessageColor + ">Failed to open Kerbal Animation Suite!</color>", 2.5f, ScreenMessageStyle.UPPER_CENTER);
 					return false;
 				}
 			}
 			else
 			{
-				ScreenMessages.PostScreenMessage ("<color=" + Colors.DefaultMessageColor + ">Kerbal must be standing on ground to animate</color>", 2.5f, ScreenMessageStyle.UPPER_CENTER);
+				ScreenMessages.PostScreenMessage("<color=" + Colors.DefaultMessageColor + ">Kerbal must be standing on ground to animate</color>", 2.5f, ScreenMessageStyle.UPPER_CENTER);
 				return false;
 			}
 
 			//stop any playing animations
 			animation.playAutomatically = false;
-			animation.Stop ();
+			animation.Stop();
 
 			//go up 10 units
 			transform.position += transform.up * 10f;
@@ -187,7 +187,7 @@ namespace KerbalAnimation
 			}
 
 			//lock input
-			InputLockManager.SetControlLock (ControlTypes.EVA_INPUT | ControlTypes.TIMEWARP | ControlTypes.VESSEL_SWITCHING, "KerbalAnimationSuite_Lock");
+			InputLockManager.SetControlLock(ControlTypes.EVA_INPUT | ControlTypes.TIMEWARP | ControlTypes.VESSEL_SWITCHING, "KerbalAnimationSuite_Lock");
 
 			//this is obvious
 			IsAnimating = true;
@@ -199,15 +199,15 @@ namespace KerbalAnimation
 		{
 			if (FSM.CurrentState.name == "KAS_Animation")
 			{
-				var exit = FSM.CurrentState.StateEvents.Find (k => k.name == "Exit KAS_Animation");
+				var exit = FSM.CurrentState.StateEvents.Find(k => k.name == "Exit KAS_Animation");
 				if (exit != null)
-					FSM.RunEvent (exit);
+					FSM.RunEvent(exit);
 				else
-					Debug.LogError ("failed to run event: Exit KAS_Animation");
+					Debug.LogError("failed to run event: Exit KAS_Animation");
 			}
 
 			//set animation settings back to default
-			animation.Stop ();
+			animation.Stop();
 			animation.playAutomatically = true;
 
 			//set helmet back to default
@@ -223,7 +223,7 @@ namespace KerbalAnimation
 			}
 
 			//remove the input lock
-			InputLockManager.RemoveControlLock ("KerbalAnimationSuite_Lock");
+			InputLockManager.RemoveControlLock("KerbalAnimationSuite_Lock");
 
 			IsAnimating = false;
 		}

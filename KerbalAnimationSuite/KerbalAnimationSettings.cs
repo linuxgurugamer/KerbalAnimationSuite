@@ -9,14 +9,14 @@ namespace KerbalAnimation
 		public KerbalAnimationSettings()
 		{
 			//load settings
-			Load ();
+			Load();
 
 			//subscribe to save event
-			GameEvents.onGameStateSaved.Add (OnGameStateSaved);
+			GameEvents.onGameStateSaved.Add(OnGameStateSaved);
 		}
 		~KerbalAnimationSettings()
 		{
-			GameEvents.onGameStateSaved.Remove (OnGameStateSaved);
+			GameEvents.onGameStateSaved.Remove(OnGameStateSaved);
 		}
 
 		//path
@@ -25,30 +25,30 @@ namespace KerbalAnimation
 		//save/load
 		public void Load()
 		{
-			ConfigNode node = ConfigNode.Load (Path);
+			ConfigNode node = ConfigNode.Load(Path);
 			if (node == null)
 			{
-				Save ();
-				node = ConfigNode.Load (Path);
+				Save();
+				node = ConfigNode.Load(Path);
 			}
 
-			if (node.HasValue ("AllowEditorMusic"))
-				bool.TryParse (node.GetValue ("AllowEditorMusic"), out AllowEditorMusic);
+			if (node.HasValue("AllowEditorMusic"))
+				bool.TryParse(node.GetValue("AllowEditorMusic"), out AllowEditorMusic);
 		}
 		public void Save()
 		{
-			ConfigNode node = new ConfigNode ("KerbalAnimationSuite_Settings");
+			ConfigNode node = new ConfigNode("KerbalAnimationSuite_Settings");
 
-			node.AddValue ("AllowEditorMusic", AllowEditorMusic.ToString());
+			node.AddValue("AllowEditorMusic", AllowEditorMusic.ToString());
 
-			node.Save (Path);
+			node.Save(Path);
 		}
 
 		//Events
-		private void OnGameStateSaved (Game game)
+		private void OnGameStateSaved(Game game)
 		{
-			Debug.Log ("Saving KerbalAnimationSuiteSettings...");
-			Save ();
+			Debug.Log("Saving KerbalAnimationSuiteSettings...");
+			Save();
 		}
 
 		//Settings

@@ -10,10 +10,10 @@ namespace KerbalAnimation
 	public class AnimationPlayerWindow : Window
 	{
 		//constructor
-		public AnimationPlayerWindow ()
+		public AnimationPlayerWindow()
 		{
 			WindowTitle = "Animation Player";
-			WindowRect = new Rect (Screen.width - 325f, 25f, 280f, 0f);
+			WindowRect = new Rect(Screen.width - 325f, 25f, 280f, 0f);
 			ExpandHeight = true;
 			Loop = false;
 		}
@@ -39,61 +39,61 @@ namespace KerbalAnimation
 
 		public int[] NumberKeyClips = new int[10];
 
-		protected override void DrawWindow ()
+		protected override void DrawWindow()
 		{
 			if (Clips.Count > 0)
 			{
-				scroll = GUILayout.BeginScrollView (scroll, GUILayout.Height (320f), GUILayout.ExpandWidth(true));
+				scroll = GUILayout.BeginScrollView(scroll, GUILayout.Height(320f), GUILayout.ExpandWidth(true));
 				for (int i = 0; i < Clips.Count; i++)
 				{
 					int nameValue = i + 1;
 					if (nameValue > 9)
 						nameValue = 0;
-					NumberKeyClips [i] = DrawClipSelector ("NumberKey" + nameValue.ToString(), nameValue.ToString(), NumberKeyClips [i]);
+					NumberKeyClips [i] = DrawClipSelector("NumberKey" + nameValue.ToString(), nameValue.ToString(), NumberKeyClips [i]);
 				}
 
-				GUILayout.Label ("<color=" + Colors.Information + ">Press the numbers 0-9 (not on the numpad) to play the selected animations. Hold left shift to play the animation on all kerbals instead of just the active one</color>");
+				GUILayout.Label("<color=" + Colors.Information + ">Press the numbers 0-9(not on the numpad) to play the selected animations. Hold left shift to play the animation on all kerbals instead of just the active one</color>");
 
-				GUILayout.EndScrollView ();
+				GUILayout.EndScrollView();
 			}
-			Loop = GUILayout.Toggle (Loop, "Loop?");
-			if (GUILayout.Button ("Reload Animations"))
+			Loop = GUILayout.Toggle(Loop, "Loop?");
+			if (GUILayout.Button("Reload Animations"))
 			{
-				ReloadAnimations ();
+				ReloadAnimations();
 			}
 		}
-		public override void Update ()
+		public override void Update()
 		{
-			if(Clips == null)
-				ReloadAnimations ();
+			if (Clips == null)
+				ReloadAnimations();
 		}
 
 		//gui methods
 		private int DrawClipSelector(string uniqueName, string name, int index)
 		{
-			if (!textBoxValues.ContainsKey (uniqueName))
-				textBoxValues.Add (uniqueName, Clips[index].Name);
+			if (!textBoxValues.ContainsKey(uniqueName))
+				textBoxValues.Add(uniqueName, Clips[index].Name);
 
 			string textBoxControlName = "ClipSelector_" + uniqueName;
 
-			GUILayout.BeginHorizontal ();
+			GUILayout.BeginHorizontal();
 
-			GUILayout.Label ("<color=" + Colors.Information + ">" + name + ":</color>", GUILayout.Width (30f));
+			GUILayout.Label("<color=" + Colors.Information + ">" + name + ":</color>", GUILayout.Width(30f));
 
 			bool buttonPressed = false;
 			int buttonValue = index;
 			int buttonIncrement = 1;
-			if (GUILayout.Button ("<<", GUILayout.MaxWidth(40f), GUILayout.Height(24f)))
+			if (GUILayout.Button("<<", GUILayout.MaxWidth(40f), GUILayout.Height(24f)))
 			{
 				buttonValue -= buttonIncrement;
 				buttonPressed = true;
 			}
 
 			//text field
-			GUI.SetNextControlName (textBoxControlName);
-			GUILayout.TextField (textBoxValues [uniqueName], GUILayout.Width(160f));
+			GUI.SetNextControlName(textBoxControlName);
+			GUILayout.TextField(textBoxValues [uniqueName], GUILayout.Width(160f));
 
-			if (GUILayout.Button (">>", GUILayout.MaxWidth(40f), GUILayout.Height(24f)))
+			if (GUILayout.Button(">>", GUILayout.MaxWidth(40f), GUILayout.Height(24f)))
 			{
 				buttonValue += buttonIncrement;
 				buttonPressed = true;
@@ -106,10 +106,10 @@ namespace KerbalAnimation
 					buttonValue = 0;
 
 				textBoxValues [uniqueName] = Clips[buttonValue].Name;
-				GUI.FocusControl ("");
+				GUI.FocusControl("");
 			}
 
-			GUILayout.EndHorizontal ();
+			GUILayout.EndHorizontal();
 
 			return buttonValue;
 		}
@@ -117,13 +117,13 @@ namespace KerbalAnimation
 		//utility methods
 		public void ReloadAnimations()
 		{
-			Clips = new List<KerbalAnimationClip> ();
+			Clips = new List<KerbalAnimationClip>();
 			foreach (var path in Directory.GetFiles(KSPUtil.ApplicationRootPath + "GameData/", "*.anim", SearchOption.AllDirectories))
 			{
-				KerbalAnimationClip clip = new KerbalAnimationClip ();
-				clip.LoadFromPath (path);
-				Clips.Add (clip);
-				Debug.Log ("KerbalAnimationClip " + clip.Name + " loaded from " + path);
+				KerbalAnimationClip clip = new KerbalAnimationClip();
+				clip.LoadFromPath(path);
+				Clips.Add(clip);
+				Debug.Log("KerbalAnimationClip " + clip.Name + " loaded from " + path);
 			}
 
 			int length = 10;
@@ -134,7 +134,7 @@ namespace KerbalAnimation
 				NumberKeyClips [i] = i;
 			}
 
-			AnimationPlayerWindowHost.Instance.OnReloadAnimationClips.Fire (Clips);
+			AnimationPlayerWindowHost.Instance.OnReloadAnimationClips.Fire(Clips);
 		}
 	}
 }

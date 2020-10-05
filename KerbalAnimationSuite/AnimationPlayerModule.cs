@@ -13,7 +13,7 @@ namespace KerbalAnimation
 	{
 		void Start()
 		{
-			KerbalEVAUtility.AddPartModule ("AnimationPlayerModule");
+			KerbalEVAUtility.AddPartModule("AnimationPlayerModule");
 		}
 	}
 #endif
@@ -36,7 +36,7 @@ namespace KerbalAnimation
 		}
 		private void Start()
 		{
-			Player = new AnimationPlayerWindow ();
+			Player = new AnimationPlayerWindow();
 		}
 		private void OnGUI()
 		{
@@ -50,7 +50,7 @@ namespace KerbalAnimation
 
 			if (GUIOpen)
 			{
-				Player.Draw ();
+				Player.Draw();
 			}
 		}
 		private void Update()
@@ -61,7 +61,7 @@ namespace KerbalAnimation
 			if (KerbalAnimationSuite.Instance.IsAnimating)
 				return;
 
-			Player.Update ();
+			Player.Update();
 		}
 	}
 
@@ -77,41 +77,41 @@ namespace KerbalAnimation
 			{
 				if (_animation == null)
 				{
-					_animation = GetComponent<Animation> ();
+					_animation = GetComponent<Animation>();
 				}
 				return _animation;
 			}
 		}
 
 		//lifetime
-		public override void OnStart (StartState state)
+		public override void OnStart(StartState state)
 		{
-			AnimationPlayerWindowHost.Instance.OnReloadAnimationClips.Add (OnReloadAnimationClips);
+			AnimationPlayerWindowHost.Instance.OnReloadAnimationClips.Add(OnReloadAnimationClips);
 		}
-		public override void OnUpdate ()
+		public override void OnUpdate()
 		{
 			Events ["ToggleGUI"].guiName = AnimationPlayerWindowHost.GUIOpen ? CloseGUIName : OpenGUIName;
 
-			for(int i = 0; i < 10; i++)
+			for (int i = 0; i < 10; i++)
 			{
-				string buttonName = (i + 1).ToString ();
+				string buttonName = (i + 1).ToString();
 				if (i >= 9)
 					buttonName = "0";
-				if (Input.GetKey (buttonName))
+				if (Input.GetKey(buttonName))
 				{
-					bool shift = Input.GetKey (KeyCode.LeftShift);
+					bool shift = Input.GetKey(KeyCode.LeftShift);
 
-					if(!shift && FlightGlobals.ActiveVessel != vessel)
+					if (!shift && FlightGlobals.ActiveVessel != vessel)
 					{
 						continue;
 					}
-					var clip = AnimationPlayerWindowHost.Instance.Player.GetNumberKeyClip (i);
-					if(clip != null && !animation.IsPlaying(clip.Name))
+					var clip = AnimationPlayerWindowHost.Instance.Player.GetNumberKeyClip(i);
+					if (clip != null && !animation.IsPlaying(clip.Name))
 					{
 						if (AnimationPlayerWindow.Loop)
-							PlayAnimation (clip.Name, WrapMode.Loop);
+							PlayAnimation(clip.Name, WrapMode.Loop);
 						else
-							PlayAnimation (clip.Name, WrapMode.Once);
+							PlayAnimation(clip.Name, WrapMode.Once);
 					}
 				}
 			}
@@ -123,16 +123,16 @@ namespace KerbalAnimation
 			if (state == null || animation.GetClip(name) == null)
 				return;
 			state.wrapMode = wrapMode;
-			animation.CrossFade (name, 0.2f * state.length, PlayMode.StopSameLayer);
+			animation.CrossFade(name, 0.2f * state.length, PlayMode.StopSameLayer);
 		}
 
 		//events
-		private void OnReloadAnimationClips (List<KerbalAnimationClip> clips)
+		private void OnReloadAnimationClips(List<KerbalAnimationClip> clips)
 		{
 			//initialize all of the clips with this kerbal
 			foreach (var clip in clips)
 			{
-				clip.Initialize (animation, transform);
+				clip.Initialize(animation, transform);
 			}
 		}
 

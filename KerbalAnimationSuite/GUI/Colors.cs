@@ -22,7 +22,7 @@ namespace KerbalAnimation
 		}
 		public static Color HexToColor(string hex)
 		{
-			if (!hex.StartsWith ("#"))
+			if (!hex.StartsWith("#"))
 				hex = "#" + hex;
 			byte r = byte.Parse(hex.Substring(1,2), System.Globalization.NumberStyles.HexNumber);
 			byte g = byte.Parse(hex.Substring(3,2), System.Globalization.NumberStyles.HexNumber);

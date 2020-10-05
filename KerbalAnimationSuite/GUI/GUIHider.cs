@@ -15,8 +15,8 @@ namespace KerbalAnimation
 			ShowUI = true;
 
 			//add GameEvents
-			GameEvents.onShowUI.Add (OnShowUI);
-			GameEvents.onHideUI.Add (OnHideUI);
+			GameEvents.onShowUI.Add(OnShowUI);
+			GameEvents.onHideUI.Add(OnHideUI);
 		}
 
 		private void OnShowUI()
