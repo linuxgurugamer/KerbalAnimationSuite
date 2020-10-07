@@ -8,8 +8,7 @@ namespace KerbalAnimation
 {
 	public class EditableAnimationClip : KerbalAnimationClip
 	{
-		public SelectedKerbalEVA Kerbal
-		{get; private set;}
+		public SelectedKerbalEVA Kerbal {get; private set;}
 
 		private string tempNewName = null;
 		public new string Name
@@ -162,12 +161,28 @@ namespace KerbalAnimation
 			string folderPath = KSPUtil.ApplicationRootPath + "GameData/" + url + "/";
 			string fileName = Name;
 
-			int v = 0;
-			while (File.Exists(folderPath + fileName + ".anim"))
+			// Count the number of backups saved, only keep 5 at the most
+			int backupCount = 0;
+			if (File.Exists(folderPath + fileName + ".anim")) backupCount++;
+			while (backupCount < 5)
 			{
-				File.Move(folderPath + fileName + ".anim", folderPath + fileName + v.ToString() + ".anim.old");
-				v++;
+				if (!File.Exists(folderPath + fileName + (backupCount - 1).ToString() + ".anim.old")) break;
+				backupCount++;
 			}
+
+			while (backupCount > 1)
+            {
+				string srcPath = folderPath + fileName + (backupCount - 2).ToString() + ".anim.old";
+				string destPath = folderPath + fileName + (backupCount - 1).ToString() + ".anim.old";
+				if (File.Exists(destPath))
+				{
+					File.Delete(destPath);
+                }
+				File.Move(srcPath, destPath);
+				backupCount--;
+			}
+			if (backupCount > 0) File.Move(folderPath + fileName + ".anim", folderPath + fileName + "0.anim.old");
+
 
 			string path = folderPath + fileName + ".anim";
 

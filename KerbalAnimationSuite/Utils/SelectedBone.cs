@@ -5,10 +5,8 @@ namespace KerbalAnimation
 {
 	public class SelectedBone
 	{
-		public string Name
-		{get{return Bone.name;}}
-		public Transform Bone
-		{get; private set;}
+		public string Name {get{return Bone.name;}}
+		public Transform Bone {get; private set;}
 		public Vector3 Position
 		{
 			get{return Bone.localPosition;}

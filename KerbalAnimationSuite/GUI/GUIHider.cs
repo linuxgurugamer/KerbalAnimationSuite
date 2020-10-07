@@ -6,8 +6,7 @@ namespace KerbalAnimation
 	[KSPAddon(KSPAddon.Startup.Instantly, false)]
 	public sealed class GUIHider : MonoBehaviour
 	{
-		public static bool ShowUI //set by pressing F2
-		{get; private set;}
+		public static bool ShowUI {get; private set;} //set by pressing F2
 
 		void Start()
 		{

@@ -53,12 +53,10 @@ namespace KerbalAnimation
 		}
 
 		//animation
-		public EditableAnimationClip animationClip
-		{get{return Suite.AnimationClip;}}
+		public EditableAnimationClip animationClip {get{return Suite.AnimationClip;}}
 
 		private KerbalAnimationClip.KerbalKeyframe currentKeyframe;
-		public bool KeyframeSelected
-		{get{return currentKeyframe != null;}}
+		public bool KeyframeSelected {get{return currentKeyframe != null;}}
 
 		//textures
 		private Texture2D TimeIndicatorIcon;

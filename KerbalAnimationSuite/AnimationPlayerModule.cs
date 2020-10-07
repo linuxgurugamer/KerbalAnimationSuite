@@ -21,8 +21,7 @@ namespace KerbalAnimation
 	[KSPAddon(KSPAddon.Startup.Flight, false)]
 	public class AnimationPlayerWindowHost : MonoBehaviour
 	{
-		public static AnimationPlayerWindowHost Instance
-		{get; private set;}
+		public static AnimationPlayerWindowHost Instance {get; private set;}
 
 		public AnimationPlayerWindow Player;
 		public static bool GUIOpen = false;

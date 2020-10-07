@@ -6,12 +6,9 @@ namespace KerbalAnimation
 {
 	public class SelectedKerbalEVA
 	{
-		public KerbalEVA Kerbal
-		{get; private set;}
-		public KerbalFSM FSM
-		{get{return Kerbal.fsm;}}
-		public Part Part
-		{get{return Kerbal.part;}}
+		public KerbalEVA Kerbal {get; private set;}
+		public KerbalFSM FSM {get{return Kerbal.fsm;}}
+		public Part Part {get{return Kerbal.part;}}
 		private Animation _animation;
 		public Animation animation
 		{
@@ -24,13 +21,10 @@ namespace KerbalAnimation
 				return _animation;
 			}
 		}
-		public Transform transform
-		{get{return Part.transform;}}
+		public Transform transform {get{return Part.transform;}}
 
-		public Transform Joints01Transform
-		{get; private set;}
-		public List<KFSMState> States
-		{ get; private set;}
+		public Transform Joints01Transform {get; private set;}
+		public List<KFSMState> States { get; private set;}
 
 		private bool _hasHelmet = true;
 		public bool HasHelmet
@@ -39,10 +33,8 @@ namespace KerbalAnimation
 			set {SetHelmet(value);}
 		}
 
-		public bool IsAnimating
-		{get; private set;}
-		public bool IsAnimationPlaying
-		{get{return animation.isPlaying;}}
+		public bool IsAnimating {get; private set;}
+		public bool IsAnimationPlaying {get{return animation.isPlaying;}}
 
 		//constructor
 		public SelectedKerbalEVA(KerbalEVA eva)
@@ -69,7 +61,7 @@ namespace KerbalAnimation
 				KFSMEvent enterEvent = new KFSMEvent("Enter KAS_Animation");
 				enterEvent.GoToStateOnEvent = state;
 				enterEvent.updateMode = KFSMUpdateMode.MANUAL_TRIGGER;
-				var idleGrounded = States.Find(k => k.name == "Idle(Grounded)");
+				var idleGrounded = States.Find(k => k.name == "Idle (Grounded)");
 				FSM.AddEvent(enterEvent, idleGrounded);
 
 				KFSMEvent exitEvent = new KFSMEvent("Exit KAS_Animation");
@@ -152,7 +144,7 @@ namespace KerbalAnimation
 				TimeWarp.SetRate(0, true);
 				return false;
 			}
-			if (FSM.CurrentState.name == "Idle(Grounded)")
+			if (FSM.CurrentState.name == "Idle (Grounded)")
 			{
 				var enter = FSM.CurrentState.StateEvents.Find(k => k.name == "Enter KAS_Animation");
 				if (enter != null)

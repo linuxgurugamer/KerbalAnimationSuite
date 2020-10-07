@@ -12,7 +12,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
@@ -122,16 +122,12 @@
     </Reference>
   </ItemGroup>
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>xcopy /Y "$(TargetPath)" "C:\Users\nicho\Signif\_ksp\Modding\KSP_1101_test\GameData\KerbalAnimationSuite\Plugins"
+xcopy /Y "$(TargetDir)$(TargetName).pdb" "C:\Users\nicho\Signif\_ksp\Modding\KSP_1101_test\GameData\KerbalAnimationSuite\Plugins"
+xcopy /Y "$(TargetDir)$(TargetName).dll.mdb" "C:\Users\nicho\Signif\_ksp\Modding\KSP_1101_test\GameData\KerbalAnimationSuite\Plugins"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>
-set textTemplatingPath="%25ProgramFiles(x86)%25\Microsoft Visual Studio\2017\Community\Common7\IDE \texttransform.exe"
-
-$(textTemplatingPath) "$(ProjectDir)AssemblyVersion.tt"
-
-
-</PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

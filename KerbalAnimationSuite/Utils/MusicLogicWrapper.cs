@@ -39,8 +39,7 @@ namespace KerbalAnimation
 			set {_playlist = value;}
 		}
 
-		public bool MusicIsPlaying
-		{get; private set;}
+		public bool MusicIsPlaying {get; private set;}
 
 		//music object
 		private MusicLogic musicLogic;

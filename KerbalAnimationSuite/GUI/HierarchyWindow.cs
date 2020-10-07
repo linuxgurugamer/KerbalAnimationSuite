@@ -11,7 +11,7 @@ namespace KerbalAnimation
 		//constructor
 		public HierarchyWindow()
 		{
-			WindowRect = new Rect(0f, 50f, 500f, 525f);
+			WindowRect = new Rect(0f, 50f, 535f, 525f);
 			WindowTitle = "Bone Hierarchy";
 		}
 

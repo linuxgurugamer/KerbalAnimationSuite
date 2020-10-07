@@ -326,8 +326,8 @@ public class KerbalAnimationClip
 				Transform t = transform.Find(name);
 
 				//ignore collider bones
-				if (name.ToLower().Contains("collider"))
-					continue;
+				//if (name.ToLower().Contains("collider"))
+				//	continue;
 
 				if (t == null)
 					Debug.LogError("[assembly: " + Assembly.GetExecutingAssembly().GetName().Name + "]:" + "t is null at " + name);
@@ -412,7 +412,7 @@ public class KerbalAnimationClip
 			}
 			catch(KeyNotFoundException e)
 			{
-				//ignore colliders
+				//ignore exceptions on colliders
 				if (animationName.ToLower().Contains("collider"))
 					return 0f;
 
