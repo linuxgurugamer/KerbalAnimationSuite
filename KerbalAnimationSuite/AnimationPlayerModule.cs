@@ -40,12 +40,10 @@ namespace KerbalAnimation
 		private void OnGUI()
 		{
 			//return if we are not in a valid state to draw
-			if (!GUIHider.ShowUI)
+			if (!GUIHider.ShowUI || !HighLogic.LoadedSceneIsFlight || KerbalAnimationSuite.Instance.IsAnimating)
+			{
 				return;
-			if (!HighLogic.LoadedSceneIsFlight || !FlightGlobals.ActiveVessel.isEVA)
-				return;
-			if (KerbalAnimationSuite.Instance.IsAnimating)
-				return;
+			}
 
 			if (GUIOpen)
 			{
@@ -55,10 +53,7 @@ namespace KerbalAnimation
 		private void Update()
 		{
 			//return if we are not in a valid state to update
-			if (!HighLogic.LoadedSceneIsFlight || !FlightGlobals.ActiveVessel.isEVA)
-				return;
-			if (KerbalAnimationSuite.Instance.IsAnimating)
-				return;
+			if (!HighLogic.LoadedSceneIsFlight || KerbalAnimationSuite.Instance.IsAnimating) return;
 
 			Player.Update();
 		}
@@ -89,13 +84,12 @@ namespace KerbalAnimation
 		}
 		public override void OnUpdate()
 		{
-			Events ["ToggleGUI"].guiName = AnimationPlayerWindowHost.GUIOpen ? CloseGUIName : OpenGUIName;
+			Events["ToggleGUI"].guiName = AnimationPlayerWindowHost.GUIOpen ? CloseGUIName : OpenGUIName;
 
 			for (int i = 0; i < 10; i++)
 			{
 				string buttonName = (i + 1).ToString();
-				if (i >= 9)
-					buttonName = "0";
+				if (i >= 9) buttonName = "0";
 				if (Input.GetKey(buttonName))
 				{
 					bool shift = Input.GetKey(KeyCode.LeftShift);
@@ -107,10 +101,8 @@ namespace KerbalAnimation
 					var clip = AnimationPlayerWindowHost.Instance.Player.GetNumberKeyClip(i);
 					if (clip != null && !animation.IsPlaying(clip.Name))
 					{
-						if (AnimationPlayerWindow.Loop)
-							PlayAnimation(clip.Name, WrapMode.Loop);
-						else
-							PlayAnimation(clip.Name, WrapMode.Once);
+						if (AnimationPlayerWindow.Loop) PlayAnimation(clip.Name, WrapMode.Loop);
+						else PlayAnimation(clip.Name, WrapMode.Once);
 					}
 				}
 			}
@@ -118,9 +110,8 @@ namespace KerbalAnimation
 
 		public void PlayAnimation(string name, WrapMode wrapMode)
 		{
-			var state = animation [name];
-			if (state == null || animation.GetClip(name) == null)
-				return;
+			var state = animation[name];
+			if (state == null || animation.GetClip(name) == null) return;
 			state.wrapMode = wrapMode;
 			animation.CrossFade(name, 0.2f * state.length, PlayMode.StopSameLayer);
 		}
@@ -136,7 +127,7 @@ namespace KerbalAnimation
 		}
 
 		//KSPEvents
-		[KSPEvent(guiName = "Open GUI", guiActiveUnfocused = false, guiActive = true)]
+		[KSPEvent(guiName = "Open GUI", guiActiveUnfocused = true, guiActive = true)]
 		public void ToggleGUI()
 		{
 			AnimationPlayerWindowHost.GUIOpen = !AnimationPlayerWindowHost.GUIOpen;

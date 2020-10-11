@@ -13,8 +13,9 @@ namespace KerbalAnimation
 		public AnimationPlayerWindow()
 		{
 			WindowTitle = "Animation Player";
-			WindowRect = new Rect(Screen.width - 325f, 25f, 280f, 0f);
+			WindowRect = new Rect(Screen.width - 380f, 25f, 300f, 0f);
 			ExpandHeight = true;
+			//ExpandWidth = true;
 			Loop = false;
 		}
 
@@ -22,15 +23,13 @@ namespace KerbalAnimation
 		private List<KerbalAnimationClip> Clips = null;
 		public KerbalAnimationClip GetNumberKeyClip(int index)
 		{
-			if (index >= Clips.Count)
-				return null;
-			else
-				return Clips [NumberKeyClips [index]];
+			if (index >= Clips.Count) return null;
+			else return Clips[NumberKeyClips[index]];
 		}
 
 		//gui values
 		private Dictionary<string, string> textBoxValues = new Dictionary<string, string>();
-		private Vector2 scroll;
+		//private Vector2 scroll;
 		public static bool Loop
 		{
 			get;
@@ -41,20 +40,23 @@ namespace KerbalAnimation
 
 		protected override void DrawWindow()
 		{
+			if (Clips == null)
+            {
+				ReloadAnimations();
+			}
 			if (Clips.Count > 0)
 			{
-				scroll = GUILayout.BeginScrollView(scroll, GUILayout.Height(320f), GUILayout.ExpandWidth(true));
-				for (int i = 0; i < Clips.Count; i++)
+				//scroll = GUILayout.BeginScrollView(scroll, GUILayout.Height(320f), GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true));
+				for (int i = 0; (i < Clips.Count) && (i < 10); i++)
 				{
 					int nameValue = i + 1;
-					if (nameValue > 9)
-						nameValue = 0;
-					NumberKeyClips [i] = DrawClipSelector("NumberKey" + nameValue.ToString(), nameValue.ToString(), NumberKeyClips [i]);
+					if (nameValue > 9) nameValue = 0;
+					NumberKeyClips[i] = DrawClipSelector("NumberKey" + nameValue.ToString(), nameValue.ToString(), NumberKeyClips[i]);
 				}
 
-				GUILayout.Label("<color=" + Colors.Information + ">Press the numbers 0-9(not on the numpad) to play the selected animations. Hold left shift to play the animation on all kerbals instead of just the active one</color>");
+				GUILayout.Label("<color=" + Colors.Information + ">Press the numbers 0-9 (not on the numpad) to play the selected animations. Hold left shift to play the animation on all kerbals instead of just the active one</color>");
 
-				GUILayout.EndScrollView();
+				//GUILayout.EndScrollView();
 			}
 			Loop = GUILayout.Toggle(Loop, "Loop?");
 			if (GUILayout.Button("Reload Animations"))
@@ -64,15 +66,13 @@ namespace KerbalAnimation
 		}
 		public override void Update()
 		{
-			if (Clips == null)
-				ReloadAnimations();
+			if (Clips == null) ReloadAnimations();
 		}
 
 		//gui methods
 		private int DrawClipSelector(string uniqueName, string name, int index)
 		{
-			if (!textBoxValues.ContainsKey(uniqueName))
-				textBoxValues.Add(uniqueName, Clips[index].Name);
+			if (!textBoxValues.ContainsKey(uniqueName)) textBoxValues.Add(uniqueName, Clips[index].Name);
 
 			string textBoxControlName = "ClipSelector_" + uniqueName;
 
@@ -91,7 +91,7 @@ namespace KerbalAnimation
 
 			//text field
 			GUI.SetNextControlName(textBoxControlName);
-			GUILayout.TextField(textBoxValues [uniqueName], GUILayout.Width(160f));
+			GUILayout.TextField(textBoxValues[uniqueName], GUILayout.Width(160f));
 
 			if (GUILayout.Button(">>", GUILayout.MaxWidth(40f), GUILayout.Height(24f)))
 			{
@@ -100,14 +100,11 @@ namespace KerbalAnimation
 			}
 			if (buttonPressed)
 			{
-				if (buttonValue < 0)
-					buttonValue = Clips.Count - 1;
-				else if (buttonValue >= Clips.Count)
-					buttonValue = 0;
-
-				textBoxValues [uniqueName] = Clips[buttonValue].Name;
+				if (buttonValue < 0) buttonValue = Clips.Count - 1;
+				else if (buttonValue >= Clips.Count) buttonValue = 0;
 				GUI.FocusControl("");
 			}
+			textBoxValues[uniqueName] = Clips[buttonValue].Name;
 
 			GUILayout.EndHorizontal();
 
@@ -127,11 +124,10 @@ namespace KerbalAnimation
 			}
 
 			int length = 10;
-			if (Clips.Count < 10)
-				length = Clips.Count;
+			if (Clips.Count < 10) length = Clips.Count;
 			for (int i = 0; i < length; i++)
 			{
-				NumberKeyClips [i] = i;
+				NumberKeyClips[i] = i;
 			}
 
 			AnimationPlayerWindowHost.Instance.OnReloadAnimationClips.Fire(Clips);

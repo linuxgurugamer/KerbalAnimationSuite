@@ -40,8 +40,7 @@ namespace KerbalAnimation
 		private void WindowDelegate(int id)
 		{
 			DrawWindow();
-			if (AllowDrag)
-				GUI.DragWindow();
+			if (AllowDrag) GUI.DragWindow();
 		}
 
 		public KerbalAnimationSuite Suite

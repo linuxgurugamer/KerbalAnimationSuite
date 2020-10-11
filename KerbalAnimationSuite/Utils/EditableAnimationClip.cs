@@ -38,6 +38,7 @@ namespace KerbalAnimation
 		{
 			Kerbal = eva;
 			name = "CustomClip_" + Guid.NewGuid().ToString();
+			duration = 1.0f;
 
 			BuildAnimationClip();
 			Initialize();
@@ -47,8 +48,7 @@ namespace KerbalAnimation
 			Kerbal = eva;
 			name = "CustomClip_" + Guid.NewGuid().ToString();
 
-			if (!url.EndsWith(".anim"))
-				url += ".anim";
+			if (!url.EndsWith(".anim")) url += ".anim";
 			ConfigNode node = ConfigNode.Load(KSPUtil.ApplicationRootPath + "GameData/" + url);
 			base.Load(node);
 
@@ -94,36 +94,32 @@ namespace KerbalAnimation
 		{
 			foreach (var keyframe in Keyframes)
 			{
-				if (keyframe.NormalizedTime == normalizedTime)
-					return keyframe;
+				if (keyframe.NormalizedTime == normalizedTime) return keyframe;
 			}
 			return null;
 		}
 		public void RemoveKeyframe(KerbalKeyframe keyframe)
 		{
-			if (Keyframes.Contains(keyframe))
-				Keyframes.Remove(keyframe);
+			if (Keyframes.Contains(keyframe)) Keyframes.Remove(keyframe);
 		}
 
 		public void SetAnimationTime(float normalizedTime)
 		{
-			if (Kerbal.IsAnimationPlaying)
-				Kerbal.animation [name].normalizedTime = normalizedTime;
+			if (Kerbal.IsAnimationPlaying) Kerbal.animation[name].normalizedTime = normalizedTime;
 			else
 			{
 				Kerbal.animation.Play(name);
-				Kerbal.animation [name].normalizedTime = normalizedTime;
+				Kerbal.animation[name].normalizedTime = normalizedTime;
 				Kerbal.animation.Sample();
 				Kerbal.animation.Stop();
 			}
 		}
 		public float GetAnimationTime(bool clamped = true)
 		{
-			if (!clamped)
-				return Kerbal.animation [name].normalizedTime;
+			if (!clamped) return Kerbal.animation[name].normalizedTime;
 			else
 			{
-				float time = Kerbal.animation [name].normalizedTime;
+				float time = Kerbal.animation[name].normalizedTime;
 				float floor = Mathf.Floor(time);
 				return time - floor;
 			}
@@ -142,10 +138,7 @@ namespace KerbalAnimation
 		//TODO: move loading/saving code into a static class
 		public bool Load(string url)
 		{
-			if (!url.EndsWith(".anim"))
-				url += ".anim";
-			var fullPath = KSPUtil.ApplicationRootPath + "GameData/" + url;
-			var node = ConfigNode.Load(fullPath);
+			var node = ConfigNode.Load(url);
 			if (node == null)
 			{
 				Debug.LogError("ConfigNode not found at " + url);

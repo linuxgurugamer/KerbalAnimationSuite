@@ -97,16 +97,14 @@ namespace KerbalAnimation
                     {
                         case "helmet":
                             {
-                                if (helmetMesh == null)
-                                    helmetMesh = smr.sharedMesh;
+                                if (helmetMesh == null) helmetMesh = smr.sharedMesh;
 
                                 smr.sharedMesh = value ? helmetMesh : null;
                             }
                             break;
                         case "visor":
                             {
-                                if (visorMesh == null)
-                                    visorMesh = smr.sharedMesh;
+                                if (visorMesh == null) visorMesh = smr.sharedMesh;
 
                                 smr.sharedMesh = value ? visorMesh : null;
                             }
@@ -114,16 +112,14 @@ namespace KerbalAnimation
 
                         case "flare1":
                             {
-                                if (flare1Mesh == null)
-                                    visorMesh = smr.sharedMesh;
+                                if (flare1Mesh == null) visorMesh = smr.sharedMesh;
 
                                 smr.sharedMesh = value ? flare1Mesh : null;
                             }
                             break;
                         case "flare2":
                             {
-                                if (flare2Mesh == null)
-                                    flare2Mesh = smr.sharedMesh;
+                                if (flare2Mesh == null) flare2Mesh = smr.sharedMesh;
 
                                 smr.sharedMesh = value ? flare2Mesh : null;
                             }
@@ -192,10 +188,8 @@ namespace KerbalAnimation
 			if (FSM.CurrentState.name == "KAS_Animation")
 			{
 				var exit = FSM.CurrentState.StateEvents.Find(k => k.name == "Exit KAS_Animation");
-				if (exit != null)
-					FSM.RunEvent(exit);
-				else
-					Debug.LogError("failed to run event: Exit KAS_Animation");
+				if (exit != null) FSM.RunEvent(exit);
+				else Debug.LogError("failed to run event: Exit KAS_Animation");
 			}
 
 			//set animation settings back to default

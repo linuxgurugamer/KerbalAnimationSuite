@@ -42,6 +42,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AssemblyVersion.tt</DependentUpon>
     </Compile>
+    <Compile Include="GUI\AnimationLoadWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="KerbalAnimationSuite.cs" />
     <Compile Include="API\KerbalAnimationClip.cs" />

@@ -51,11 +51,9 @@ namespace KerbalAnimation
 		public static void PrintTransform(Transform t, bool printComponents = false, int level = 0)
 		{
 			string indent = "";
-			for (int i = 0; i < level; i++)
-				indent += "   |";
+			for (int i = 0; i < level; i++) indent += "   |";
 			Debug.Log(indent + t.name);
-			if (printComponents)
-				PrintComponents(t, level);
+			if (printComponents) PrintComponents(t, level);
 			foreach (Transform child in t)
 			{
 				PrintTransform(child, printComponents, level + 1);
@@ -64,13 +62,11 @@ namespace KerbalAnimation
 		public static void PrintComponents(Transform t, int level = 0)
 		{
 			string indent = "";
-			for (int i = 0; i < level; i++)
-				indent += "   |";
+			for (int i = 0; i < level; i++) indent += "   |";
 			indent += " - ";
 			foreach (var component in t.GetComponents<Component>())
 			{
-				if (component.GetType() != typeof(Transform))
-					Debug.Log(indent + component.GetType().Name);
+				if (component.GetType() != typeof(Transform)) Debug.Log(indent + component.GetType().Name);
 			}
 		}
 	}

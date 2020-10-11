@@ -9,8 +9,10 @@ namespace KerbalAnimation
 		public ManipulationWindow()
 		{
 			SetupGUIStyles();
-			WindowRect = new Rect(Screen.width - 500f, Screen.height - 500f, 500f, 300f);
+			WindowRect = new Rect((Screen.width / 2f) + 600f, (Screen.height / 2f) - 300f, 500f, 300f);
 			WindowTitle = "Manipulation";
+			ExpandHeight = true;
+
 			Suite.OnBoneSelected.Add(OnBoneSelected);
 		}
 
@@ -24,7 +26,7 @@ namespace KerbalAnimation
 		public Vector3 Position;
 
 		//private GUI values
-		private Vector2 manipulationScroll;
+		//private Vector2 manipulationScroll;
 		private Dictionary<string, string> textBoxValues = new Dictionary<string, string>();
 		private Dictionary<string, Color> textBoxColors = new Dictionary<string, Color>();
 
@@ -73,7 +75,17 @@ namespace KerbalAnimation
 
 		protected override void DrawWindow()
 		{
-			manipulationScroll = GUILayout.BeginScrollView(manipulationScroll);
+			//manipulationScroll = GUILayout.BeginScrollView(manipulationScroll);
+
+			if (Suite.CurrentBone != null)
+            {
+				WindowTitle = "Manipulation - " + (Suite.ReadableNames.ContainsKey(Suite.CurrentBone.Name) ? Suite.ReadableNames[Suite.CurrentBone.Name] : Suite.CurrentBone.Name);
+			}
+			else
+            {
+				WindowTitle = "Manipulation (No Bone Selected)";
+				GUI.enabled = false;
+			}
 
 			GUILayout.Label("Rotation");
 			Rotation.x = DrawManipulationSlider("RX", "X", Rotation.x, 0f, 360f);
@@ -92,7 +104,9 @@ namespace KerbalAnimation
 				Suite.Kerbal.HasHelmet = !Suite.Kerbal.HasHelmet;
 			}
 
-			GUILayout.EndScrollView();
+			//GUILayout.EndScrollView();
+
+			GUI.enabled = true;
 
 			GUI.DragWindow();
 		}
@@ -100,10 +114,8 @@ namespace KerbalAnimation
 		private float DrawManipulationSlider(string uniqueName, string name, float value, float min, float max)
 		{
 			value = Mathf.Clamp(value, min, max);
-			if (!textBoxValues.ContainsKey(uniqueName))
-				textBoxValues.Add(uniqueName, value.ToString());
-			if (!textBoxColors.ContainsKey(uniqueName))
-				textBoxColors.Add(uniqueName, Color.white);
+			if (!textBoxValues.ContainsKey(uniqueName)) textBoxValues.Add(uniqueName, value.ToString());
+			if (!textBoxColors.ContainsKey(uniqueName)) textBoxColors.Add(uniqueName, Color.white);
 
 			GUILayout.BeginHorizontal();
 
@@ -115,28 +127,26 @@ namespace KerbalAnimation
 			string focusedControl = GUI.GetNameOfFocusedControl();
 
 			GUI.SetNextControlName(textBoxControlName);
-			GUI.color = textBoxColors [uniqueName];
-			textBoxValues [uniqueName] = GUILayout.TextField(textBoxValues [uniqueName], GUILayout.Width(120f));
+			GUI.color = textBoxColors[uniqueName];
+			textBoxValues[uniqueName] = GUILayout.TextField(textBoxValues[uniqueName], GUILayout.Width(120f));
 			GUI.color = Color.white;
 
 			//make the color slightly darker if it's focused
-			if (focusedControl == textBoxControlName)
-				textBoxColors [uniqueName] = sliderFocusColor;
-			else
-				textBoxColors [uniqueName] = Color.white;
+			if (focusedControl == textBoxControlName) textBoxColors[uniqueName] = sliderFocusColor;
+			else textBoxColors[uniqueName] = Color.white;
 
 			float parsedTextBoxFloat;
 			bool parsedTextBox = true;
-			if (!float.TryParse(textBoxValues [uniqueName], out parsedTextBoxFloat))
+			if (!float.TryParse(textBoxValues[uniqueName], out parsedTextBoxFloat))
 			{
 				//make the color red if it fails to parse the text box
-				textBoxColors [uniqueName] = sliderErrorColor;
+				textBoxColors[uniqueName] = sliderErrorColor;
 				parsedTextBox = false;
 			}
 			if (parsedTextBox && (parsedTextBoxFloat < min || parsedTextBoxFloat > max))
 			{
 				//also make the color red if the value is not within the specified contraints
-				textBoxColors [uniqueName] = sliderErrorColor;
+				textBoxColors[uniqueName] = sliderErrorColor;
 				parsedTextBox = false;
 			}
 
@@ -158,7 +168,7 @@ namespace KerbalAnimation
 
 			if (focusedControl != textBoxControlName)
 			{
-				textBoxValues [uniqueName] = sliderValue.ToString("##0.0###");
+				textBoxValues[uniqueName] = sliderValue.ToString("##0.0###");
 			}
 
 			GUILayout.EndHorizontal();

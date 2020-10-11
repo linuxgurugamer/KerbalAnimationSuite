@@ -32,8 +32,7 @@ namespace KerbalAnimation
 				node = ConfigNode.Load(Path);
 			}
 
-			if (node.HasValue("AllowEditorMusic"))
-				bool.TryParse(node.GetValue("AllowEditorMusic"), out AllowEditorMusic);
+			if (node.HasValue("AllowEditorMusic")) bool.TryParse(node.GetValue("AllowEditorMusic"), out AllowEditorMusic);
 		}
 		public void Save()
 		{

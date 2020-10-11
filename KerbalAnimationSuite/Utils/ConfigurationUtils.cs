@@ -56,7 +56,7 @@ namespace KerbalAnimation
 		//readable names
 		public static void LoadReadableNames()
 		{
-			ConfigNode node = GameDatabase.Instance.GetConfigNodes("KerbalAnimationSuiteReadableNames") [0];
+			ConfigNode node = GameDatabase.Instance.GetConfigNodes("KerbalAnimationSuiteReadableNames")[0];
 
 			KerbalAnimationSuite.Instance.ReadableNames = new Dictionary<string, string>();
 			foreach (ConfigNode.Value value in node.values)

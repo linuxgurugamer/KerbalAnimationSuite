@@ -18,16 +18,14 @@ public class KerbalAnimationClip
 	//loading
 	public void LoadFromURL(string url)
 	{
-		if (!url.EndsWith(".anim"))
-			url += ".anim";
+		if (!url.EndsWith(".anim")) url += ".anim";
 		string fullPath = KSPUtil.ApplicationRootPath + "GameData/" + url;
 		ConfigNode node = ConfigNode.Load(fullPath);
 		LoadAndBuild(node);
 	}
 	public void LoadFromPath(string fullPath)
 	{
-		if (!fullPath.EndsWith(".anim"))
-			fullPath += ".anim";
+		if (!fullPath.EndsWith(".anim")) fullPath += ".anim";
 		ConfigNode node = ConfigNode.Load(fullPath);
 		LoadAndBuild(node);
 	}
@@ -37,8 +35,7 @@ public class KerbalAnimationClip
 	}
 	protected void LoadAndBuild(ConfigNode node)
 	{
-		if (AnimationNames == null)
-			LoadAnimationNames();
+		if (AnimationNames == null) LoadAnimationNames();
 
 		Load(node);
 		BuildAnimationClip();
@@ -132,16 +129,13 @@ public class KerbalAnimationClip
 			return;
 		}
 		animation.RemoveClip(Name);
-		if (newName != null)
-			name = newName;
+		if (newName != null) name = newName;
 		animation.AddClip(clip, Name);
-		animation [Name].layer = Layer;
+		animation[Name].layer = Layer;
 		foreach (var mt in MixingTransforms)
 		{
-			if (AnimationNames.ContainsKey(mt) && transform.Find(AnimationNames [mt]) != null && transform != null)
-				animation [Name].AddMixingTransform(transform.Find(AnimationNames [mt]));
-			else
-				Debug.LogError("[assembly: " + Assembly.GetExecutingAssembly().GetName().Name + "]: animation mixing transform " + mt + " from animation " + Name + " does not exist, or could not be found.");
+			if (AnimationNames.ContainsKey(mt) && transform.Find(AnimationNames[mt]) != null && transform != null) animation[Name].AddMixingTransform(transform.Find(AnimationNames[mt]));
+			else Debug.LogError("[assembly: " + Assembly.GetExecutingAssembly().GetName().Name + "]: animation mixing transform " + mt + " from animation " + Name + " does not exist, or could not be found.");
 		}
 	}
 
@@ -165,8 +159,7 @@ public class KerbalAnimationClip
 	}
 	protected void RemoveMixingTransform(string name)
 	{
-		if (MixingTransforms.Contains(name))
-			MixingTransforms.Remove(name);
+		if (MixingTransforms.Contains(name)) MixingTransforms.Remove(name);
 	}
 
 	protected AnimationClip BuildAnimationClip()
@@ -200,27 +193,27 @@ public class KerbalAnimationClip
 		{
 			foreach (string animationName in AnimationNames.Values)
 			{
-				RotationWCurves [animationName].AddKey(keyframe.Time, keyframe.GetValue(animationName, KAS_ValueType.RotW));
-				RotationXCurves [animationName].AddKey(keyframe.Time, keyframe.GetValue(animationName, KAS_ValueType.RotX));
-				RotationYCurves [animationName].AddKey(keyframe.Time, keyframe.GetValue(animationName, KAS_ValueType.RotY));
-				RotationZCurves [animationName].AddKey(keyframe.Time, keyframe.GetValue(animationName, KAS_ValueType.RotZ));
-				PositionXCurves [animationName].AddKey(keyframe.Time, keyframe.GetValue(animationName, KAS_ValueType.PosX));
-				PositionYCurves [animationName].AddKey(keyframe.Time, keyframe.GetValue(animationName, KAS_ValueType.PosY));
-				PositionZCurves [animationName].AddKey(keyframe.Time, keyframe.GetValue(animationName, KAS_ValueType.PosZ));
+				RotationWCurves[animationName].AddKey(keyframe.Time, keyframe.GetValue(animationName, KAS_ValueType.RotW));
+				RotationXCurves[animationName].AddKey(keyframe.Time, keyframe.GetValue(animationName, KAS_ValueType.RotX));
+				RotationYCurves[animationName].AddKey(keyframe.Time, keyframe.GetValue(animationName, KAS_ValueType.RotY));
+				RotationZCurves[animationName].AddKey(keyframe.Time, keyframe.GetValue(animationName, KAS_ValueType.RotZ));
+				PositionXCurves[animationName].AddKey(keyframe.Time, keyframe.GetValue(animationName, KAS_ValueType.PosX));
+				PositionYCurves[animationName].AddKey(keyframe.Time, keyframe.GetValue(animationName, KAS_ValueType.PosY));
+				PositionZCurves[animationName].AddKey(keyframe.Time, keyframe.GetValue(animationName, KAS_ValueType.PosZ));
 			}
 		}
 
 		//set curves to clip
 		foreach (string animationName in AnimationNames.Values)
 		{
-			clip.SetCurve(animationName, typeof(Transform), "localRotation.w", RotationWCurves [animationName]);
-			clip.SetCurve(animationName, typeof(Transform), "localRotation.x", RotationXCurves [animationName]);
-			clip.SetCurve(animationName, typeof(Transform), "localRotation.y", RotationYCurves [animationName]);
-			clip.SetCurve(animationName, typeof(Transform), "localRotation.z", RotationZCurves [animationName]);
+			clip.SetCurve(animationName, typeof(Transform), "localRotation.w", RotationWCurves[animationName]);
+			clip.SetCurve(animationName, typeof(Transform), "localRotation.x", RotationXCurves[animationName]);
+			clip.SetCurve(animationName, typeof(Transform), "localRotation.y", RotationYCurves[animationName]);
+			clip.SetCurve(animationName, typeof(Transform), "localRotation.z", RotationZCurves[animationName]);
 
-			clip.SetCurve(animationName, typeof(Transform), "localPosition.x", PositionXCurves [animationName]);
-			clip.SetCurve(animationName, typeof(Transform), "localPosition.y", PositionYCurves [animationName]);
-			clip.SetCurve(animationName, typeof(Transform), "localPosition.z", PositionZCurves [animationName]);
+			clip.SetCurve(animationName, typeof(Transform), "localPosition.x", PositionXCurves[animationName]);
+			clip.SetCurve(animationName, typeof(Transform), "localPosition.y", PositionYCurves[animationName]);
+			clip.SetCurve(animationName, typeof(Transform), "localPosition.z", PositionZCurves[animationName]);
 		}
 
 		clip.EnsureQuaternionContinuity();
@@ -238,10 +231,8 @@ public class KerbalAnimationClip
 		{
 			this.name = node.GetValue("Name");
 			this.duration = float.Parse(node.GetValue("Duration"));
-			if (node.HasValue("Layer"))
-				this.layer = int.Parse(node.GetValue("Layer"));
-			else
-				this.layer = 5;
+			if (node.HasValue("Layer")) this.layer = int.Parse(node.GetValue("Layer"));
+			else this.layer = 5;
 
 			ConfigNode mtNode = node.GetNode("MIXING_TRANSFORMS");
 			foreach (var mt in mtNode.GetValues("MixingTransform"))
@@ -257,19 +248,18 @@ public class KerbalAnimationClip
 
 				foreach (string animationName in AnimationNames.Values)
 				{
-					if (!keyframeNode.HasValue(animationName))
-						continue;
+					if (!keyframeNode.HasValue(animationName)) continue;
 
 					string allValues = keyframeNode.GetValue(animationName);
 					string[] values = allValues.Split(' ');
 
-					float rotW = float.Parse(values [0]);
-					float rotX = float.Parse(values [1]);
-					float rotY = float.Parse(values [2]);
-					float rotZ = float.Parse(values [3]);
-					float posX = float.Parse(values [4]);
-					float posY = float.Parse(values [5]);
-					float posZ = float.Parse(values [6]);
+					float rotW = float.Parse(values[0]);
+					float rotX = float.Parse(values[1]);
+					float rotY = float.Parse(values[2]);
+					float rotZ = float.Parse(values[3]);
+					float posX = float.Parse(values[4]);
+					float posY = float.Parse(values[5]);
+					float posZ = float.Parse(values[6]);
 
 					keyframe.SetValue(rotW, animationName, KAS_ValueType.RotW);
 					keyframe.SetValue(rotX, animationName, KAS_ValueType.RotX);
@@ -317,6 +307,17 @@ public class KerbalAnimationClip
 		Dictionary<string, float> PositionY = new Dictionary<string, float>();
 		Dictionary<string, float> PositionZ = new Dictionary<string, float>();
 
+		private string DebugPrintTransform(Transform transform, int level=0, string path="")
+        {
+			path += "/" + transform.name;
+			string output = "".PadLeft(level * 4) + path + "\n";
+			for (int i = 0; i < transform.childCount; i++)
+            {
+				output += DebugPrintTransform(transform.GetChild(i), (level + 1), path);
+            }
+			return output;
+        }
+
 		public void Write(Transform transform, float time)
 		{
 			this.Clear();
@@ -325,12 +326,17 @@ public class KerbalAnimationClip
 			{
 				Transform t = transform.Find(name);
 
-				//ignore collider bones
-				//if (name.ToLower().Contains("collider"))
-				//	continue;
+				// Ignore HeadCollider as its path differs between male and female kerbals
+				if (name.ToLower().Contains("headcollider")) continue;
 
 				if (t == null)
-					Debug.LogError("[assembly: " + Assembly.GetExecutingAssembly().GetName().Name + "]:" + "t is null at " + name);
+				{
+					Debug.LogError("[" + Assembly.GetExecutingAssembly().GetName().Name + "]: t is null at " + name);
+					string output = DebugPrintTransform(transform);
+					Debug.LogError("[" + Assembly.GetExecutingAssembly().GetName().Name + "]: transform dump follows\n " + output);
+
+
+				}
 				Quaternion quatRot = t.localRotation;
 				RotationW.Add(name, quatRot.w);
 				RotationX.Add(name, quatRot.x);
@@ -361,25 +367,25 @@ public class KerbalAnimationClip
 			switch(type)
 			{
 			case KAS_ValueType.RotW:
-				RotationW [animationName] = value;
+				RotationW[animationName] = value;
 				break;
 			case KAS_ValueType.RotX:
-				RotationX [animationName] = value;
+				RotationX[animationName] = value;
 				break;
 			case KAS_ValueType.RotY:
-				RotationY [animationName] = value;
+				RotationY[animationName] = value;
 				break;
 			case KAS_ValueType.RotZ:
-				RotationZ [animationName] = value;
+				RotationZ[animationName] = value;
 				break;
 			case KAS_ValueType.PosX:
-				PositionX [animationName] = value;
+				PositionX[animationName] = value;
 				break;
 			case KAS_ValueType.PosY:
-				PositionY [animationName] = value;
+				PositionY[animationName] = value;
 				break;
 			case KAS_ValueType.PosZ:
-				PositionZ [animationName] = value;
+				PositionZ[animationName] = value;
 				break;
 			default:
 				break;
@@ -393,19 +399,19 @@ public class KerbalAnimationClip
 				switch(type)
 				{
 				case KAS_ValueType.RotW:
-					return RotationW [animationName];
+					return RotationW[animationName];
 				case KAS_ValueType.RotX:
-					return RotationX [animationName];
+					return RotationX[animationName];
 				case KAS_ValueType.RotY:
-					return RotationY [animationName];
+					return RotationY[animationName];
 				case KAS_ValueType.RotZ:
-					return RotationZ [animationName];
+					return RotationZ[animationName];
 				case KAS_ValueType.PosX:
-					return PositionX [animationName];
+					return PositionX[animationName];
 				case KAS_ValueType.PosY:
-					return PositionY [animationName];
+					return PositionY[animationName];
 				case KAS_ValueType.PosZ:
-					return PositionZ [animationName];
+					return PositionZ[animationName];
 				default:
 					return 0f;
 				}
@@ -413,8 +419,7 @@ public class KerbalAnimationClip
 			catch(KeyNotFoundException e)
 			{
 				//ignore exceptions on colliders
-				if (animationName.ToLower().Contains("collider"))
-					return 0f;
+				if (animationName.ToLower().Contains("collider")) return 0f;
 
 				Debug.LogError("key not found: " + animationName);
 				Debug.LogException(e);

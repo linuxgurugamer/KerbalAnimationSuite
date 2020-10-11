@@ -28,8 +28,7 @@ public static class KerbalEVAUtility
 
 		foreach (var aPart in PartLoader.LoadedPartsList)
 		{
-			if (aPart.name != partName)
-				continue;
+			if (aPart.name != partName) continue;
 
 			try
 			{
@@ -63,20 +62,16 @@ public static class KerbalEVAUtility
 	{
 		foreach (var kfsme in eva.fsm.CurrentState.StateEvents)
 		{
-			if (kfsme.name == name)
-				eva.fsm.RunEvent(kfsme);
-			else
-				Debug.LogError("[assembly: " + Assembly.GetExecutingAssembly().GetName().Name + "]:" + "Event " + name + " not found");
+			if (kfsme.name == name) eva.fsm.RunEvent(kfsme);
+			else Debug.LogError("[assembly: " + Assembly.GetExecutingAssembly().GetName().Name + "]:" + "Event " + name + " not found");
 		}
 	}
 	public static void RunEvent(this KerbalFSM fsm, string name)
 	{
 		foreach (var kfsme in fsm.CurrentState.StateEvents)
 		{
-			if (kfsme.name == name)
-				fsm.RunEvent(kfsme);
-			else
-				Debug.LogError("[assembly: " + Assembly.GetExecutingAssembly().GetName().Name + "]:" + "Event " + name + " not found");
+			if (kfsme.name == name) fsm.RunEvent(kfsme);
+			else Debug.LogError("[assembly: " + Assembly.GetExecutingAssembly().GetName().Name + "]:" + "Event " + name + " not found");
 		}
 	}
 }

@@ -63,8 +63,7 @@ namespace KerbalAnimation
 		}
 		private void stopPlaylist(AudioSource source)
 		{
-			if (runningPlaylistRoutine != null)
-				musicLogic.StopCoroutine(runningPlaylistRoutine);
+			if (runningPlaylistRoutine != null) musicLogic.StopCoroutine(runningPlaylistRoutine);
 			source.clip = null;
 		}
 
@@ -92,8 +91,7 @@ namespace KerbalAnimation
 						yield return null;
 					}
 					source.volume = end;
-					if (onFadeEnd != null)
-						onFadeEnd.Invoke(source);
+					if (onFadeEnd != null) onFadeEnd.Invoke(source);
 				}
 			}
 		}
@@ -102,12 +100,10 @@ namespace KerbalAnimation
 			int counter = new System.Random().Next(playlist.Count);
 			while (true)
 			{
-				if (counter < 0)
-					counter = playlist.Count - 1;
-				if (counter >= playlist.Count)
-					counter = 0;
+				if (counter < 0) counter = playlist.Count - 1;
+				if (counter >= playlist.Count) counter = 0;
 
-				source.clip = playlist [counter];
+				source.clip = playlist[counter];
 				source.Play();
 				//yield return new WaitForSeconds(source.clip.length + 1f);
 				yield return new WaitForSeconds(source.clip.length + 2f);

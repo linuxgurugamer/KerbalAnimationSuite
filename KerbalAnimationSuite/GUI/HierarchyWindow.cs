@@ -11,8 +11,9 @@ namespace KerbalAnimation
 		//constructor
 		public HierarchyWindow()
 		{
-			WindowRect = new Rect(0f, 50f, 535f, 525f);
+			WindowRect = new Rect(5f, 60f, 560f, 525f);
 			WindowTitle = "Bone Hierarchy";
+			//ExpandWidth = true;
 		}
 
 		public bool ShowRawHierarchy = false;
@@ -44,7 +45,7 @@ namespace KerbalAnimation
 			}
 			else
 			{
-				boneSelectionScroll = GUILayout.BeginScrollView(boneSelectionScroll);
+				boneSelectionScroll = GUILayout.BeginScrollView(boneSelectionScroll, GUILayout.ExpandWidth(true));
 
 				//legs
 				GUILayout.Label("<b>Legs:</b>");
@@ -182,7 +183,7 @@ namespace KerbalAnimation
 		//GUI Util
 		void DrawBoneSelection(string boneName)
 		{
-			string name = Suite.ReadableNames.ContainsKey(boneName) ? Suite.ReadableNames [boneName] : boneName;
+			string name = Suite.ReadableNames.ContainsKey(boneName) ? Suite.ReadableNames[boneName] : boneName;
 
 			if (boneSelected && Suite.CurrentBone != null && Suite.CurrentBone.Name == boneName)
 			{
@@ -194,8 +195,8 @@ namespace KerbalAnimation
 			}
 			else if (GUILayout.Button(name))
 			{
-				string animationName = Suite.AnimationNames.ContainsKey(boneName) ? Suite.AnimationNames [boneName] : "none found :C";
-				var boneTransform = Suite.AnimationNames.ContainsKey(boneName) ? Suite.Kerbal.transform.Find(Suite.AnimationNames [boneName]) : null;
+				string animationName = Suite.AnimationNames.ContainsKey(boneName) ? Suite.AnimationNames[boneName] : "none found :C";
+				var boneTransform = Suite.AnimationNames.ContainsKey(boneName) ? Suite.Kerbal.transform.Find(Suite.AnimationNames[boneName]) : null;
 				if (boneTransform == null)
 				{
 					Debug.LogError("Null bone: " + boneName + " at " + animationName);
@@ -215,11 +216,9 @@ namespace KerbalAnimation
 				GUILayout.BeginVertical(skin.box);
 
 				string indent = "";
-				for (int i = 0; i < level; i++)
-					indent += " |";
-				string name = Suite.ReadableNames.ContainsKey(child.name) ? Suite.ReadableNames [child.name] : null;
-				if (Suite.AnimationNames.ContainsKey(child.name))
-					name = "<color=" + Colors.Orange + ">" + name + "</color>";
+				for (int i = 0; i < level; i++) indent += " |";
+				string name = Suite.ReadableNames.ContainsKey(child.name) ? Suite.ReadableNames[child.name] : null;
+				if (Suite.AnimationNames.ContainsKey(child.name)) name = "<color=" + Colors.Orange + ">" + name + "</color>";
 
 				GUILayout.BeginHorizontal();
 				GUILayout.Label(indent + child.name + " (" + name + ")");

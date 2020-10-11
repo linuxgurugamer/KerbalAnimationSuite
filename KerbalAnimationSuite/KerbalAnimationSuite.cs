@@ -75,10 +75,8 @@ namespace KerbalAnimation
 			get {return MusicWrapper.MusicIsPlaying;}
 			set
 			{
-				if (value && Settings.AllowEditorMusic)
-					MusicWrapper.StartPlaylist(0.5f);
-				else
-					MusicWrapper.StopPlaylist(0.5f);
+				if (value && Settings.AllowEditorMusic) MusicWrapper.StartPlaylist(0.5f);
+				else MusicWrapper.StopPlaylist(0.5f);
 			}
 		}
 
@@ -144,8 +142,7 @@ namespace KerbalAnimation
             }
 #if false
             //remove AppLauncher button
-            if (Button != null)
-				ApplicationLauncher.Instance.RemoveModApplication(Button);
+            if (Button != null) ApplicationLauncher.Instance.RemoveModApplication(Button);
 #endif
 		}
 
@@ -163,6 +160,7 @@ namespace KerbalAnimation
 
 			Kerbal = new SelectedKerbalEVA(vessel.evaController);
 			AnimationClip = new EditableAnimationClip(Kerbal);
+			Animation.OnEnableSuite();
 
 			if (!Kerbal.EnterAnimationMode())
 			{
@@ -182,8 +180,7 @@ namespace KerbalAnimation
 		{
 			MusicIsPlaying = false;
 
-			if (Kerbal != null)
-				Kerbal.ExitAnimationMode();
+			if (Kerbal != null) Kerbal.ExitAnimationMode();
 
 			//wipe the state
 			Kerbal = null;
@@ -216,18 +213,14 @@ namespace KerbalAnimation
 		void OnGUI()
 		{
 			//don't draw when F2 is pressed
-			if (!GUIHider.ShowUI)
-				return;
+			if (!GUIHider.ShowUI) return;
 
 			if (Kerbal != null && Kerbal.IsAnimating)
 			{
 				Master.Draw();
-				if (Master.HierarchyOpen && !Kerbal.IsAnimationPlaying && Animation.KeyframeSelected)
-					Hierarchy.Draw();
-				if (Master.ManipulationOpen && !Kerbal.IsAnimationPlaying && Animation.KeyframeSelected)
-					Manipulation.Draw();
-				if (Master.AnimationOpen)
-					Animation.Draw();
+				if (Master.HierarchyOpen && !Kerbal.IsAnimationPlaying && Animation.KeyframeSelected) Hierarchy.Draw();
+				if (Master.ManipulationOpen && !Kerbal.IsAnimationPlaying && Animation.KeyframeSelected) Manipulation.Draw();
+				if (Master.AnimationOpen) Animation.Draw();
 			}
 		}
 	}
