@@ -86,7 +86,8 @@ namespace KerbalAnimation
 		}
 		private void OnDestroy()
         {
-			AnimationPlayerWindowHost.Instance.Player.RemoveKerbal(animation.gameObject);
+			// Avoid dereferencing null Player on initial load
+			if (AnimationPlayerWindowHost.Instance.Player != null) AnimationPlayerWindowHost.Instance.Player.RemoveKerbal(animation.gameObject);
 		}
 		public override void OnUpdate()
 		{

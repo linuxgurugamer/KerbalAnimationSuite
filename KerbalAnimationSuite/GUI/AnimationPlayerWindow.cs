@@ -134,7 +134,7 @@ namespace KerbalAnimation
 						GUILayout.Space(5f);
 
 						GUILayout.BeginVertical(skin.box);
-						GUILayout.Space(3f);
+						GUILayout.Space(10f);
 						SelectedKerbal = DrawKerbalSelector();
 						GUILayout.Space(5f);
 
@@ -182,7 +182,7 @@ namespace KerbalAnimation
 
 					//GUILayout.EndScrollView();
 				}
-				Loop = GUILayout.Toggle(Loop, "Loop?");
+				Loop = GUILayout.Toggle(Loop, "Loop Animations");
 				if (GUILayout.Button("Reload Animations"))
 				{
 					ReloadAnimations();
@@ -209,7 +209,7 @@ namespace KerbalAnimation
 
 			GUILayout.BeginHorizontal();
 
-			GUILayout.Label("<color=" + Colors.Orange + ">" + name + ":</color>", GUILayout.Width(15f));
+			GUILayout.Label("<b><color=" + Colors.Orange + ">" + name + ":</color></b>", GUILayout.Width(15f));
 
 			bool buttonPressed = false;
 			int buttonValue = index;
@@ -222,7 +222,7 @@ namespace KerbalAnimation
 
 			//text field
 			GUI.SetNextControlName(textBoxControlName);
-			GUILayout.TextField(textBoxValues[uniqueName], GUILayout.Width(145f));
+			GUILayout.TextField(textBoxValues[uniqueName], GUILayout.ExpandWidth(true));
 
 			if (GUILayout.Button(">", GUILayout.MaxWidth(40f), GUILayout.Height(24f)))
 			{
@@ -246,7 +246,7 @@ namespace KerbalAnimation
 		{
 			string textBoxControlName = "KerbalSelector";
 
-			GUILayout.BeginHorizontal();
+			GUILayout.BeginHorizontal(GUILayout.ExpandWidth(true));
 
 			//GUILayout.Label("<color=" + Colors.Information + ">Selected Kerbal:</color>", GUILayout.Width(30f));
 

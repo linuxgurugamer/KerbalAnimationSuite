@@ -98,6 +98,7 @@ namespace KerbalAnimation
 				if (GUILayout.Button("<b>-</b>", GUILayout.Height(24f), GUILayout.Width(24f)))
 				{
 					Suite.AnimationClip.RemoveMixingTransform(mt);
+					break; // It's okay to break for one frame to avoid the exception from modifying during foreach iteration
 				}
 				GUI.backgroundColor = Color.white;
 				GUILayout.EndHorizontal();

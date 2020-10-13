@@ -90,7 +90,7 @@ namespace KerbalAnimation
 				DrawBoneSelection("bn_l_elbow_b01");
 				DrawBoneSelection("bn_l_wrist01");
 				GUILayout.Space(5f);
-				GUILayout.Label("<color=" + Colors.Orange + ">Left Hand</color>");
+				GUILayout.Label("<b><color=" + Colors.Orange + ">Left Hand</color></b>");
 				DrawBoneSelection("bn_l_mid_a01");
 				DrawBoneSelection("bn_l_mid_b01");
 				DrawBoneSelection("bn_l_thumb_a01");
@@ -105,7 +105,7 @@ namespace KerbalAnimation
 				DrawBoneSelection("bn_r_elbow_b01");
 				DrawBoneSelection("bn_r_wrist01");
 				GUILayout.Space(5f);
-				GUILayout.Label("<color=" + Colors.Orange + ">Right Hand</color>");
+				GUILayout.Label("<b><color=" + Colors.Orange + ">Right Hand</color></b>");
 				DrawBoneSelection("bn_r_mid_a01");
 				DrawBoneSelection("bn_r_mid_b01");
 				DrawBoneSelection("bn_r_thumb_a01");
@@ -143,16 +143,16 @@ namespace KerbalAnimation
 				DrawBoneSelection("bn_lowerTeeth01");
 				DrawBoneSelection("bn_upperTeet01");
 				GUILayout.Space(5f);
-				GUILayout.Label("<color=" + Colors.Orange + ">Eyes</color>");
+				GUILayout.Label("<b><color=" + Colors.Orange + ">Eyes</color></b>");
 				GUILayout.BeginHorizontal();
 				DrawBoneSelection("jntDrv_l_eye01");
 				DrawBoneSelection("jntDrv_r_eye01");
 				GUILayout.EndHorizontal();
 				GUILayout.Space(10f);
-				GUILayout.Label("<color=" + Colors.Orange + ">Mouth</color>");
+				GUILayout.Label("<b><color=" + Colors.Orange + ">Mouth</color></b>");
 				GUILayout.BeginHorizontal();
 				GUILayout.BeginVertical();
-				GUILayout.Label("<color=" + Colors.Orange + ">Lower Lip</color>");
+				GUILayout.Label("<b><color=" + Colors.Orange + ">Lower Lip</color></b>");
 				DrawBoneSelection("bn_l_mouthCorner01");
 				DrawBoneSelection("bn_l_mouthLow_d01");
 				DrawBoneSelection("bn_l_mouthLow_c01");
@@ -165,7 +165,7 @@ namespace KerbalAnimation
 				GUILayout.EndVertical();
 
 				GUILayout.BeginVertical();
-				GUILayout.Label("<color=" + Colors.Orange + ">Upper Lip</color>");
+				GUILayout.Label("<b><color=" + Colors.Orange + ">Upper Lip</color></b>");
 				DrawBoneSelection("bn_l_mouthUp_d01");
 				DrawBoneSelection("bn_l_mouthUp_c01");
 				DrawBoneSelection("bn_l_mouthUp_b01");

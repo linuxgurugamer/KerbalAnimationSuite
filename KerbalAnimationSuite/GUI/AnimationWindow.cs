@@ -191,16 +191,16 @@ namespace KerbalAnimation
 				//button toolbar
 				if (GUILayout.Button("Add Keyframe Here", GUILayout.ExpandWidth(false)))
 				{
-					SelectedBone oldBone = Suite.CurrentBone;
-					Suite.CurrentBone = null;
-
 					Debug.Log("creating new keyframe at " + timeIndicatorTime);
 					// This will save the old keyframe with the proper transform state
 					if (currentKeyframe != null)
 					{
-						animationClip.SetAnimationTime(currentKeyframe.NormalizedTime);
+						//animationClip.SetAnimationTime(currentKeyframe.NormalizedTime);
 						SetCurrentKeyframe(null);
 					}
+
+					SelectedBone oldBone = Suite.CurrentBone;
+					Suite.CurrentBone = null;
 
 					// Ensure that the new keyframe is an interpolation at the indicator's time
 					animationClip.SetAnimationTime(timeIndicatorTime);
@@ -383,7 +383,7 @@ namespace KerbalAnimation
 				else if (moveKeyframeRect.Contains(mousePos)) tooltip = "Moves the <color=" + Colors.SelectedKeyframeColor + ">selected keyframe</color> to the <color=" + Colors.Orange + ">Time Indicator's</color> position";
 				else if (deleteKeyframeRect.Contains(mousePos)) tooltip = "Deletes the <color=" + Colors.SelectedKeyframeColor + ">selected keyframe</color>";
 				else if (resetKeyframeRect.Contains(mousePos)) tooltip = "Resets all manipulations for the <color=" + Colors.SelectedKeyframeColor + ">selected keyframe</color> to default";
-				else if (timeIndicatorRect.Contains(mousePos)) tooltip = "The <color=" + Colors.Orange + ">Time Indicator</color>";
+				else if (timeIndicatorRect.Contains(mousePos)) tooltip = "The <color=" + Colors.Orange + ">Time Indicator.</color> Drag or click a position to move it.";
 				else if (timelineRect.Contains(mousePos)) tooltip = "The <color=" + Colors.Orange + ">Timeline</color>";
 				else if (otherKeyframeRects.Where(r => r.Contains(mousePos)).Count() > 0) tooltip = "A <color=" + Colors.KeyframeColor + ">keyframe</color>. Click it to select it";
 				else if (selectedKeyframeRect.Contains(mousePos)) tooltip = "The <color=" + Colors.SelectedKeyframeColor + ">selected keyframe</color>. Click it to deselect it";
@@ -506,7 +506,7 @@ namespace KerbalAnimation
 				GUILayout.EndHorizontal();
 
 				GUILayout.BeginHorizontal();
-				AnimationLoadOpen = GUILayout.Toggle(AnimationLoadOpen, "Load Animation", skin.button);
+				AnimationLoadOpen = GUILayout.Toggle(AnimationLoadOpen, "Load Saved Animation", skin.button);
 				GUILayout.EndHorizontal();
 			}
 

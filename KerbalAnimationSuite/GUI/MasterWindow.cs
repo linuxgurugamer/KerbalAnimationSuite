@@ -20,12 +20,29 @@ namespace KerbalAnimation
 		protected override void DrawWindow()
 		{
 			GUILayout.BeginVertical(skin.scrollView);
+			GUILayout.Space(10f);
 
 			AnimationOpen = GUILayout.Toggle(AnimationOpen, "Animation", skin.button);
-			if (!Suite.Kerbal.IsAnimationPlaying && Suite.Animation.KeyframeSelected) HierarchyOpen = GUILayout.Toggle(HierarchyOpen, "Bone Hierarchy", skin.button);
-			else GUILayout.Toggle(false, "Bone Hierarchy", skin.button);
-			if (!Suite.Kerbal.IsAnimationPlaying && Suite.Animation.KeyframeSelected) ManipulationOpen = GUILayout.Toggle(ManipulationOpen, "Manipulation", skin.button);
-			else GUILayout.Toggle(false, "Manipulation", skin.button);
+			if (!Suite.Kerbal.IsAnimationPlaying && Suite.Animation.KeyframeSelected)
+			{
+				HierarchyOpen = GUILayout.Toggle(HierarchyOpen, "Bone Hierarchy", skin.button);
+			}
+			else
+			{
+				GUI.enabled = false;
+				GUILayout.Toggle(false, "Bone Hierarchy", skin.button);
+				GUI.enabled = true;
+			}
+			if (!Suite.Kerbal.IsAnimationPlaying && Suite.Animation.KeyframeSelected)
+			{
+				ManipulationOpen = GUILayout.Toggle(ManipulationOpen, "Manipulation", skin.button);
+			}
+			else
+			{
+				GUI.enabled = false;
+				GUILayout.Toggle(false, "Manipulation", skin.button);
+				GUI.enabled = true;
+			}
 			GUILayout.Space(3f);
 
 			Suite.Settings.AllowEditorMusic = GUILayout.Toggle(Suite.Settings.AllowEditorMusic, "Play Music?");
