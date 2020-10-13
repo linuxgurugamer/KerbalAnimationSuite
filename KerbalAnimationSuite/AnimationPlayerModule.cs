@@ -97,7 +97,7 @@ namespace KerbalAnimation
 			{
 				string buttonName = (i + 1).ToString();
 				if (i >= 9) buttonName = "0";
-				if (Input.GetKey(buttonName))
+				if (Input.GetKey(buttonName) && (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt)))
 				{
 					bool shift = Input.GetKey(KeyCode.LeftShift);
 

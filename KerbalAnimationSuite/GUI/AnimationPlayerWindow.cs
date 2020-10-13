@@ -178,7 +178,7 @@ namespace KerbalAnimation
 					}
 					GUILayout.Space(3f);
 
-					GUILayout.Label("<color=" + Colors.Information + ">Press the numbers 0-9 (not on the numpad) to play the selected animations. Hold left shift to play the animation on all enabled kerbals instead of just the active one</color>");
+					GUILayout.Label("<color=" + Colors.Information + ">Press Alt + the numbers 0-9 (not on the numpad) to play the selected animations. Hold left shift to play the animation on all enabled kerbals instead of just the active one</color>");
 
 					//GUILayout.EndScrollView();
 				}
