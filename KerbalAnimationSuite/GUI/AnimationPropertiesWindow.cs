@@ -85,7 +85,7 @@ namespace KerbalAnimation
 				{
 					readableName = Suite.ReadableNames[mt];
 				}
-				catch (KeyNotFoundException _)
+				catch (KeyNotFoundException)
 				{
 					// handle custom cases by just not showing a readable name
 					readableName = "";
@@ -106,12 +106,11 @@ namespace KerbalAnimation
 			GUILayout.Space(3f);
 			GUILayout.EndVertical();
 
-			GUILayout.Space(2f);
+			GUILayout.Space(10f);
 			GUILayout.Label("<b>Add Mixing Transform:</b>");
 
 			// Common Mixing Transforms
 			GUILayout.BeginVertical();
-			GUILayout.Space(3f);
 			foreach (var mtName in commonMixingTransforms)
 			{
 				// Skip transforms that were already added
@@ -122,7 +121,7 @@ namespace KerbalAnimation
 				{
 					readableName = Suite.ReadableNames[mtName];
 				}
-				catch (KeyNotFoundException _)
+				catch (KeyNotFoundException)
 				{
 					// handle custom cases by just not showing a readable name
 					readableName = "";

@@ -34,7 +34,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01 = 0.9761687 1.254205E-16 -1.344751E-16 0.2170133 -0.01543731 -0.002867172 4.236617E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01 = 0.5923539 0.3861566 -0.5923539 0.3861566 -0.5085568 3.552714E-17 5.646115E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01/trackHeadlamps = 0.9984649 0 -0.05538777 0 -0.04317779 0.08000031 0.1949169
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = -0.9982681 4.169781E-07 -3.321842E-07 0.05883028 -0.2398641 0.04858204 -0.0001751508
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01 = 0.9885592 1.937808E-16 4.286438E-16 -0.1508335 0.008580074 -0.002419978 3.155136E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01 = 0.8235335 0 0 0.5672677 -0.1106252 2.398406E-07 1.228181E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01 = 1 1.110223E-16 2.844947E-16 -2.220446E-16 -3.552714E-17 0 0
@@ -66,7 +66,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_mouthCenter01 = 0.7055923 0.04625543 -0.7055923 0.04625543 -0.1747027 -0.0131457 -1.859665E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01 = -0.06526282 -0.000171274 -1.102778E-05 0.9978681 -0.1338117 0.0833647 0.06752983
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01/jntDrv_r_eyeEnd01 = 1 0 0 0 0.5106286 0 -2.220446E-16
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 0.6675104 0.2333023 -0.6675103 0.2333023 -0.158 0.12 0
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01 = 0.5 0.5 -0.5 0.5 0.03723461 0.1567828 -6.024428E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01 = 0.5837747 -0.4224161 0.5260558 -0.4517047 -0.08841593 -0.05698596 0.04019795
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01/bn_l_armElbow01 = -0.1618927 0.04149042 -0.002538047 0.9859325 -0.1129181 -1.217261E-07 -7.799983E-08
@@ -80,7 +80,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01 = -0.2487016 -0.3503841 0.8970354 -0.1034692 0 3.552714E-17 1.776357E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01 = 0.9621096 -0.08649838 -0.2522309 0.05694496 0.0364663 1.57173E-07 3.650906E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01/be_r_handleEnd01 = 1 0 0 0 0.06892186 -3.111647E-07 -1.38529E-07
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 0.9955844 0.09387103 0 0 0 -0.003354717 0.07629815
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01 = 0.4785055 0.401641 -0.5053208 0.5952882 -0.02405123 0.004854613 -0.03686757
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01 = 1 0 0 0 -0.04678345 -2.304957E-07 -9.351621E-08
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1 = 0.8486275 -0.1156164 -0.3109188 0.4120604 -4.440892E-18 -2.131628E-16 8.881784E-18
@@ -135,7 +135,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01 = 0.9761687 1.254205E-16 -1.344751E-16 0.2170133 -0.01543731 -0.002867172 4.236617E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01 = 0.5923539 0.3861566 -0.5923539 0.3861566 -0.5085568 3.552714E-17 5.646115E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01/trackHeadlamps = 0.9984649 0 -0.05538777 0 -0.04317779 0.08000031 0.1949169
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = -0.9982681 4.169781E-07 -3.321842E-07 0.05883028 -0.2398641 0.04858204 -0.0001751508
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01 = 0.9885592 1.937808E-16 4.286438E-16 -0.1508335 0.008580074 -0.002419978 3.155136E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01 = 0.8235335 0 0 0.5672677 -0.1106252 2.398406E-07 1.228181E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01 = 1 1.110223E-16 2.844947E-16 -2.220446E-16 -3.552714E-17 0 0
@@ -167,7 +167,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_mouthCenter01 = 0.7055923 0.04625543 -0.7055923 0.04625543 -0.1747027 -0.0131457 -1.859665E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01 = -0.06526282 -0.000171274 -1.102778E-05 0.9978681 -0.1338117 0.0833647 0.06752983
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01/jntDrv_r_eyeEnd01 = 1 0 0 0 0.5106286 0 -2.220446E-16
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 0.6675104 0.2333023 -0.6675103 0.2333023 -0.158 0.12 0
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01 = 0.5 0.5 -0.5 0.5 0.03723461 0.1567828 -6.024428E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01 = 0.5837747 -0.4224161 0.5260558 -0.4517047 -0.08841593 -0.05698596 0.04019795
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01/bn_l_armElbow01 = -0.1618927 0.04149042 -0.002538047 0.9859325 -0.1129181 -1.217261E-07 -7.799983E-08
@@ -181,7 +181,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01 = -0.2487016 -0.3503841 0.8970354 -0.1034692 0 3.552714E-17 1.776357E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01 = 0.9621096 -0.08649838 -0.2522309 0.05694496 0.0364663 1.57173E-07 3.650906E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01/be_r_handleEnd01 = 1 0 0 0 0.06892186 -3.111647E-07 -1.38529E-07
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 0.9955844 0.09387103 0 0 0 -0.003354717 0.07629815
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01 = 0.4785055 0.401641 -0.5053208 0.5952882 -0.02405123 0.004854613 -0.03686757
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01 = 1 0 0 0 -0.04678345 -2.304957E-07 -9.351621E-08
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1 = 0.8486275 -0.1156164 -0.3109188 0.4120604 -4.440892E-18 -2.131628E-16 8.881784E-18
@@ -236,7 +236,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01 = 0.9761687 1.254205E-16 -1.344751E-16 0.2170133 -0.01543731 -0.002867172 4.236617E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01 = 0.5923539 0.3861566 -0.5923539 0.3861566 -0.5085568 3.552714E-17 5.646115E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01/trackHeadlamps = 0.9984649 0 -0.05538777 0 -0.04317779 0.08000031 0.1949169
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = -0.9982681 4.169781E-07 -3.321842E-07 0.05883028 -0.2398641 0.04858204 -0.0001751508
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01 = 0.9885592 1.937808E-16 4.286438E-16 -0.1508335 0.008580074 -0.002419978 3.155136E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01 = 0.8235335 0 0 0.5672677 -0.1106252 2.398406E-07 1.228181E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01 = 1 1.110223E-16 2.844947E-16 -2.220446E-16 -3.552714E-17 0 0
@@ -268,7 +268,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_mouthCenter01 = 0.7055923 0.04625543 -0.7055923 0.04625543 -0.1747027 -0.0131457 -1.859665E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01 = -0.06526282 -0.000171274 -1.102778E-05 0.9978681 -0.1338117 0.0833647 0.06752983
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01/jntDrv_r_eyeEnd01 = 1 0 0 0 0.5106286 0 -2.220446E-16
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 0.6675104 0.2333023 -0.6675103 0.2333023 -0.158 0.12 0
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01 = 0.5 0.5 -0.5 0.5 0.03723461 0.1567828 -6.024428E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01 = 0.5837747 -0.4224161 0.5260558 -0.4517047 -0.08841593 -0.05698596 0.04019795
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01/bn_l_armElbow01 = -0.1618927 0.04149042 -0.002538047 0.9859325 -0.1129181 -1.217261E-07 -7.799983E-08
@@ -282,7 +282,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01 = -0.2487016 -0.3503841 0.8970354 -0.1034692 0 3.552714E-17 1.776357E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01 = 0.9621096 -0.08649838 -0.2522309 0.05694496 0.0364663 1.57173E-07 3.650906E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01/be_r_handleEnd01 = 1 0 0 0 0.06892186 -3.111647E-07 -1.38529E-07
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 0.9955844 0.09387103 0 0 0 -0.003354717 0.07629815
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01 = 0.4785054 0.401641 -0.5053208 0.5952882 -0.02405123 0.004854613 -0.03686757
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01 = 1 0 0 0 -0.04678345 -2.304957E-07 -9.351621E-08
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1 = 0.8486275 -0.1156164 -0.3109188 0.4120604 -4.440892E-18 -2.131628E-16 8.881784E-18
@@ -337,7 +337,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01 = 0.9761687 1.254205E-16 -1.344751E-16 0.2170133 -0.01543731 -0.002867172 4.236617E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01 = 0.5923539 0.3861566 -0.5923539 0.3861566 -0.5085568 3.552714E-17 5.646115E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01/trackHeadlamps = 0.9984649 0 -0.05538777 0 -0.04317779 0.08000031 0.1949169
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = -0.9982681 4.169781E-07 -3.321842E-07 0.05883028 -0.2398641 0.04858204 -0.0001751508
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01 = 0.9885592 1.937808E-16 4.286438E-16 -0.1508335 0.008580074 -0.002419978 3.155136E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01 = 0.8235335 0 0 0.5672677 -0.1106252 2.398406E-07 1.228181E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01 = 1 1.110223E-16 2.844947E-16 -2.220446E-16 -3.552714E-17 0 0
@@ -369,7 +369,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_mouthCenter01 = 0.7055923 0.04625543 -0.7055923 0.04625543 -0.1747027 -0.0131457 -1.859665E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01 = -0.06526282 -0.000171274 -1.102778E-05 0.9978681 -0.1338117 0.0833647 0.06752983
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01/jntDrv_r_eyeEnd01 = 1 0 0 0 0.5106286 0 -2.220446E-16
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 0.6675104 0.2333023 -0.6675103 0.2333023 -0.158 0.12 0
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01 = 0.5 0.5 -0.5 0.5 0.03723461 0.1567828 -6.024428E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01 = 0.5837747 -0.4224161 0.5260558 -0.4517047 -0.08841593 -0.05698596 0.04019795
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01/bn_l_armElbow01 = -0.1618927 0.04149042 -0.002538047 0.9859325 -0.1129181 -1.217261E-07 -7.799983E-08
@@ -383,7 +383,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01 = -0.2487016 -0.3503841 0.8970354 -0.1034692 0 3.552714E-17 1.776357E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01 = 0.9621096 -0.08649838 -0.2522309 0.05694496 0.0364663 1.57173E-07 3.650906E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01/be_r_handleEnd01 = 1 0 0 0 0.06892186 -3.111647E-07 -1.38529E-07
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 0.9955844 0.09387103 0 0 0 -0.003354717 0.07629815
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01 = 0.4785054 0.401641 -0.5053208 0.5952882 -0.02405123 0.004854613 -0.03686757
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01 = 1 0 0 0 -0.04678345 -2.304957E-07 -9.351621E-08
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1 = 0.8486275 -0.1156164 -0.3109188 0.4120604 -4.440892E-18 -2.131628E-16 8.881784E-18
@@ -438,7 +438,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01 = 0.9761687 1.254205E-16 -1.344751E-16 0.2170133 -0.01543731 -0.002867172 4.236617E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01 = 0.5923539 0.3861566 -0.5923539 0.3861566 -0.5085568 3.552714E-17 5.646115E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01/trackHeadlamps = 0.9984649 0 -0.05538777 0 -0.04317779 0.08000031 0.1949169
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = -0.9982681 4.169781E-07 -3.321842E-07 0.05883028 -0.2398641 0.04858204 -0.0001751508
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01 = 0.9885592 1.937808E-16 4.286438E-16 -0.1508335 0.008580074 -0.002419978 3.155136E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01 = 0.8235335 0 0 0.5672677 -0.1106252 2.398406E-07 1.228181E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01 = 1 1.110223E-16 2.844947E-16 -2.220446E-16 -3.552714E-17 0 0
@@ -470,7 +470,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_mouthCenter01 = 0.7055923 0.04625543 -0.7055923 0.04625543 -0.1747027 -0.0131457 -1.859665E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01 = -0.06526282 -0.000171274 -1.102778E-05 0.9978681 -0.1338117 0.0833647 0.06752983
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01/jntDrv_r_eyeEnd01 = 1 0 0 0 0.5106286 0 -2.220446E-16
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 0.6675104 0.2333023 -0.6675103 0.2333023 -0.158 0.12 0
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01 = 0.5 0.5 -0.5 0.5 0.03723461 0.1567828 -6.024428E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01 = 0.5837747 -0.4224161 0.5260558 -0.4517047 -0.08841593 -0.05698596 0.04019795
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01/bn_l_armElbow01 = -0.1618927 0.04149042 -0.002538047 0.9859325 -0.1129181 -1.217261E-07 -7.799983E-08
@@ -484,7 +484,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01 = -0.2487016 -0.3503841 0.8970354 -0.1034692 0 3.552714E-17 1.776357E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01 = 0.9621096 -0.08649838 -0.2522309 0.05694496 0.0364663 1.57173E-07 3.650906E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01/be_r_handleEnd01 = 1 0 0 0 0.06892186 -3.111647E-07 -1.38529E-07
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 0.9955844 0.09387103 0 0 0 -0.003354717 0.07629815
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01 = 0.4785054 0.401641 -0.5053208 0.5952882 -0.02405123 0.004854613 -0.03686757
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01 = 1 0 0 0 -0.04678345 -2.304957E-07 -9.351621E-08
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1 = 0.8486275 -0.1156164 -0.3109188 0.4120604 -4.440892E-18 -2.131628E-16 8.881784E-18
@@ -539,7 +539,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01 = 0.9761687 1.254205E-16 -1.344751E-16 0.2170133 -0.01543731 -0.002867172 4.236617E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01 = 0.5923539 0.3861566 -0.5923539 0.3861566 -0.5085568 3.552714E-17 5.646115E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01/trackHeadlamps = 0.9984649 0 -0.05538777 0 -0.04317779 0.08000031 0.1949169
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = -0.9982681 4.169781E-07 -3.321842E-07 0.05883028 -0.2398641 0.04858204 -0.0001751508
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01 = 0.9885592 1.937808E-16 4.286438E-16 -0.1508335 0.008580074 -0.002419978 3.155136E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01 = 0.8235335 0 0 0.5672677 -0.1106252 2.398406E-07 1.228181E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01 = 1 1.110223E-16 2.844947E-16 -2.220446E-16 -3.552714E-17 0 0
@@ -571,7 +571,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_mouthCenter01 = 0.7055923 0.04625543 -0.7055923 0.04625543 -0.1747027 -0.0131457 -1.859665E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01 = -0.06526282 -0.000171274 -1.102778E-05 0.9978681 -0.1338117 0.0833647 0.06752983
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01/jntDrv_r_eyeEnd01 = 1 0 0 0 0.5106286 0 -2.220446E-16
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 0.6675104 0.2333023 -0.6675103 0.2333023 -0.158 0.12 0
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01 = 0.5 0.5 -0.5 0.5 0.03723461 0.1567828 -6.024428E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01 = 0.5837747 -0.4224161 0.5260558 -0.4517047 -0.08841593 -0.05698596 0.04019795
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01/bn_l_armElbow01 = -0.1618927 0.04149042 -0.002538047 0.9859325 -0.1129181 -1.217261E-07 -7.799983E-08
@@ -585,7 +585,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01 = -0.2487016 -0.3503841 0.8970354 -0.1034692 0 3.552714E-17 1.776357E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01 = 0.9621096 -0.08649838 -0.2522309 0.05694496 0.0364663 1.57173E-07 3.650906E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01/be_r_handleEnd01 = 1 0 0 0 0.06892186 -3.111647E-07 -1.38529E-07
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 0.9955844 0.09387103 0 0 0 -0.003354717 0.07629815
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01 = 0.4785054 0.401641 -0.5053208 0.5952882 -0.02405123 0.004854613 -0.03686757
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01 = 1 0 0 0 -0.04678345 -2.304957E-07 -9.351621E-08
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1 = 0.8486275 -0.1156164 -0.3109188 0.4120604 -4.440892E-18 -2.131628E-16 8.881784E-18
@@ -640,7 +640,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01 = 0.9761687 1.254205E-16 -1.344751E-16 0.2170133 -0.01543731 -0.002867172 4.236617E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01 = 0.5923539 0.3861566 -0.5923539 0.3861566 -0.5085568 3.552714E-17 5.646115E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01/trackHeadlamps = 0.9984649 0 -0.05538777 0 -0.04317779 0.08000031 0.1949169
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = -0.9982681 4.169781E-07 -3.321842E-07 0.05883028 -0.2398641 0.04858204 -0.0001751508
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01 = 0.9885592 1.937808E-16 4.286438E-16 -0.1508335 0.008580074 -0.002419978 3.155136E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01 = 0.8235335 0 0 0.5672677 -0.1106252 2.398406E-07 1.228181E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01 = 1 1.110223E-16 2.844947E-16 -2.220446E-16 -3.552714E-17 0 0
@@ -672,7 +672,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_mouthCenter01 = 0.7055923 0.04625543 -0.7055923 0.04625543 -0.1747027 -0.0131457 -1.859665E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01 = -0.06526282 -0.000171274 -1.102778E-05 0.9978681 -0.1338117 0.0833647 0.06752983
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01/jntDrv_r_eyeEnd01 = 1 0 0 0 0.5106286 0 -2.220446E-16
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 0.6675104 0.2333023 -0.6675103 0.2333023 -0.158 0.12 0
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01 = 0.5 0.5 -0.5 0.5 0.03723461 0.1567828 -6.024428E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01 = 0.5837747 -0.4224161 0.5260558 -0.4517047 -0.08841593 -0.05698596 0.04019795
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01/bn_l_armElbow01 = -0.1618927 0.04149042 -0.002538047 0.9859325 -0.1129181 -1.217261E-07 -7.799983E-08
@@ -686,7 +686,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01 = -0.2487016 -0.3503841 0.8970354 -0.1034692 0 3.552714E-17 1.776357E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01 = 0.9621096 -0.08649838 -0.2522309 0.05694496 0.0364663 1.57173E-07 3.650906E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01/be_r_handleEnd01 = 1 0 0 0 0.06892186 -3.111647E-07 -1.38529E-07
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 0.9955844 0.09387103 0 0 0 -0.003354717 0.07629815
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01 = 0.4785054 0.401641 -0.5053208 0.5952882 -0.02405123 0.004854613 -0.03686757
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01 = 1 0 0 0 -0.04678345 -2.304957E-07 -9.351621E-08
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1 = 0.8486275 -0.1156164 -0.3109188 0.4120604 -4.440892E-18 -2.131628E-16 8.881784E-18
@@ -741,7 +741,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01 = 0.9761687 1.254205E-16 -1.344751E-16 0.2170133 -0.01543731 -0.002867172 4.236617E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01 = 0.5923539 0.3861566 -0.5923539 0.3861566 -0.5085568 3.552714E-17 5.646115E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01/trackHeadlamps = 0.9984649 0 -0.05538777 0 -0.04317779 0.08000031 0.1949169
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = -0.9982681 4.169781E-07 -3.321842E-07 0.05883028 -0.2398641 0.04858204 -0.0001751508
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01 = 0.9885592 1.937808E-16 4.286438E-16 -0.1508335 0.008580074 -0.002419978 3.155136E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01 = 0.8235335 0 0 0.5672677 -0.1106252 2.398406E-07 1.228181E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01 = 1 1.110223E-16 2.844947E-16 -2.220446E-16 -3.552714E-17 0 0
@@ -773,7 +773,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_mouthCenter01 = 0.7055923 0.04625543 -0.7055923 0.04625543 -0.1747027 -0.0131457 -1.859665E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01 = -0.06526282 -0.000171274 -1.102778E-05 0.9978681 -0.1338117 0.0833647 0.06752983
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01/jntDrv_r_eyeEnd01 = 1 0 0 0 0.5106286 0 -2.220446E-16
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 0.6675104 0.2333023 -0.6675103 0.2333023 -0.158 0.12 0
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/headCollider = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01 = 0.5 0.5 -0.5 0.5 0.03723461 0.1567828 -6.024428E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01 = 0.5837747 -0.4224161 0.5260558 -0.4517047 -0.08841593 -0.05698596 0.04019795
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01/bn_l_armElbow01 = -0.1618927 0.04149042 -0.002538047 0.9859325 -0.1129181 -1.217261E-07 -7.799983E-08
@@ -787,7 +787,7 @@ KEYFRAMES
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01 = -0.2487016 -0.3503841 0.8970354 -0.1034692 0 3.552714E-17 1.776357E-17
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01 = 0.9621096 -0.08649838 -0.2522309 0.05694496 0.0364663 1.57173E-07 3.650906E-07
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01/be_r_handleEnd01 = 1 0 0 0 0.06892186 -3.111647E-07 -1.38529E-07
-		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 0.9955844 0.09387103 0 0 0 -0.003354717 0.07629815
+		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig = 1 0 0 0 0 0 0
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01 = 0.4785054 0.401641 -0.5053208 0.5952882 -0.02405123 0.004854613 -0.03686757
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01 = 1 0 0 0 -0.04678345 -2.304957E-07 -9.351621E-08
 		globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1 = 0.8486275 -0.1156164 -0.3109188 0.4120604 -4.440892E-18 -2.131628E-16 8.881784E-18

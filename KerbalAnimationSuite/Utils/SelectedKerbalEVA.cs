@@ -33,6 +33,13 @@ namespace KerbalAnimation
 			set {SetHelmet(value);}
 		}
 
+		private bool _hasNeckRing = true;
+		public bool HasNeckRing
+		{
+			get {return _hasNeckRing;}
+			set {SetNeckRing(value);}
+		}
+
 		public bool IsAnimating {get; private set;}
 		public bool IsAnimationPlaying {get{return animation.isPlaying;}}
 
@@ -72,11 +79,14 @@ namespace KerbalAnimation
 		}
         public static Mesh helmetMesh = null;
         public static Mesh visorMesh = null;
-        public static Mesh flare1Mesh = null;
-        public static Mesh flare2Mesh = null;
+        public static Mesh flareL1Mesh = null;
+        public static Mesh flareL2Mesh = null;
+		public static Mesh flareR1Mesh = null;
+		public static Mesh flareR2Mesh = null;
+		public static Mesh neckRingMesh = null;
 
-        //utility methods
-        private void SetHelmet(bool value)
+		//utility methods
+		private void SetHelmet(bool value)
 		{
 #if false
             foreach (var rend in Kerbal.GetComponentsInChildren<Renderer>())
@@ -95,14 +105,16 @@ namespace KerbalAnimation
                 {
                     switch(smr.name)
                     {
-                        case "helmet":
+						case "helmet":
+						case "mesh_female_kerbalAstronaut01_helmet":
                             {
                                 if (helmetMesh == null) helmetMesh = smr.sharedMesh;
 
                                 smr.sharedMesh = value ? helmetMesh : null;
                             }
                             break;
-                        case "visor":
+						case "visor":
+						case "mesh_female_kerbalAstronaut01_visor":
                             {
                                 if (visorMesh == null) visorMesh = smr.sharedMesh;
 
@@ -110,24 +122,66 @@ namespace KerbalAnimation
                             }
                             break;
 
-                        case "flare1":
+                        case "flareL1":
                             {
-                                if (flare1Mesh == null) visorMesh = smr.sharedMesh;
+                                if (flareL1Mesh == null) flareL1Mesh = smr.sharedMesh;
 
-                                smr.sharedMesh = value ? flare1Mesh : null;
+                                smr.sharedMesh = value ? flareL1Mesh : null;
                             }
                             break;
-                        case "flare2":
+                        case "flareL2":
                             {
-                                if (flare2Mesh == null) flare2Mesh = smr.sharedMesh;
+                                if (flareL2Mesh == null) flareL2Mesh = smr.sharedMesh;
 
-                                smr.sharedMesh = value ? flare2Mesh : null;
+                                smr.sharedMesh = value ? flareL2Mesh : null;
                             }
                             break;
-                    }
+						case "flareR1":
+							{
+								if (flareR1Mesh == null) flareR1Mesh = smr.sharedMesh;
+
+								smr.sharedMesh = value ? flareR1Mesh : null;
+							}
+							break;
+						case "flareR2":
+							{
+								if (flareR2Mesh == null) flareR2Mesh = smr.sharedMesh;
+
+								smr.sharedMesh = value ? flareR2Mesh : null;
+							}
+							break;
+					}
                 }
             }
             _hasHelmet = value;
+		}
+
+		private void SetNeckRing(bool value)
+		{
+#if false
+            foreach (var rend in Kerbal.GetComponentsInChildren<Renderer>())
+			{
+				if (rend.name == "neckRing")
+				{
+					rend.enabled = value;
+				}
+			}
+#endif
+			foreach (Renderer renderer in Kerbal.GetComponentsInChildren<Renderer>())
+			{
+				var smr = renderer as SkinnedMeshRenderer;
+
+				if (smr != null)
+				{
+					if (smr.name == "neckRing")
+					{
+						if (neckRingMesh == null) neckRingMesh = smr.sharedMesh;
+
+						smr.sharedMesh = value ? neckRingMesh : null;
+					}
+				}
+			}
+			_hasNeckRing = value;
 		}
 
 		//returns false if it failed to initialize animation mode
@@ -196,8 +250,9 @@ namespace KerbalAnimation
 			animation.Stop();
 			animation.playAutomatically = true;
 
-			//set helmet back to default
+			//set helmet and neck ring back to default
 			HasHelmet = true;
+			HasNeckRing = true;
 
 			//move back down onto ground
 			//TODO: use a raycast sanity check

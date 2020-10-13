@@ -50,7 +50,8 @@ namespace KerbalAnimation
 				Player.Draw();
 			}
 		}
-		private void Update()
+
+        private void Update()
 		{
 			//return if we are not in a valid state to update
 			if (!HighLogic.LoadedSceneIsFlight || KerbalAnimationSuite.Instance.IsAnimating) return;
@@ -81,6 +82,11 @@ namespace KerbalAnimation
 		public override void OnStart(StartState state)
 		{
 			AnimationPlayerWindowHost.Instance.OnReloadAnimationClips.Add(OnReloadAnimationClips);
+			AnimationPlayerWindowHost.Instance.Player.AddKerbal(animation.gameObject);
+		}
+		private void OnDestroy()
+        {
+			AnimationPlayerWindowHost.Instance.Player.RemoveKerbal(animation.gameObject);
 		}
 		public override void OnUpdate()
 		{
@@ -94,11 +100,12 @@ namespace KerbalAnimation
 				{
 					bool shift = Input.GetKey(KeyCode.LeftShift);
 
-					if (!shift && FlightGlobals.ActiveVessel != vessel)
+					// Only animate the proper kerbals
+					if (!AnimationPlayerWindowHost.Instance.Player.ShouldAnimateKerbal(animation.gameObject, shift, (FlightGlobals.ActiveVessel == vessel)))
 					{
 						continue;
 					}
-					var clip = AnimationPlayerWindowHost.Instance.Player.GetNumberKeyClip(i);
+					var clip = AnimationPlayerWindowHost.Instance.Player.GetNumberKeyClip(animation.gameObject, i);
 					if (clip != null && !animation.IsPlaying(clip.Name))
 					{
 						if (AnimationPlayerWindow.Loop) PlayAnimation(clip.Name, WrapMode.Loop);
@@ -132,6 +139,8 @@ namespace KerbalAnimation
 		{
 			AnimationPlayerWindowHost.GUIOpen = !AnimationPlayerWindowHost.GUIOpen;
 		}
+
+		
 	}
 }
 

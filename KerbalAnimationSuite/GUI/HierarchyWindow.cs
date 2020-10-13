@@ -47,6 +47,17 @@ namespace KerbalAnimation
 			{
 				boneSelectionScroll = GUILayout.BeginScrollView(boneSelectionScroll, GUILayout.ExpandWidth(true));
 
+				//base
+				GUILayout.Label("<b>Global:</b>");
+				GUILayout.BeginHorizontal();
+
+				GUILayout.BeginVertical(skin.box);
+				DrawBoneSelection("bn_spA01");
+				GUILayout.EndVertical();
+
+				GUILayout.EndHorizontal();
+				GUILayout.Space(10f);
+
 				//legs
 				GUILayout.Label("<b>Legs:</b>");
 				GUILayout.BeginHorizontal();

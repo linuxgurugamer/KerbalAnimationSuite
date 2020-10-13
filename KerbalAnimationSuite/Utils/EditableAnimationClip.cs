@@ -34,6 +34,8 @@ namespace KerbalAnimation
 			set{wrapMode = value;}
 		}
 
+		private KerbalKeyframe defaultkeyFrame;
+
 		public EditableAnimationClip(SelectedKerbalEVA eva)
 		{
 			Kerbal = eva;
@@ -84,7 +86,7 @@ namespace KerbalAnimation
 		{
 			get{return base.Keyframes;}
 		}
-		public KerbalKeyframe CreateKeyframe(float normalizedTime)
+		public KerbalKeyframe CreateKeyframe()
 		{
 			KerbalKeyframe keyframe = new KerbalKeyframe(this);
 			Keyframes.Add(keyframe);
@@ -220,6 +222,17 @@ namespace KerbalAnimation
 
 			node.Save(path, "Saved " + DateTime.Now.ToString());
 		}
-	}
+
+        public void saveDefaultFrame(Transform transform)
+        {
+            defaultkeyFrame = new KerbalKeyframe(this);
+			defaultkeyFrame.Write(transform, 0);
+		}
+
+		public KerbalKeyframe getDefaultFrame()
+        {
+			return defaultkeyFrame;
+		}
+    }
 }
 

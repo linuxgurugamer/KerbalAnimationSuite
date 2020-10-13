@@ -60,8 +60,6 @@ namespace KerbalAnimation
 		private KerbalAnimationClip.KerbalKeyframe currentKeyframe;
 		public bool KeyframeSelected {get{return currentKeyframe != null;}}
 
-		private Transform DefaultTransform;
-
 		//textures
 		private Texture2D TimeIndicatorIcon;
 		private Texture2D KeyframeIcon;
@@ -87,6 +85,9 @@ namespace KerbalAnimation
 		private Rect moveKeyframeRect;
 		private Rect deleteKeyframeRect;
 		private Rect resetKeyframeRect;
+
+		private SelectedBone previousSelectedBone;
+		private KerbalAnimationClip.KerbalKeyframe previousSelectedKeyframe;
 
 		//animation properties window
 		public AnimationPropertiesWindow Properties;
@@ -190,11 +191,24 @@ namespace KerbalAnimation
 				//button toolbar
 				if (GUILayout.Button("Add Keyframe Here", GUILayout.ExpandWidth(false)))
 				{
+					SelectedBone oldBone = Suite.CurrentBone;
+					Suite.CurrentBone = null;
+
 					Debug.Log("creating new keyframe at " + timeIndicatorTime);
-					animationClip.SetAnimationTime(timeIndicatorTime); // Ensure that the new keyframe is an interpolation at the indicator's time
-					var keyframe = animationClip.CreateKeyframe(timeIndicatorTime); //create and write it at the time indicator's time
+					// This will save the old keyframe with the proper transform state
+					if (currentKeyframe != null)
+					{
+						animationClip.SetAnimationTime(currentKeyframe.NormalizedTime);
+						SetCurrentKeyframe(null);
+					}
+
+					// Ensure that the new keyframe is an interpolation at the indicator's time
+					animationClip.SetAnimationTime(timeIndicatorTime);
+					var keyframe = animationClip.CreateKeyframe();
 					keyframe.Write(Suite.Kerbal.transform, timeIndicatorTime);
 					UpdateAnimationClip();
+
+					Suite.CurrentBone = oldBone;
 					SetCurrentKeyframe(keyframe);
 				}
 				addKeyframeRect = GUILayoutUtility.GetLastRect();
@@ -207,11 +221,24 @@ namespace KerbalAnimation
 				GUILayout.BeginHorizontal(GUILayout.ExpandWidth(true));
 				if (GUILayout.Button("Copy Keyframe Here", GUILayout.ExpandWidth(true)))
 				{
+					SelectedBone oldBone = Suite.CurrentBone;
+					Suite.CurrentBone = null;
+
 					Debug.Log("copying keyframe at " + currentKeyframe.NormalizedTime + " to " + timeIndicatorTime);
-					var keyframe = animationClip.CreateKeyframe(currentKeyframe.NormalizedTime); //create and write it at the current keyframe's time, then move it
-					keyframe.Write(Suite.Kerbal.transform, currentKeyframe.NormalizedTime);
+					var srcKeyFrame = currentKeyframe;
+					// This will save the old keyframe with the proper transform state
+					animationClip.SetAnimationTime(currentKeyframe.NormalizedTime);
+					SetCurrentKeyframe(null); 
+
+					// Create a new keyframe In the original's position
+					var keyframe = animationClip.CreateKeyframe();
+					keyframe.WriteCopy(Suite.Kerbal.transform, srcKeyFrame, srcKeyFrame.NormalizedTime);
+					// Move it to the indicator
 					keyframe.NormalizedTime = timeIndicatorTime;
+					animationClip.SetAnimationTime(timeIndicatorTime);
 					UpdateAnimationClip();
+
+					Suite.CurrentBone = oldBone;
 					SetCurrentKeyframe(keyframe);
 				}
 				copyKeyframeRect = GUILayoutUtility.GetLastRect();
@@ -219,6 +246,7 @@ namespace KerbalAnimation
 				{
 					Debug.Log("moving keyframe at " + currentKeyframe.NormalizedTime + " to " + timeIndicatorTime);
 					currentKeyframe.NormalizedTime = timeIndicatorTime; //set the time to the indicator's time
+					animationClip.SetAnimationTime(timeIndicatorTime);
 					UpdateAnimationClip();
 				}
 				moveKeyframeRect = GUILayoutUtility.GetLastRect();
@@ -318,9 +346,28 @@ namespace KerbalAnimation
 
 				if (GUILayout.Button("Reset Keyframe Manipulations", GUILayout.ExpandWidth(false)))
 				{
-					Debug.Log("Reseting keyframe at " + timeIndicatorTime);
-					currentKeyframe.Write(DefaultTransform, currentKeyframe.Time);
-					UpdateAnimationClip();
+					Debug.Log("Reseting keyframe at " + currentKeyframe.NormalizedTime);
+					var defaultFrame = animationClip.getDefaultFrame();
+					if (defaultFrame != null)
+                    {
+						SelectedBone oldBone = Suite.CurrentBone;
+						Suite.CurrentBone = null;
+
+						var keyframeTime = currentKeyframe.NormalizedTime;
+						animationClip.RemoveKeyframe(currentKeyframe); //remove selected keyframe
+						UpdateAnimationClip();
+
+						var keyframe = animationClip.CreateKeyframe(); //create and write it at the current keyframe's time
+						keyframe.WriteCopy(Suite.Kerbal.transform, defaultFrame, keyframeTime);
+						UpdateAnimationClip();
+						SetCurrentKeyframe(keyframe);
+
+						Suite.CurrentBone = oldBone;
+					}
+					else
+                    {
+						Debug.LogError("Error reseting keyframe, no default frame");
+					}
 				}
 				resetKeyframeRect = GUILayoutUtility.GetLastRect();
 
@@ -396,6 +443,10 @@ namespace KerbalAnimation
 
 				if (!Suite.Kerbal.IsAnimationPlaying && GUILayout.Button("Play Animation"))
 				{
+					// Save the selection so it can be reselected later
+					previousSelectedBone = Suite.CurrentBone;
+					previousSelectedKeyframe = currentKeyframe;
+
 					Suite.CurrentBone = null;
 					SetCurrentKeyframe(null);
 					animationClip.WrapMode = WrapMode.Loop;
@@ -407,6 +458,12 @@ namespace KerbalAnimation
 					animationClip.Stop();
 					animationClip.WrapMode = WrapMode.ClampForever;
 					UpdateAnimationClip();
+
+					// Reselect the previous selection
+					SetCurrentKeyframe(previousSelectedKeyframe);
+					Suite.CurrentBone = previousSelectedBone;
+					previousSelectedKeyframe = null;
+					previousSelectedBone = null;
 				}
 				GUILayout.Space(10f);
 
@@ -429,16 +486,22 @@ namespace KerbalAnimation
 				GUILayout.BeginHorizontal();
 				if (GUILayout.Button("New Animation"))
                 {
-					DefaultTransform = Suite.Kerbal.transform; // TODO Make this actually copy so that it works
 					timeIndicatorTime = 0;
-					Debug.Log("New animation, creating new keyframe at sart");
-					var keyframe0 = animationClip.CreateKeyframe(0); // create and write it at the start
+					animationClip.SetAnimationTime(0);
+					animationClip.saveDefaultFrame(Suite.Kerbal.transform);
+					Debug.Log("New animation, creating new keyframe at start");
+					var keyframe0 = animationClip.CreateKeyframe(); // create and write it at the start
 					keyframe0.Write(Suite.Kerbal.transform, 0);
+					UpdateAnimationClip();
+
+					animationClip.SetAnimationTime(1);
 					Debug.Log("New animation, creating new keyframe at end");
-					var keyframe1 = animationClip.CreateKeyframe(1); // create and write it at the end
+					var keyframe1 = animationClip.CreateKeyframe(); // create and write it at the end
 					keyframe1.Write(Suite.Kerbal.transform, 1);
 					UpdateAnimationClip();
-					SetCurrentKeyframe(keyframe0);
+
+					animationClip.SetAnimationTime(0);
+					SetCurrentKeyframe(keyframe0, false);
 				}
 				GUILayout.EndHorizontal();
 
@@ -467,7 +530,11 @@ namespace KerbalAnimation
 				{
 					Debug.LogError("failed to load animation from " + loadURL);
 				}
-				else Suite.OnNewAnimationClip.Fire(animationClip);
+				else
+				{
+					animationClip.saveDefaultFrame(Suite.Kerbal.transform);
+					Suite.OnNewAnimationClip.Fire(animationClip);
+				}
 			}
 			catch (Exception e)
 			{

@@ -98,15 +98,31 @@ namespace KerbalAnimation
 			Position.y = DrawManipulationSlider("PY", "Y", Position.y, -0.5f, 0.5f);
 			Position.z = DrawManipulationSlider("PZ", "Z", Position.z, -0.5f, 0.5f);
 
+			GUI.enabled = true;
+
 			GUILayout.Space(10f);
-			if (GUILayout.Button("Toggle Helmet"))
+			if (GUILayout.Button((Suite.Kerbal.HasHelmet) ? "Remove Helmet" : "Equip Helmet"))
 			{
+				// Equip neck ring if not present when equipping the helmet
+				if (!Suite.Kerbal.HasHelmet && !Suite.Kerbal.HasNeckRing)
+                {
+					Suite.Kerbal.HasNeckRing = true;
+				}
 				Suite.Kerbal.HasHelmet = !Suite.Kerbal.HasHelmet;
+			}
+			if (!Suite.Kerbal.HasHelmet)
+			{
+				if (GUILayout.Button((Suite.Kerbal.HasNeckRing) ? "Remove Neck Ring" : "Equip Neck Ring"))
+				{
+					Suite.Kerbal.HasNeckRing = !Suite.Kerbal.HasNeckRing;
+				}
+			}
+			else
+            {
+				GUILayout.Space(24f);
 			}
 
 			//GUILayout.EndScrollView();
-
-			GUI.enabled = true;
 
 			GUI.DragWindow();
 		}

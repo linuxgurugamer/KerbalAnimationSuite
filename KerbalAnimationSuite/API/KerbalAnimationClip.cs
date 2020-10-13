@@ -334,8 +334,6 @@ public class KerbalAnimationClip
 					Debug.LogError("[" + Assembly.GetExecutingAssembly().GetName().Name + "]: t is null at " + name);
 					string output = DebugPrintTransform(transform);
 					Debug.LogError("[" + Assembly.GetExecutingAssembly().GetName().Name + "]: transform dump follows\n " + output);
-
-
 				}
 				Quaternion quatRot = t.localRotation;
 				RotationW.Add(name, quatRot.w);
@@ -347,6 +345,45 @@ public class KerbalAnimationClip
 				PositionX.Add(name, localPos.x);
 				PositionY.Add(name, localPos.y);
 				PositionZ.Add(name, localPos.z);
+			}
+		}
+
+		public void WriteCopy(Transform transform, KerbalKeyframe srcFrame, float time)
+		{
+			this.Clear();
+			this.NormalizedTime = time;
+			foreach (string name in AnimationNames.Values)
+			{
+				Transform t = transform.Find(name);
+
+				// Ignore HeadCollider as its path differs between male and female kerbals
+				if (name.ToLower().Contains("headcollider")) continue;
+
+				if (t == null)
+				{
+					Debug.LogError("[" + Assembly.GetExecutingAssembly().GetName().Name + "]: t is null at " + name);
+					string output = DebugPrintTransform(transform);
+					Debug.LogError("[" + Assembly.GetExecutingAssembly().GetName().Name + "]: transform dump follows\n " + output);
+				}
+				Quaternion quatRot = t.localRotation;
+				RotationW.Add(name, quatRot.w);
+				RotationX.Add(name, quatRot.x);
+				RotationY.Add(name, quatRot.y);
+				RotationZ.Add(name, quatRot.z);
+
+				Vector3 localPos = t.localPosition;
+				PositionX.Add(name, localPos.x);
+				PositionY.Add(name, localPos.y);
+				PositionZ.Add(name, localPos.z);
+
+				// Copy the values over
+				this.SetValue(srcFrame.GetValue(name, KAS_ValueType.RotW), name, KAS_ValueType.RotW);
+				this.SetValue(srcFrame.GetValue(name, KAS_ValueType.RotX), name, KAS_ValueType.RotX);
+				this.SetValue(srcFrame.GetValue(name, KAS_ValueType.RotY), name, KAS_ValueType.RotY);
+				this.SetValue(srcFrame.GetValue(name, KAS_ValueType.RotZ), name, KAS_ValueType.RotZ);
+				this.SetValue(srcFrame.GetValue(name, KAS_ValueType.PosX), name, KAS_ValueType.PosX);
+				this.SetValue(srcFrame.GetValue(name, KAS_ValueType.PosY), name, KAS_ValueType.PosY);
+				this.SetValue(srcFrame.GetValue(name, KAS_ValueType.PosZ), name, KAS_ValueType.PosZ);
 			}
 		}
 
