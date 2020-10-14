@@ -4,20 +4,20 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle ("KerbalAnimationSuite")]
-[assembly: AssemblyDescription ("")]
-[assembly: AssemblyConfiguration ("")]
-[assembly: AssemblyCompany ("HappyFaceIndustries")]
-[assembly: AssemblyProduct ("")]
-[assembly: AssemblyCopyright ("")]
-[assembly: AssemblyTrademark ("")]
-[assembly: AssemblyCulture ("")]
+[assembly: AssemblyTitle("KerbalAnimationSuite")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("HappyFaceIndustries")]
+[assembly: AssemblyProduct("")]
+[assembly: AssemblyCopyright("")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
 
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
 // The form "{Major}.{Minor}.*" will automatically update the build and revision,
 // and "{Major}.{Minor}.{Build}.*" will update just the revision.
 
-//[assembly: AssemblyVersion ("1.2.0.0")]
+//[assembly: AssemblyVersion("1.2.0.0")]
 
 [assembly: KSPAssembly("KerbalAnimationSuite", 1, 1)]
 

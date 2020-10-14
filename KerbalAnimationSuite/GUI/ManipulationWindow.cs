@@ -8,10 +8,12 @@ namespace KerbalAnimation
 	{
 		public ManipulationWindow()
 		{
-			SetupGUIStyles ();
-			WindowRect = new Rect (Screen.width - 500f, Screen.height - 500f, 500f, 300f);
+			SetupGUIStyles();
+			WindowRect = new Rect((Screen.width / 2f) + 600f, (Screen.height / 2f) - 300f, 500f, 300f);
 			WindowTitle = "Manipulation";
-			Suite.OnBoneSelected.Add (OnBoneSelected);
+			ExpandHeight = true;
+
+			Suite.OnBoneSelected.Add(OnBoneSelected);
 		}
 
 		public SelectedBone Bone
@@ -24,12 +26,12 @@ namespace KerbalAnimation
 		public Vector3 Position;
 
 		//private GUI values
-		private Vector2 manipulationScroll;
+		//private Vector2 manipulationScroll;
 		private Dictionary<string, string> textBoxValues = new Dictionary<string, string>();
 		private Dictionary<string, Color> textBoxColors = new Dictionary<string, Color>();
 
 		private Color sliderErrorColor = new Color(1f, 0f, 0f);
-		private Color sliderFocusColor = new Color (1f, 1f, 1f);
+		private Color sliderFocusColor = new Color(1f, 1f, 1f);
 
 		//gui styles
 		private GUIStyle manipulationSliderStyle;
@@ -37,27 +39,27 @@ namespace KerbalAnimation
 		private void SetupGUIStyles()
 		{
 			//estimate the height of the text box
-			float height = skin.textField.CalcHeight (new GUIContent ("0.0"), 120f);
+			float height = skin.textField.CalcHeight(new GUIContent("0.0"), 120f);
 			int marginTop = skin.textField.margin.top;
 			int marginBottom = skin.textField.margin.bottom;
 
-			manipulationSliderStyle = new GUIStyle (skin.horizontalSlider);
+			manipulationSliderStyle = new GUIStyle(skin.horizontalSlider);
 			manipulationSliderStyle.fixedHeight = height;
 			manipulationSliderStyle.margin.top = marginTop;
 			manipulationSliderStyle.margin.bottom = marginBottom;
-			manipulationSliderThumbStyle = new GUIStyle (skin.horizontalSliderThumb);
+			manipulationSliderThumbStyle = new GUIStyle(skin.horizontalSliderThumb);
 			manipulationSliderThumbStyle.fixedHeight = height;
 		}
 
 		public override void Update()
 		{
-			if(Suite.CurrentBone != null)
+			if (Suite.CurrentBone != null)
 			{
 				Suite.CurrentBone.Position = Position;
 				Suite.CurrentBone.Rotation = Rotation;
 			}
 		}
-		private void OnBoneSelected (SelectedBone bone)
+		private void OnBoneSelected(SelectedBone bone)
 		{
 			if (bone == null)
 			{
@@ -73,70 +75,94 @@ namespace KerbalAnimation
 
 		protected override void DrawWindow()
 		{
-			manipulationScroll = GUILayout.BeginScrollView (manipulationScroll);
+			//manipulationScroll = GUILayout.BeginScrollView(manipulationScroll);
 
-			GUILayout.Label ("Rotation");
-			Rotation.x = DrawManipulationSlider ("RX", "X", Rotation.x, 0f, 360f);
-			Rotation.y = DrawManipulationSlider ("RY", "Y", Rotation.y, 0f, 360f);
-			Rotation.z = DrawManipulationSlider ("RZ", "Z", Rotation.z, 0f, 360f);
-			GUILayout.Space (20f);
-
-			GUILayout.Label ("Relative Position");
-			Position.x = DrawManipulationSlider ("PX", "X", Position.x, -0.5f, 0.5f);
-			Position.y = DrawManipulationSlider ("PY", "Y", Position.y, -0.5f, 0.5f);
-			Position.z = DrawManipulationSlider ("PZ", "Z", Position.z, -0.5f, 0.5f);
-
-			GUILayout.Space (10f);
-			if (GUILayout.Button ("Toggle Helmet"))
-			{
-				Suite.Kerbal.HasHelmet = !Suite.Kerbal.HasHelmet;
+			if (Suite.CurrentBone != null)
+            {
+				WindowTitle = "Manipulation - " + (Suite.ReadableNames.ContainsKey(Suite.CurrentBone.Name) ? Suite.ReadableNames[Suite.CurrentBone.Name] : Suite.CurrentBone.Name);
+			}
+			else
+            {
+				WindowTitle = "Manipulation (No Bone Selected)";
+				GUI.enabled = false;
 			}
 
-			GUILayout.EndScrollView ();
+			GUILayout.Label("Rotation");
+			Rotation.x = DrawManipulationSlider("RX", "X", Rotation.x, 0f, 360f);
+			Rotation.y = DrawManipulationSlider("RY", "Y", Rotation.y, 0f, 360f);
+			Rotation.z = DrawManipulationSlider("RZ", "Z", Rotation.z, 0f, 360f);
+			GUILayout.Space(20f);
 
-			GUI.DragWindow ();
+			GUILayout.Label("Relative Position");
+			Position.x = DrawManipulationSlider("PX", "X", Position.x, -0.5f, 0.5f);
+			Position.y = DrawManipulationSlider("PY", "Y", Position.y, -0.5f, 0.5f);
+			Position.z = DrawManipulationSlider("PZ", "Z", Position.z, -0.5f, 0.5f);
+
+			GUI.enabled = true;
+
+			GUILayout.Space(10f);
+			if (GUILayout.Button((Suite.Kerbal.HasHelmet) ? "Remove Helmet" : "Equip Helmet"))
+			{
+				// Equip neck ring if not present when equipping the helmet
+				if (!Suite.Kerbal.HasHelmet && !Suite.Kerbal.HasNeckRing)
+                {
+					Suite.Kerbal.HasNeckRing = true;
+				}
+				Suite.Kerbal.HasHelmet = !Suite.Kerbal.HasHelmet;
+			}
+			if (!Suite.Kerbal.HasHelmet)
+			{
+				if (GUILayout.Button((Suite.Kerbal.HasNeckRing) ? "Remove Neck Ring" : "Equip Neck Ring"))
+				{
+					Suite.Kerbal.HasNeckRing = !Suite.Kerbal.HasNeckRing;
+				}
+			}
+			else
+            {
+				GUILayout.Space(24f);
+			}
+
+			//GUILayout.EndScrollView();
+
+			GUI.DragWindow();
 		}
 
 		private float DrawManipulationSlider(string uniqueName, string name, float value, float min, float max)
 		{
-			value = Mathf.Clamp (value, min, max);
-			if (!textBoxValues.ContainsKey (uniqueName))
-				textBoxValues.Add (uniqueName, value.ToString ());
-			if (!textBoxColors.ContainsKey (uniqueName))
-				textBoxColors.Add (uniqueName, Color.white);
+			value = Mathf.Clamp(value, min, max);
+			if (!textBoxValues.ContainsKey(uniqueName)) textBoxValues.Add(uniqueName, value.ToString());
+			if (!textBoxColors.ContainsKey(uniqueName)) textBoxColors.Add(uniqueName, Color.white);
 
-			GUILayout.BeginHorizontal ();
+			GUILayout.BeginHorizontal();
 
-			GUILayout.Label ("<b><color=" + Colors.Orange + ">" + name + ":</color></b>");
+			GUILayout.Label("<b><color=" + Colors.Orange + ">" + name + ":</color></b>");
 
 			//gui focus stuff
 			string textBoxControlName = "ManipulationTextBox_" + uniqueName;
 			string sliderControlName = "ManipulationSlider_" + uniqueName;
-			string focusedControl = GUI.GetNameOfFocusedControl ();
+			string focusedControl = GUI.GetNameOfFocusedControl();
 
-			GUI.SetNextControlName (textBoxControlName);
-			GUI.color = textBoxColors [uniqueName];
-			textBoxValues [uniqueName] = GUILayout.TextField (textBoxValues [uniqueName], GUILayout.Width(120f));
+			GUI.SetNextControlName(textBoxControlName);
+			GUI.color = textBoxColors[uniqueName];
+			textBoxValues[uniqueName] = GUILayout.TextField(textBoxValues[uniqueName], GUILayout.Width(120f));
 			GUI.color = Color.white;
 
 			//make the color slightly darker if it's focused
-			if (focusedControl == textBoxControlName)
-				textBoxColors [uniqueName] = sliderFocusColor;
-			else
-				textBoxColors [uniqueName] = Color.white;
+			if (focusedControl == textBoxControlName) textBoxColors[uniqueName] = sliderFocusColor;
+			else textBoxColors[uniqueName] = Color.white;
 
 			float parsedTextBoxFloat;
 			bool parsedTextBox = true;
-			if (!float.TryParse (textBoxValues [uniqueName], out parsedTextBoxFloat))
+			if (!float.TryParse(textBoxValues[uniqueName], out parsedTextBoxFloat))
 			{
 				//make the color red if it fails to parse the text box
-				textBoxColors [uniqueName] = sliderErrorColor;
+				textBoxColors[uniqueName] = sliderErrorColor;
 				parsedTextBox = false;
 			}
 			if (parsedTextBox && (parsedTextBoxFloat < min || parsedTextBoxFloat > max))
 			{
 				//also make the color red if the value is not within the specified contraints
-				textBoxColors [uniqueName] = sliderErrorColor;
+				textBoxColors[uniqueName] = sliderErrorColor;
 				parsedTextBox = false;
 			}
 
@@ -146,22 +172,22 @@ namespace KerbalAnimation
 				sliderValue = parsedTextBoxFloat;
 			}
 
-			GUI.SetNextControlName (sliderControlName);
-			sliderValue = GUILayout.HorizontalSlider (sliderValue, min, max, manipulationSliderStyle, manipulationSliderThumbStyle, GUILayout.ExpandWidth(true));
+			GUI.SetNextControlName(sliderControlName);
+			sliderValue = GUILayout.HorizontalSlider(sliderValue, min, max, manipulationSliderStyle, manipulationSliderThumbStyle, GUILayout.ExpandWidth(true));
 
 			//take focus off of the text box if it's focused, and the slider has been clicked
-			Rect sliderRect = GUILayoutUtility.GetLastRect ();
-			if(focusedControl == textBoxControlName && sliderRect.Contains(Event.current.mousePosition) && (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)))
+			Rect sliderRect = GUILayoutUtility.GetLastRect();
+			if (focusedControl == textBoxControlName && sliderRect.Contains(Event.current.mousePosition) && (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)))
 			{
-				GUI.FocusControl (sliderControlName);
+				GUI.FocusControl(sliderControlName);
 			}
 
 			if (focusedControl != textBoxControlName)
 			{
-				textBoxValues [uniqueName] = sliderValue.ToString ("##0.0###");
+				textBoxValues[uniqueName] = sliderValue.ToString("##0.0###");
 			}
 
-			GUILayout.EndHorizontal ();
+			GUILayout.EndHorizontal();
 
 			return sliderValue;
 		}

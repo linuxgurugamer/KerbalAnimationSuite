@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KerbalAnimationSuite", "KerbalAnimationSuite\KerbalAnimationSuite.csproj", "{A2F6E6D3-9C98-4573-B0C9-D2C0199BDC2F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{39AE93EB-F3E4-46BA-9B22-C7BD948F4A20}"
 	ProjectSection(SolutionItems) = preProject
-		buildRelease.bat = buildRelease.bat
 		ChangeLog.txt = ChangeLog.txt
-		deploy.bat = deploy.bat
 		hierarchy.txt = hierarchy.txt
 		jenkins.txt = jenkins.txt
 		KerbalAnimationSuite.version = KerbalAnimationSuite.version

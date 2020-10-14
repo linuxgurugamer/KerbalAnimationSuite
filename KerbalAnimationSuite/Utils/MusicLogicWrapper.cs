@@ -39,8 +39,7 @@ namespace KerbalAnimation
 			set {_playlist = value;}
 		}
 
-		public bool MusicIsPlaying
-		{get; private set;}
+		public bool MusicIsPlaying {get; private set;}
 
 		//music object
 		private MusicLogic musicLogic;
@@ -52,20 +51,19 @@ namespace KerbalAnimation
 		public void StartPlaylist(float fade)
 		{
 			MusicIsPlaying = true;
-			runningPlaylistRoutine = PlaylistRoutine (musicLogic.audio2, Playlist);
+			runningPlaylistRoutine = PlaylistRoutine(musicLogic.audio2, Playlist);
 			musicLogic.StartCoroutine(runningPlaylistRoutine);
 			musicLogic.audio2.volume = 0f;
-			musicLogic.StartCoroutine (FadeRoutine (musicLogic.audio2, GameSettings.MUSIC_VOLUME, fade));
+			musicLogic.StartCoroutine(FadeRoutine(musicLogic.audio2, GameSettings.MUSIC_VOLUME, fade));
 		}
 		public void StopPlaylist(float fade)
 		{
 			MusicIsPlaying = false;
-			musicLogic.StartCoroutine (FadeRoutine (musicLogic.audio2, 0f, fade, new OnFadeEnd(stopPlaylist)));
+			musicLogic.StartCoroutine(FadeRoutine(musicLogic.audio2, 0f, fade, new OnFadeEnd(stopPlaylist)));
 		}
 		private void stopPlaylist(AudioSource source)
 		{
-			if(runningPlaylistRoutine != null)
-				musicLogic.StopCoroutine (runningPlaylistRoutine);
+			if (runningPlaylistRoutine != null) musicLogic.StopCoroutine(runningPlaylistRoutine);
 			source.clip = null;
 		}
 
@@ -88,13 +86,12 @@ namespace KerbalAnimation
 				{
 					while (source.volume != end)
 					{
-						source.volume = Mathf.Lerp (start, end, currentTime);
+						source.volume = Mathf.Lerp(start, end, currentTime);
 						currentTime += Time.deltaTime / time;
 						yield return null;
 					}
 					source.volume = end;
-					if(onFadeEnd != null)
-						onFadeEnd.Invoke (source);
+					if (onFadeEnd != null) onFadeEnd.Invoke(source);
 				}
 			}
 		}
@@ -103,15 +100,13 @@ namespace KerbalAnimation
 			int counter = new System.Random().Next(playlist.Count);
 			while (true)
 			{
-				if (counter < 0)
-					counter = playlist.Count - 1;
-				if (counter >= playlist.Count)
-					counter = 0;
+				if (counter < 0) counter = playlist.Count - 1;
+				if (counter >= playlist.Count) counter = 0;
 
-				source.clip = playlist [counter];
-				source.Play ();
-				//yield return new WaitForSeconds (source.clip.length + 1f);
-				yield return new WaitForSeconds (source.clip.length + 2f);
+				source.clip = playlist[counter];
+				source.Play();
+				//yield return new WaitForSeconds(source.clip.length + 1f);
+				yield return new WaitForSeconds(source.clip.length + 2f);
 				counter++;
 			}
 		}

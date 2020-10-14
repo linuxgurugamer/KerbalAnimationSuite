@@ -6,12 +6,9 @@ namespace KerbalAnimation
 {
 	public class SelectedKerbalEVA
 	{
-		public KerbalEVA Kerbal
-		{get; private set;}
-		public KerbalFSM FSM
-		{get{return Kerbal.fsm;}}
-		public Part Part
-		{get{return Kerbal.part;}}
+		public KerbalEVA Kerbal {get; private set;}
+		public KerbalFSM FSM {get{return Kerbal.fsm;}}
+		public Part Part {get{return Kerbal.part;}}
 		private Animation _animation;
 		public Animation animation
 		{
@@ -19,39 +16,41 @@ namespace KerbalAnimation
 			{
 				if (_animation == null)
 				{
-					_animation = Kerbal.GetComponent<Animation> ();
+					_animation = Kerbal.GetComponent<Animation>();
 				}
 				return _animation;
 			}
 		}
-		public Transform transform
-		{get{return Part.transform;}}
+		public Transform transform {get{return Part.transform;}}
 
-		public Transform Joints01Transform
-		{get; private set;}
-		public List<KFSMState> States
-		{ get; private set;}
+		public Transform Joints01Transform {get; private set;}
+		public List<KFSMState> States { get; private set;}
 
 		private bool _hasHelmet = true;
 		public bool HasHelmet
 		{
 			get {return _hasHelmet;}
-			set {SetHelmet (value);}
+			set {SetHelmet(value);}
 		}
 
-		public bool IsAnimating
-		{get; private set;}
-		public bool IsAnimationPlaying
-		{get{return animation.isPlaying;}}
+		private bool _hasNeckRing = true;
+		public bool HasNeckRing
+		{
+			get {return _hasNeckRing;}
+			set {SetNeckRing(value);}
+		}
+
+		public bool IsAnimating {get; private set;}
+		public bool IsAnimationPlaying {get{return animation.isPlaying;}}
 
 		//constructor
 		public SelectedKerbalEVA(KerbalEVA eva)
 		{
 			Kerbal = eva;
 			Joints01Transform = Part.transform.Find("globalMove01/joints01");
-			States = KerbalEVAUtility.GetEVAStates (eva);
+			States = KerbalEVAUtility.GetEVAStates(eva);
 
-			AddAnimationState ();
+			AddAnimationState();
 
 			//set defaults
 			IsAnimating = false;
@@ -60,36 +59,39 @@ namespace KerbalAnimation
 		//adds an FSM state to show that we are animating
 		private void AddAnimationState()
 		{
-			if (States.Find (k => k.name == "KAS_Animation") == null)
+			if (States.Find(k => k.name == "KAS_Animation") == null)
 			{
-				KFSMState state = new KFSMState ("KAS_Animation");
+				KFSMState state = new KFSMState("KAS_Animation");
 				state.updateMode = KFSMUpdateMode.MANUAL_TRIGGER;
-				FSM.AddState (state);
+				FSM.AddState(state);
 
-				KFSMEvent enterEvent = new KFSMEvent ("Enter KAS_Animation");
+				KFSMEvent enterEvent = new KFSMEvent("Enter KAS_Animation");
 				enterEvent.GoToStateOnEvent = state;
 				enterEvent.updateMode = KFSMUpdateMode.MANUAL_TRIGGER;
-				var idleGrounded = States.Find (k => k.name == "Idle (Grounded)");
-				FSM.AddEvent (enterEvent, idleGrounded);
+				var idleGrounded = States.Find(k => k.name == "Idle (Grounded)");
+				FSM.AddEvent(enterEvent, idleGrounded);
 
-				KFSMEvent exitEvent = new KFSMEvent ("Exit KAS_Animation");
+				KFSMEvent exitEvent = new KFSMEvent("Exit KAS_Animation");
 				exitEvent.GoToStateOnEvent = idleGrounded;
 				exitEvent.updateMode = KFSMUpdateMode.MANUAL_TRIGGER;
-				FSM.AddEvent (exitEvent, state);
+				FSM.AddEvent(exitEvent, state);
 			}
 		}
         public static Mesh helmetMesh = null;
         public static Mesh visorMesh = null;
-        public static Mesh flare1Mesh = null;
-        public static Mesh flare2Mesh = null;
+        public static Mesh flareL1Mesh = null;
+        public static Mesh flareL2Mesh = null;
+		public static Mesh flareR1Mesh = null;
+		public static Mesh flareR2Mesh = null;
+		public static Mesh neckRingMesh = null;
 
-        //utility methods
-        private void SetHelmet(bool value)
+		//utility methods
+		private void SetHelmet(bool value)
 		{
 #if false
             foreach (var rend in Kerbal.GetComponentsInChildren<Renderer>())
 			{
-				if(rend.name == "helmet" || rend.name == "visor" || rend.name == "flare1" || rend.name == "flare2")
+				if (rend.name == "helmet" || rend.name == "visor" || rend.name == "flare1" || rend.name == "flare2")
 				{
 					rend.enabled = value;
 				}
@@ -101,45 +103,85 @@ namespace KerbalAnimation
 
                 if (smr != null)
                 {
-                    switch (smr.name)
+                    switch(smr.name)
                     {
-                        case "helmet":
+						case "helmet":
+						case "mesh_female_kerbalAstronaut01_helmet":
                             {
-                                if (helmetMesh == null)
-                                    helmetMesh = smr.sharedMesh;
+                                if (helmetMesh == null) helmetMesh = smr.sharedMesh;
 
                                 smr.sharedMesh = value ? helmetMesh : null;
                             }
                             break;
-                        case "visor":
+						case "visor":
+						case "mesh_female_kerbalAstronaut01_visor":
                             {
-                                if (visorMesh == null)
-                                    visorMesh = smr.sharedMesh;
+                                if (visorMesh == null) visorMesh = smr.sharedMesh;
 
                                 smr.sharedMesh = value ? visorMesh : null;
                             }
                             break;
 
-                        case "flare1":
+                        case "flareL1":
                             {
-                                if (flare1Mesh == null)
-                                    visorMesh = smr.sharedMesh;
+                                if (flareL1Mesh == null) flareL1Mesh = smr.sharedMesh;
 
-                                smr.sharedMesh = value ? flare1Mesh : null;
+                                smr.sharedMesh = value ? flareL1Mesh : null;
                             }
                             break;
-                        case "flare2":
+                        case "flareL2":
                             {
-                                if (flare2Mesh == null)
-                                    flare2Mesh = smr.sharedMesh;
+                                if (flareL2Mesh == null) flareL2Mesh = smr.sharedMesh;
 
-                                smr.sharedMesh = value ? flare2Mesh : null;
+                                smr.sharedMesh = value ? flareL2Mesh : null;
                             }
                             break;
-                    }
+						case "flareR1":
+							{
+								if (flareR1Mesh == null) flareR1Mesh = smr.sharedMesh;
+
+								smr.sharedMesh = value ? flareR1Mesh : null;
+							}
+							break;
+						case "flareR2":
+							{
+								if (flareR2Mesh == null) flareR2Mesh = smr.sharedMesh;
+
+								smr.sharedMesh = value ? flareR2Mesh : null;
+							}
+							break;
+					}
                 }
             }
             _hasHelmet = value;
+		}
+
+		private void SetNeckRing(bool value)
+		{
+#if false
+            foreach (var rend in Kerbal.GetComponentsInChildren<Renderer>())
+			{
+				if (rend.name == "neckRing")
+				{
+					rend.enabled = value;
+				}
+			}
+#endif
+			foreach (Renderer renderer in Kerbal.GetComponentsInChildren<Renderer>())
+			{
+				var smr = renderer as SkinnedMeshRenderer;
+
+				if (smr != null)
+				{
+					if (smr.name == "neckRing")
+					{
+						if (neckRingMesh == null) neckRingMesh = smr.sharedMesh;
+
+						smr.sharedMesh = value ? neckRingMesh : null;
+					}
+				}
+			}
+			_hasNeckRing = value;
 		}
 
 		//returns false if it failed to initialize animation mode
@@ -148,33 +190,33 @@ namespace KerbalAnimation
 			//check if we can animate
 			if (TimeWarp.CurrentRate != 1f)
 			{
-				ScreenMessages.PostScreenMessage ("<color=" + Colors.DefaultMessageColor + ">You must not be in time warp to animate</color>", 2.5f, ScreenMessageStyle.UPPER_CENTER);
-				TimeWarp.SetRate (0, true);
+				ScreenMessages.PostScreenMessage("<color=" + Colors.DefaultMessageColor + ">You must not be in time warp to animate</color>", 2.5f, ScreenMessageStyle.UPPER_CENTER);
+				TimeWarp.SetRate(0, true);
 				return false;
 			}
 			if (FSM.CurrentState.name == "Idle (Grounded)")
 			{
-				var enter = FSM.CurrentState.StateEvents.Find (k => k.name == "Enter KAS_Animation");
+				var enter = FSM.CurrentState.StateEvents.Find(k => k.name == "Enter KAS_Animation");
 				if (enter != null)
 				{
-					FSM.RunEvent (enter);
+					FSM.RunEvent(enter);
 				}
 				else
 				{
-					Debug.LogError ("failed to run event: Enter KAS_Animation");
-					ScreenMessages.PostScreenMessage ("<color=" + Colors.ErrorMessageColor + ">Failed to open Kerbal Animation Suite!</color>", 2.5f, ScreenMessageStyle.UPPER_CENTER);
+					Debug.LogError("failed to run event: Enter KAS_Animation");
+					ScreenMessages.PostScreenMessage("<color=" + Colors.ErrorMessageColor + ">Failed to open Kerbal Animation Suite!</color>", 2.5f, ScreenMessageStyle.UPPER_CENTER);
 					return false;
 				}
 			}
 			else
 			{
-				ScreenMessages.PostScreenMessage ("<color=" + Colors.DefaultMessageColor + ">Kerbal must be standing on ground to animate</color>", 2.5f, ScreenMessageStyle.UPPER_CENTER);
+				ScreenMessages.PostScreenMessage("<color=" + Colors.DefaultMessageColor + ">Kerbal must be standing on ground to animate</color>", 2.5f, ScreenMessageStyle.UPPER_CENTER);
 				return false;
 			}
 
 			//stop any playing animations
 			animation.playAutomatically = false;
-			animation.Stop ();
+			animation.Stop();
 
 			//go up 10 units
 			transform.position += transform.up * 10f;
@@ -187,7 +229,7 @@ namespace KerbalAnimation
 			}
 
 			//lock input
-			InputLockManager.SetControlLock (ControlTypes.EVA_INPUT | ControlTypes.TIMEWARP | ControlTypes.VESSEL_SWITCHING, "KerbalAnimationSuite_Lock");
+			InputLockManager.SetControlLock(ControlTypes.EVA_INPUT | ControlTypes.TIMEWARP | ControlTypes.VESSEL_SWITCHING, "KerbalAnimationSuite_Lock");
 
 			//this is obvious
 			IsAnimating = true;
@@ -199,19 +241,18 @@ namespace KerbalAnimation
 		{
 			if (FSM.CurrentState.name == "KAS_Animation")
 			{
-				var exit = FSM.CurrentState.StateEvents.Find (k => k.name == "Exit KAS_Animation");
-				if (exit != null)
-					FSM.RunEvent (exit);
-				else
-					Debug.LogError ("failed to run event: Exit KAS_Animation");
+				var exit = FSM.CurrentState.StateEvents.Find(k => k.name == "Exit KAS_Animation");
+				if (exit != null) FSM.RunEvent(exit);
+				else Debug.LogError("failed to run event: Exit KAS_Animation");
 			}
 
 			//set animation settings back to default
-			animation.Stop ();
+			animation.Stop();
 			animation.playAutomatically = true;
 
-			//set helmet back to default
+			//set helmet and neck ring back to default
 			HasHelmet = true;
+			HasNeckRing = true;
 
 			//move back down onto ground
 			//TODO: use a raycast sanity check
@@ -223,7 +264,7 @@ namespace KerbalAnimation
 			}
 
 			//remove the input lock
-			InputLockManager.RemoveControlLock ("KerbalAnimationSuite_Lock");
+			InputLockManager.RemoveControlLock("KerbalAnimationSuite_Lock");
 
 			IsAnimating = false;
 		}

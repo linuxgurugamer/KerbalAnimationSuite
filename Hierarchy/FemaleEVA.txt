@@ -1,0 +1,98 @@
+globalMove01
+    globalMove01/joints01
+        globalMove01/joints01/bn_spA01
+            globalMove01/joints01/bn_spA01/bn_l_hip01
+                globalMove01/joints01/bn_spA01/bn_l_hip01/bn_l_knee_a01
+                    globalMove01/joints01/bn_spA01/bn_l_hip01/bn_l_knee_a01/bn_l_knee_b01
+                        globalMove01/joints01/bn_spA01/bn_l_hip01/bn_l_knee_a01/bn_l_knee_b01/bn_l_foot01
+                            globalMove01/joints01/bn_spA01/bn_l_hip01/bn_l_knee_a01/bn_l_knee_b01/bn_l_foot01/bn_l_ball01
+                                globalMove01/joints01/bn_spA01/bn_l_hip01/bn_l_knee_a01/bn_l_knee_b01/bn_l_foot01/bn_l_ball01/be_l_footEnd01
+                                globalMove01/joints01/bn_spA01/bn_l_hip01/bn_l_knee_a01/bn_l_knee_b01/bn_l_foot01/bn_l_ball01/footCollider_l
+            globalMove01/joints01/bn_spA01/bn_r_hip01
+                globalMove01/joints01/bn_spA01/bn_r_hip01/bn_r_knee_a01
+                    globalMove01/joints01/bn_spA01/bn_r_hip01/bn_r_knee_a01/bn_r_knee_b01
+                        globalMove01/joints01/bn_spA01/bn_r_hip01/bn_r_knee_a01/bn_r_knee_b01/bn_r_foot01
+                            globalMove01/joints01/bn_spA01/bn_r_hip01/bn_r_knee_a01/bn_r_knee_b01/bn_r_foot01/bn_r_ball01
+                                globalMove01/joints01/bn_spA01/bn_r_hip01/bn_r_knee_a01/bn_r_knee_b01/bn_r_foot01/bn_r_ball01/be_r_footEnd01
+                                globalMove01/joints01/bn_spA01/bn_r_hip01/bn_r_knee_a01/bn_r_knee_b01/bn_r_foot01/bn_r_ball01/footCollider_r
+            globalMove01/joints01/bn_spA01/bn_spB01
+                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01
+                    globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01
+                        globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01
+                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01
+                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/be_helmetEnd01
+                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_helmet01/helmetColliderRig
+                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01
+                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01
+                                    globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01
+                                        globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01
+                                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_lowerJaw01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_lowerJaw01/be_lowerJawEnd01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_lowerJaw01/bn_l_mouthCorner01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_lowerJaw01/bn_l_mouthLow_b01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_lowerJaw01/bn_l_mouthLow_c01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_lowerJaw01/bn_l_mouthLow_d01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_lowerJaw01/bn_l_mouthLowMid_a01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_lowerJaw01/bn_lowerTeeth01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_lowerJaw01/bn_r_mouthCorner01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_lowerJaw01/bn_r_mouthLow_b01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_lowerJaw01/bn_r_mouthLow_c01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_lowerJaw01/bn_r_mouthLow_d01
+                                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/be_upperJawEnd01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/bn_l_mouthUp_b01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/bn_l_mouthUp_c01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/bn_l_mouthUp_d01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/bn_l_mouthUpMid_a01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/bn_r_mouthUp_b01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/bn_r_mouthUp_c01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/bn_r_mouthUp_d01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/bn_upperTeet01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_l_eye01
+                                                    globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_l_eye01/jntDrv_l_eyeEnd01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_mouthCenter01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01
+                                                    globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/bn_upperJaw01/jntDrv_r_eye01/jntDrv_r_eyeEnd01
+                                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/be_spE01/bn_neck01/be_neck01/bn_headPivot_a01/bn_headPivot_b01/headCollider
+                        globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01
+                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01
+                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01/bn_l_armElbow01
+                                    globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01/bn_l_armElbow01/bn_l_armEnd01
+                                        globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01/bn_l_armElbow01/bn_l_armEnd01/be_l_handlePivot01
+                                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01/bn_l_armElbow01/bn_l_armEnd01/be_l_handlePivot01/bn_l_handle01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_l_arm01/bn_l_armElbow01/bn_l_armEnd01/be_l_handlePivot01/bn_l_handle01/be_l_handleEnd01
+                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01
+                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01
+                                    globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01
+                                        globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01
+                                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/bn_r_arm01/bn_r_armElbow01/bn_r_armEnd01/be_r_handlePivot01/bn_r_handle01/be_r_handleEnd01
+                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_jetpack01/jetpackColliderRig
+                        globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01
+                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01
+                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1
+                                    globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1/bn_l_elbow_a01
+                                        globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1/bn_l_elbow_a01/bn_l_elbow_b01
+                                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1/bn_l_elbow_a01/bn_l_elbow_b01/bn_l_wrist01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1/bn_l_elbow_a01/bn_l_elbow_b01/bn_l_wrist01/bn_l_mid_a01
+                                                    globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1/bn_l_elbow_a01/bn_l_elbow_b01/bn_l_wrist01/bn_l_mid_a01/bn_l_mid_b01
+                                                        globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1/bn_l_elbow_a01/bn_l_elbow_b01/bn_l_wrist01/bn_l_mid_a01/bn_l_mid_b01/be_l_mid_c01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1/bn_l_elbow_a01/bn_l_elbow_b01/bn_l_wrist01/bn_l_thumb_a01
+                                                    globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1/bn_l_elbow_a01/bn_l_elbow_b01/bn_l_wrist01/bn_l_thumb_a01/bn_l_thumb_b01
+                                                        globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1/bn_l_elbow_a01/bn_l_elbow_b01/bn_l_wrist01/bn_l_thumb_a01/bn_l_thumb_b01/bn_l_thumb_c01
+                                                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1/bn_l_elbow_a01/bn_l_elbow_b01/bn_l_wrist01/bn_l_thumb_a01/bn_l_thumb_b01/bn_l_thumb_c01/be_l_thumb_d01
+                                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_l_shld01/be_l_shldEnd01/bn_l_arm01 1/bn_l_elbow_a01/bn_l_elbow_b01/handCollider_l
+                        globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_r_shld01
+                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_r_shld01/be_r_shldEnd01
+                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_r_shld01/be_r_shldEnd01/bn_r_arm01 1
+                                    globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_r_shld01/be_r_shldEnd01/bn_r_arm01 1/bn_r_elbow_a01
+                                        globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_r_shld01/be_r_shldEnd01/bn_r_arm01 1/bn_r_elbow_a01/bn_r_elbow_b01
+                                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_r_shld01/be_r_shldEnd01/bn_r_arm01 1/bn_r_elbow_a01/bn_r_elbow_b01/bn_r_wrist01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_r_shld01/be_r_shldEnd01/bn_r_arm01 1/bn_r_elbow_a01/bn_r_elbow_b01/bn_r_wrist01/bn_r_mid_a01
+                                                    globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_r_shld01/be_r_shldEnd01/bn_r_arm01 1/bn_r_elbow_a01/bn_r_elbow_b01/bn_r_wrist01/bn_r_mid_a01/bn_r_mid_b01
+                                                        globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_r_shld01/be_r_shldEnd01/bn_r_arm01 1/bn_r_elbow_a01/bn_r_elbow_b01/bn_r_wrist01/bn_r_mid_a01/bn_r_mid_b01/be_r_mid_c01
+                                                globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_r_shld01/be_r_shldEnd01/bn_r_arm01 1/bn_r_elbow_a01/bn_r_elbow_b01/bn_r_wrist01/bn_r_thumb_a01
+                                                    globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_r_shld01/be_r_shldEnd01/bn_r_arm01 1/bn_r_elbow_a01/bn_r_elbow_b01/bn_r_wrist01/bn_r_thumb_a01/bn_r_thumb_b01
+                                                        globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_r_shld01/be_r_shldEnd01/bn_r_arm01 1/bn_r_elbow_a01/bn_r_elbow_b01/bn_r_wrist01/bn_r_thumb_a01/bn_r_thumb_b01/bn_r_thumb_c01
+                                                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_r_shld01/be_r_shldEnd01/bn_r_arm01 1/bn_r_elbow_a01/bn_r_elbow_b01/bn_r_wrist01/bn_r_thumb_a01/bn_r_thumb_b01/bn_r_thumb_c01/be_r_thumb_d01
+                                            globalMove01/joints01/bn_spA01/bn_spB01/bn_spc01/bn_spD01/bn_r_shld01/be_r_shldEnd01/bn_r_arm01 1/bn_r_elbow_a01/bn_r_elbow_b01/handCollider_r

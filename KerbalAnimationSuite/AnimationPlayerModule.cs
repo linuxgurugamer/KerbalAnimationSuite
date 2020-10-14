@@ -13,7 +13,7 @@ namespace KerbalAnimation
 	{
 		void Start()
 		{
-			KerbalEVAUtility.AddPartModule ("AnimationPlayerModule");
+			KerbalEVAUtility.AddPartModule("AnimationPlayerModule");
 		}
 	}
 #endif
@@ -21,8 +21,7 @@ namespace KerbalAnimation
 	[KSPAddon(KSPAddon.Startup.Flight, false)]
 	public class AnimationPlayerWindowHost : MonoBehaviour
 	{
-		public static AnimationPlayerWindowHost Instance
-		{get; private set;}
+		public static AnimationPlayerWindowHost Instance {get; private set;}
 
 		public AnimationPlayerWindow Player;
 		public static bool GUIOpen = false;
@@ -36,32 +35,28 @@ namespace KerbalAnimation
 		}
 		private void Start()
 		{
-			Player = new AnimationPlayerWindow ();
+			Player = new AnimationPlayerWindow();
 		}
 		private void OnGUI()
 		{
 			//return if we are not in a valid state to draw
-			if (!GUIHider.ShowUI)
+			if (!GUIHider.ShowUI || !HighLogic.LoadedSceneIsFlight || KerbalAnimationSuite.Instance.IsAnimating)
+			{
 				return;
-			if (!HighLogic.LoadedSceneIsFlight || !FlightGlobals.ActiveVessel.isEVA)
-				return;
-			if (KerbalAnimationSuite.Instance.IsAnimating)
-				return;
+			}
 
 			if (GUIOpen)
 			{
-				Player.Draw ();
+				Player.Draw();
 			}
 		}
-		private void Update()
+
+        private void Update()
 		{
 			//return if we are not in a valid state to update
-			if (!HighLogic.LoadedSceneIsFlight || !FlightGlobals.ActiveVessel.isEVA)
-				return;
-			if (KerbalAnimationSuite.Instance.IsAnimating)
-				return;
+			if (!HighLogic.LoadedSceneIsFlight || KerbalAnimationSuite.Instance.IsAnimating) return;
 
-			Player.Update ();
+			Player.Update();
 		}
 	}
 
@@ -77,41 +72,45 @@ namespace KerbalAnimation
 			{
 				if (_animation == null)
 				{
-					_animation = GetComponent<Animation> ();
+					_animation = GetComponent<Animation>();
 				}
 				return _animation;
 			}
 		}
 
 		//lifetime
-		public override void OnStart (StartState state)
+		public override void OnStart(StartState state)
 		{
-			AnimationPlayerWindowHost.Instance.OnReloadAnimationClips.Add (OnReloadAnimationClips);
+			AnimationPlayerWindowHost.Instance.OnReloadAnimationClips.Add(OnReloadAnimationClips);
+			AnimationPlayerWindowHost.Instance.Player.AddKerbal(animation.gameObject);
 		}
-		public override void OnUpdate ()
+		private void OnDestroy()
+        {
+			// Avoid dereferencing null Player on initial load
+			if (AnimationPlayerWindowHost.Instance.Player != null) AnimationPlayerWindowHost.Instance.Player.RemoveKerbal(animation.gameObject);
+		}
+		public override void OnUpdate()
 		{
-			Events ["ToggleGUI"].guiName = AnimationPlayerWindowHost.GUIOpen ? CloseGUIName : OpenGUIName;
+			Events["ToggleGUI"].guiName = AnimationPlayerWindowHost.GUIOpen ? CloseGUIName : OpenGUIName;
 
-			for(int i = 0; i < 10; i++)
+			for (int i = 0; i < 10; i++)
 			{
-				string buttonName = (i + 1).ToString ();
-				if (i >= 9)
-					buttonName = "0";
-				if (Input.GetKey (buttonName))
+				string buttonName = (i + 1).ToString();
+				if (i >= 9) buttonName = "0";
+				if (Input.GetKey(buttonName) && (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt)))
 				{
-					bool shift = Input.GetKey (KeyCode.LeftShift);
+					bool shift = Input.GetKey(KeyCode.LeftShift);
 
-					if(!shift && FlightGlobals.ActiveVessel != vessel)
+					// Only animate the proper kerbals
+					if (!AnimationPlayerWindowHost.Instance.Player.ShouldAnimateKerbal(animation.gameObject, shift, (FlightGlobals.ActiveVessel == vessel)))
 					{
 						continue;
 					}
-					var clip = AnimationPlayerWindowHost.Instance.Player.GetNumberKeyClip (i);
-					if(clip != null && !animation.IsPlaying(clip.Name))
+					var clip = AnimationPlayerWindowHost.Instance.Player.GetNumberKeyClip(animation.gameObject, i);
+					if (clip != null && !animation.IsPlaying(clip.Name))
 					{
-						if (AnimationPlayerWindow.Loop)
-							PlayAnimation (clip.Name, WrapMode.Loop);
-						else
-							PlayAnimation (clip.Name, WrapMode.Once);
+						if (AnimationPlayerWindow.Loop) PlayAnimation(clip.Name, WrapMode.Loop);
+						else PlayAnimation(clip.Name, WrapMode.Once);
 					}
 				}
 			}
@@ -119,29 +118,30 @@ namespace KerbalAnimation
 
 		public void PlayAnimation(string name, WrapMode wrapMode)
 		{
-			var state = animation [name];
-			if (state == null || animation.GetClip(name) == null)
-				return;
+			var state = animation[name];
+			if (state == null || animation.GetClip(name) == null) return;
 			state.wrapMode = wrapMode;
-			animation.CrossFade (name, 0.2f * state.length, PlayMode.StopSameLayer);
+			animation.CrossFade(name, 0.2f * state.length, PlayMode.StopSameLayer);
 		}
 
 		//events
-		private void OnReloadAnimationClips (List<KerbalAnimationClip> clips)
+		private void OnReloadAnimationClips(List<KerbalAnimationClip> clips)
 		{
 			//initialize all of the clips with this kerbal
 			foreach (var clip in clips)
 			{
-				clip.Initialize (animation, transform);
+				clip.Initialize(animation, transform);
 			}
 		}
 
 		//KSPEvents
-		[KSPEvent(guiName = "Open GUI", guiActiveUnfocused = false, guiActive = true)]
+		[KSPEvent(guiName = "Open GUI", guiActiveUnfocused = true, guiActive = true)]
 		public void ToggleGUI()
 		{
 			AnimationPlayerWindowHost.GUIOpen = !AnimationPlayerWindowHost.GUIOpen;
 		}
+
+		
 	}
 }
 

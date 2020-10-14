@@ -1,0 +1,2205 @@
+New Kerbal Model Hierarchy for KSP 1.6.0+ (New models, w/removable helmets and seperate neck rings)
+Thanx to Shaw, owner of TextureReplacer mod for adding the function into the TR plugin to pull this list
+
+
+Line 13	Male IVA Hierarchy
+Line 271	Male EVA Hierarchy
+Line 1065	Male EVA Vintage Hierarchy
+Line 2205	Female IVA Hierarchy
+Line 2460	Female EVA Hierarchy
+Line 3268	Female EVA Vintage Hierarchy
+
+
+Male IVA Hierarchy
+ * kerbalMale: UnityEngine.GameObject
+   * globalMove01: UnityEngine.GameObject
+     * joints01: UnityEngine.GameObject
+       * bn_spA01: UnityEngine.GameObject
+         * bn_l_hip01: UnityEngine.GameObject
+           * bn_l_knee_a01: UnityEngine.GameObject
+             * bn_l_knee_b01: UnityEngine.GameObject
+               * bn_l_foot01: UnityEngine.GameObject
+                 * bn_l_ball01: UnityEngine.GameObject
+                   * be_l_footEnd01: UnityEngine.GameObject
+         * bn_r_hip01: UnityEngine.GameObject
+           * bn_r_knee_a01: UnityEngine.GameObject
+             * bn_r_knee_b01: UnityEngine.GameObject
+               * bn_r_foot01: UnityEngine.GameObject
+                 * bn_r_ball01: UnityEngine.GameObject
+                   * be_r_footEnd01: UnityEngine.GameObject
+         * bn_spB01: UnityEngine.GameObject
+           * bn_spc01: UnityEngine.GameObject
+             * bn_spD01: UnityEngine.GameObject
+               * be_spE01: UnityEngine.GameObject
+                 * bn_helmet01: UnityEngine.GameObject
+                   * be_helmetEnd01: UnityEngine.GameObject
+                 * bn_neck01: UnityEngine.GameObject
+                   * be_neck01: UnityEngine.GameObject
+                     * bn_headPivot_a01: UnityEngine.GameObject
+                       * bn_headPivot_b01: UnityEngine.GameObject
+                         * bn_lowerJaw01: UnityEngine.GameObject
+                           * be_lowerJawEnd01: UnityEngine.GameObject
+                           * bn_l_mouthCorner01: UnityEngine.GameObject
+                           * bn_l_mouthLow_b01: UnityEngine.GameObject
+                           * bn_l_mouthLow_c01: UnityEngine.GameObject
+                           * bn_l_mouthLow_d01: UnityEngine.GameObject
+                           * bn_l_mouthLowMid_a01: UnityEngine.GameObject
+                           * bn_lowerTeeth01: UnityEngine.GameObject
+                           * bn_r_mouthCorner01: UnityEngine.GameObject
+                           * bn_r_mouthLow_b01: UnityEngine.GameObject
+                           * bn_r_mouthLow_c01: UnityEngine.GameObject
+                           * bn_r_mouthLow_d01: UnityEngine.GameObject
+                           * bn_tongue_A01: UnityEngine.GameObject
+                             * bn_tongue_B01: UnityEngine.GameObject
+                               * bn_tongue_C01: UnityEngine.GameObject
+                                 * bn_tongue_D01: UnityEngine.GameObject
+                                   * be_tongueEnd01: UnityEngine.GameObject
+                         * bn_upperJaw01: UnityEngine.GameObject
+                           * be_upperJawEnd01: UnityEngine.GameObject
+                           * bn_l_mouthUp_b01: UnityEngine.GameObject
+                           * bn_l_mouthUp_c01: UnityEngine.GameObject
+                           * bn_l_mouthUp_d01: UnityEngine.GameObject
+                           * bn_l_mouthUpMid_a01: UnityEngine.GameObject
+                           * bn_r_mouthUp_b01: UnityEngine.GameObject
+                           * bn_r_mouthUp_c01: UnityEngine.GameObject
+                           * bn_r_mouthUp_d01: UnityEngine.GameObject
+                           * bn_upperTeet01: UnityEngine.GameObject
+                           * jntDrv_l_eye01: UnityEngine.GameObject
+                             * jntDrv_l_eyeEnd01: UnityEngine.GameObject
+                           * jntDrv_mouthCenter01: UnityEngine.GameObject
+                           * jntDrv_r_eye01: UnityEngine.GameObject
+                             * jntDrv_r_eyeEnd01: UnityEngine.GameObject
+               * bn_l_shld01: UnityEngine.GameObject
+                 * be_l_shldEnd01: UnityEngine.GameObject
+                   * bn_l_arm01: UnityEngine.GameObject
+                     * bn_l_elbow_a01: UnityEngine.GameObject
+                       * bn_l_elbow_b01: UnityEngine.GameObject
+                         * bn_l_wrist01: UnityEngine.GameObject
+                           * bn_l_mid_a01: UnityEngine.GameObject
+                             * bn_l_mid_b01: UnityEngine.GameObject
+                               * be_l_mid_c01: UnityEngine.GameObject
+                           * bn_l_thumb_a01: UnityEngine.GameObject
+                             * bn_l_thumb_b01: UnityEngine.GameObject
+                               * bn_l_thumb_c01: UnityEngine.GameObject
+                                 * be_l_thumb_d01: UnityEngine.GameObject
+               * bn_r_shld01: UnityEngine.GameObject
+                 * be_r_shldEnd01: UnityEngine.GameObject
+                   * bn_r_arm01: UnityEngine.GameObject
+                     * bn_r_elbow_a01: UnityEngine.GameObject
+                       * bn_r_elbow_b01: UnityEngine.GameObject
+                         * bn_r_wrist01: UnityEngine.GameObject
+                           * bn_r_mid_a01: UnityEngine.GameObject
+                             * bn_r_mid_b01: UnityEngine.GameObject
+                               * be_r_mid_c01: UnityEngine.GameObject
+                           * bn_r_thumb_a01: UnityEngine.GameObject
+                             * bn_r_thumb_b01: UnityEngine.GameObject
+                               * bn_r_thumb_c01: UnityEngine.GameObject
+                                 * be_r_thumb_d01: UnityEngine.GameObject
+   * model01: UnityEngine.GameObject
+     * body01: UnityEngine.GameObject
+        material: kerbalMain (Instance)
+        shader:   KSP/Bumped Specular (UnityEngine.Shader)
+        maintex:  orangeSuite_diffuse (UnityEngine.Texture2D)
+        bumpmap:  orangeSuite_normal (UnityEngine.Texture2D)
+     * head02: UnityEngine.GameObject
+       * eyeballLeft: UnityEngine.GameObject
+          material: mat_eyeballs (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  
+       * eyeballRight: UnityEngine.GameObject
+          material: mat_eyeballs (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  
+       * headMesh01: UnityEngine.GameObject
+          material: kerbalHead (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  kerbalHead (UnityEngine.Texture2D)
+       * pupilLeft: UnityEngine.GameObject
+          material: mat_eyes01 (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  
+       * pupilRight: UnityEngine.GameObject
+          material: mat_eyes01 (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  
+       * tongue: UnityEngine.GameObject
+          material: kerbalHead (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  kerbalHead (UnityEngine.Texture2D)
+       * upTeeth01: UnityEngine.GameObject
+          material: kerbalHead (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  kerbalHead (UnityEngine.Texture2D)
+       * upTeeth02: UnityEngine.GameObject
+          material: kerbalHead (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  kerbalHead (UnityEngine.Texture2D)
+     * helmet01: UnityEngine.GameObject
+       * helmet: UnityEngine.GameObject
+          material: kerbalMain (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  orangeSuite_diffuse (UnityEngine.Texture2D)
+          bumpmap:  orangeSuite_normal (UnityEngine.Texture2D)
+       * visor: UnityEngine.GameObject
+          material: pasted_visor (Instance)
+          shader:   Standard (Specular setup) (UnityEngine.Shader)
+          maintex:  
+          bumpmap:  
+   * kerbalCam: UnityEngine.GameObject
+   * IVA EyeTransform: UnityEngine.GameObject
+	
+Male EVA Hierarchy
+ * maleEVA(Clone): UnityEngine.GameObject
+   * capsuleCollider: UnityEngine.GameObject
+   * referenceTransform: UnityEngine.GameObject
+   * ladderCollider: UnityEngine.GameObject
+   * helmetAndHeadCollider: UnityEngine.GameObject
+   * globalMove01: UnityEngine.GameObject
+     * joints01: UnityEngine.GameObject
+       * bn_spA01: UnityEngine.GameObject
+         * bn_l_hip01: UnityEngine.GameObject
+           * bn_l_knee_a01: UnityEngine.GameObject
+             * bn_l_knee_b01: UnityEngine.GameObject
+               * bn_l_foot01: UnityEngine.GameObject
+                 * bn_l_ball01: UnityEngine.GameObject
+                   * be_l_footEnd01: UnityEngine.GameObject
+                   * footCollider_l: UnityEngine.GameObject
+         * bn_r_hip01: UnityEngine.GameObject
+           * bn_r_knee_a01: UnityEngine.GameObject
+             * bn_r_knee_b01: UnityEngine.GameObject
+               * bn_r_foot01: UnityEngine.GameObject
+                 * bn_r_ball01: UnityEngine.GameObject
+                   * be_r_footEnd01: UnityEngine.GameObject
+                   * footCollider_r: UnityEngine.GameObject
+         * bn_spB01: UnityEngine.GameObject
+           * bn_spc01: UnityEngine.GameObject
+             * bn_spD01: UnityEngine.GameObject
+               * be_spE01: UnityEngine.GameObject
+                 * bn_helmet01: UnityEngine.GameObject
+                   * be_helmetEnd01: UnityEngine.GameObject
+                   * helmetColliderRig: UnityEngine.GameObject
+                 * bn_neck01: UnityEngine.GameObject
+                   * be_neck01: UnityEngine.GameObject
+                     * bn_headPivot_a01: UnityEngine.GameObject
+                       * bn_headPivot_b01: UnityEngine.GameObject
+                         * bn_lowerJaw01: UnityEngine.GameObject
+                           * be_lowerJawEnd01: UnityEngine.GameObject
+                           * bn_l_mouthCorner01: UnityEngine.GameObject
+                           * bn_l_mouthLow_b01: UnityEngine.GameObject
+                           * bn_l_mouthLow_c01: UnityEngine.GameObject
+                           * bn_l_mouthLow_d01: UnityEngine.GameObject
+                           * bn_l_mouthLowMid_a01: UnityEngine.GameObject
+                           * bn_lowerTeeth01: UnityEngine.GameObject
+                           * bn_r_mouthCorner01: UnityEngine.GameObject
+                           * bn_r_mouthLow_b01: UnityEngine.GameObject
+                           * bn_r_mouthLow_c01: UnityEngine.GameObject
+                           * bn_r_mouthLow_d01: UnityEngine.GameObject
+                         * bn_upperJaw01: UnityEngine.GameObject
+                           * be_upperJawEnd01: UnityEngine.GameObject
+                           * bn_l_mouthUp_b01: UnityEngine.GameObject
+                           * bn_l_mouthUp_c01: UnityEngine.GameObject
+                           * bn_l_mouthUp_d01: UnityEngine.GameObject
+                           * bn_l_mouthUpMid_a01: UnityEngine.GameObject
+                           * bn_r_mouthUp_b01: UnityEngine.GameObject
+                           * bn_r_mouthUp_c01: UnityEngine.GameObject
+                           * bn_r_mouthUp_d01: UnityEngine.GameObject
+                           * bn_upperTeet01: UnityEngine.GameObject
+                           * jntDrv_l_eye01: UnityEngine.GameObject
+                             * jntDrv_l_eyeEnd01: UnityEngine.GameObject
+                           * jntDrv_mouthCenter01: UnityEngine.GameObject
+                           * jntDrv_r_eye01: UnityEngine.GameObject
+                             * jntDrv_r_eyeEnd01: UnityEngine.GameObject
+                     * headCollider: UnityEngine.GameObject
+               * bn_jetpack01: UnityEngine.GameObject
+                 * jetpackColliderRig: UnityEngine.GameObject
+                 * bn_l_arm01: UnityEngine.GameObject
+                   * bn_l_armElbow01: UnityEngine.GameObject
+                     * bn_l_armEnd01: UnityEngine.GameObject
+                       * be_l_handlePivot01: UnityEngine.GameObject
+                         * bn_l_handle01: UnityEngine.GameObject
+                           * be_l_handleEnd01: UnityEngine.GameObject
+                 * bn_r_arm01: UnityEngine.GameObject
+                   * bn_r_armElbow01: UnityEngine.GameObject
+                     * bn_r_armEnd01: UnityEngine.GameObject
+                       * be_r_handlePivot01: UnityEngine.GameObject
+                         * bn_r_handle01: UnityEngine.GameObject
+                           * be_r_handleEnd01: UnityEngine.GameObject
+               * bn_l_shld01: UnityEngine.GameObject
+                 * be_l_shldEnd01: UnityEngine.GameObject
+                   * bn_l_arm01 1: UnityEngine.GameObject
+                     * bn_l_elbow_a01: UnityEngine.GameObject
+                       * bn_l_elbow_b01: UnityEngine.GameObject
+                         * bn_l_wrist01: UnityEngine.GameObject
+                           * bn_l_mid_a01: UnityEngine.GameObject
+                             * bn_l_mid_b01: UnityEngine.GameObject
+                               * be_l_mid_c01: UnityEngine.GameObject
+                           * bn_l_thumb_a01: UnityEngine.GameObject
+                             * bn_l_thumb_b01: UnityEngine.GameObject
+                               * bn_l_thumb_c01: UnityEngine.GameObject
+                                 * be_l_thumb_d01: UnityEngine.GameObject
+                           * handCollider_l: UnityEngine.GameObject
+               * bn_r_shld01: UnityEngine.GameObject
+                 * be_r_shldEnd01: UnityEngine.GameObject
+                   * bn_r_arm01 1: UnityEngine.GameObject
+                     * bn_r_elbow_a01: UnityEngine.GameObject
+                       * bn_r_elbow_b01: UnityEngine.GameObject
+                         * bn_r_wrist01: UnityEngine.GameObject
+                           * bn_r_mid_a01: UnityEngine.GameObject
+                             * bn_r_mid_b01: UnityEngine.GameObject
+                               * be_r_mid_c01: UnityEngine.GameObject
+                           * bn_r_thumb_a01: UnityEngine.GameObject
+                             * bn_r_thumb_b01: UnityEngine.GameObject
+                               * bn_r_thumb_c01: UnityEngine.GameObject
+                                 * be_r_thumb_d01: UnityEngine.GameObject
+                           * handCollider_r: UnityEngine.GameObject
+   * model01: UnityEngine.GameObject
+     * body01: UnityEngine.GameObject
+        material: orangeSuite_diffuse (Instance)
+        shader:   KSP/Bumped Specular (UnityEngine.Shader)
+        maintex:  whiteSuite_diffuse (UnityEngine.Texture2D)
+        bumpmap:  orangeSuite_normal (UnityEngine.Texture2D)
+       * neckRing: UnityEngine.GameObject
+          material: orangeSuite_diffuse (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  whiteSuite_diffuse (UnityEngine.Texture2D)
+          bumpmap:  orangeSuite_normal (UnityEngine.Texture2D)
+     * head02: UnityEngine.GameObject
+       * eyeballLeft: UnityEngine.GameObject
+          material: mat_eyeballs (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  
+       * eyeballRight: UnityEngine.GameObject
+          material: mat_eyeballs (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  
+       * headMesh02: UnityEngine.GameObject
+          material: kerbalHead (Instance)
+          shader:   Mobile/Diffuse (UnityEngine.Shader)
+          maintex:  kerbalHead (UnityEngine.Texture2D)
+       * pupilLeft: UnityEngine.GameObject
+          material: mat_eyes01 (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  
+       * pupilRight: UnityEngine.GameObject
+          material: mat_eyes01 (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  
+       * upTeeth01: UnityEngine.GameObject
+          material: kerbalHead (Instance)
+          shader:   Mobile/Diffuse (UnityEngine.Shader)
+          maintex:  kerbalHead (UnityEngine.Texture2D)
+       * upTeeth02: UnityEngine.GameObject
+          material: kerbalHead (Instance)
+          shader:   Mobile/Diffuse (UnityEngine.Shader)
+          maintex:  kerbalHead (UnityEngine.Texture2D)
+     * helmet01: UnityEngine.GameObject
+       * helmet: UnityEngine.GameObject
+          material: orangeSuite_diffuse (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  whiteSuite_diffuse (UnityEngine.Texture2D)
+          bumpmap:  orangeSuite_normal (UnityEngine.Texture2D)
+       * visor: UnityEngine.GameObject
+          material: pasted_visor (Instance)
+          shader:   Standard (Specular setup) (UnityEngine.Shader)
+          maintex:  
+          bumpmap:  
+       * headlamp: UnityEngine.GameObject
+         * flareL1: UnityEngine.GameObject
+            material: Default-Particle (Instance)
+            shader:   Particles/Alpha Blended Premultiply (UnityEngine.Shader)
+            maintex:  Default-Particle (UnityEngine.Texture2D)
+         * flareL2: UnityEngine.GameObject
+            material: Default-Particle (Instance)
+            shader:   Particles/Alpha Blended Premultiply (UnityEngine.Shader)
+            maintex:  Default-Particle (UnityEngine.Texture2D)
+         * flareR1: UnityEngine.GameObject
+            material: Default-Particle (Instance)
+            shader:   Particles/Alpha Blended Premultiply (UnityEngine.Shader)
+            maintex:  Default-Particle (UnityEngine.Texture2D)
+         * flareR2: UnityEngine.GameObject
+            material: Default-Particle (Instance)
+            shader:   Particles/Alpha Blended Premultiply (UnityEngine.Shader)
+            maintex:  Default-Particle (UnityEngine.Texture2D)
+     * jetpack01: UnityEngine.GameObject
+       * grp_l_arm01: UnityEngine.GameObject
+         * arm_l_arm_a01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_l_arm_b01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_l_handle01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_l_handleCtrl01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_l_pivotA01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+       * grp_r_arm01: UnityEngine.GameObject
+         * arm_r_arm_a01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_r_arm_b01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_r_handle01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_r_handleCtrl01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_r_pivotA01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+       * jetpack_base01: UnityEngine.GameObject
+          material: EVAjetpack (Instance)
+          shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+          maintex:  EVAjetpack (UnityEngine.Texture2D)
+          bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+       * tank1: UnityEngine.GameObject
+          material: EVAjetpack (Instance)
+          shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+          maintex:  EVAjetpack (UnityEngine.Texture2D)
+          bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+       * tank2: UnityEngine.GameObject
+          material: EVAjetpack (Instance)
+          shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+          maintex:  EVAjetpack (UnityEngine.Texture2D)
+          bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+       * thrusters_l: UnityEngine.GameObject
+         * thruster_l01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l02: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l03: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l04: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l05: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l06: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l07: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l08: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l09: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+       * thrusters_r: UnityEngine.GameObject
+         * thruster_r01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r02: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r03: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r04: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r05: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r06: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r07: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r08: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r09: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+       * jetpackColliderModel: UnityEngine.GameObject
+       * FXGroupHolder: UnityEngine.GameObject
+         * Z+: UnityEngine.GameObject
+           * fx_gasJet_tr_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_tl_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_br_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_bl_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * Z-: UnityEngine.GameObject
+           * fx_gasJet_br_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_bl_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_tr_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_tl_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * Y+: UnityEngine.GameObject
+           * fx_gasJet_r_y+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_l_y+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_br_y+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_bl_y+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * Y-: UnityEngine.GameObject
+           * fx_gasJet_l_y-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_r_y-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * X+: UnityEngine.GameObject
+           * fx_gasJet_b_x+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_t_x+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * X-: UnityEngine.GameObject
+           * fx_gasJet_b_x-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_t_x-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+   * model: UnityEngine.GameObject
+     * kbEVA_flagDecals: UnityEngine.GameObject
+        material: flagSurface (Instance)
+        shader:   Legacy Shaders/Transparent/Diffuse (UnityEngine.Shader)
+        maintex:  flagbase (UnityEngine.Texture2D)
+     * EVAparachute: UnityEngine.GameObject
+       * base: UnityEngine.GameObject
+          material: backpack_Diff (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  backpack_Diff (UnityEngine.Texture2D)
+          bumpmap:  backpack_NM (UnityEngine.Texture2D)
+       * canopyrot: UnityEngine.GameObject
+         * canopy: UnityEngine.GameObject
+            material: canopy_Diff (Instance)
+            shader:   KSP/Bumped Specular (Stencil) (UnityEngine.Shader)
+            maintex:  canopy_Diff (UnityEngine.Texture2D)
+            bumpmap:  canopy_NR (UnityEngine.Texture2D)
+           * flag: UnityEngine.GameObject
+              material: flag_mat (Instance)
+              shader:   KSP/Scenery/Decal/Multiply (UnityEngine.Shader)
+              maintex:  
+       * collider: UnityEngine.GameObject
+          material: Default_Material (Instance)
+          shader:   Legacy Shaders/Bumped Diffuse (UnityEngine.Shader)
+          maintex:  
+          bumpmap:  
+
+Male EVA Vintage Hierarchy
+ * kerbalEVA_RD_Exp(Clone): UnityEngine.GameObject
+   * capsuleCollider: UnityEngine.GameObject
+   * referenceTransform: UnityEngine.GameObject
+   * ladderCollider: UnityEngine.GameObject
+   * helmetAndHeadCollider: UnityEngine.GameObject
+   * globalMove01: UnityEngine.GameObject
+     * controlObjects01: UnityEngine.GameObject
+       * cc_COG01: UnityEngine.GameObject
+         * cc_chest01: UnityEngine.GameObject
+           * jntDrv_chest01: UnityEngine.GameObject
+         * cc_hip01: UnityEngine.GameObject
+           * jntDrv_hip01: UnityEngine.GameObject
+         * cc_neck01: UnityEngine.GameObject
+           * cc_headPivot_a01: UnityEngine.GameObject
+             * cc_headPivot_b01: UnityEngine.GameObject
+               * cc_jaw01: UnityEngine.GameObject
+                 * grp_loc_bn_lowerTeeth01: UnityEngine.GameObject
+                   * cc_lowerTeeth01: UnityEngine.GameObject
+                     * loc_bn_lowerTeeth01: UnityEngine.GameObject
+                 * locOri_lowerJaw01: UnityEngine.GameObject
+               * cc_l_lipCorner01: UnityEngine.GameObject
+                 * jntDrv_l_mouthCorner01: UnityEngine.GameObject
+                 * SDK_cc_l_lipCorner01: UnityEngine.GameObject
+               * cc_r_lipCorner01: UnityEngine.GameObject
+                 * jntDrv_r_mouthCorner01: UnityEngine.GameObject
+                 * SDK_cc_r_lipCorner01: UnityEngine.GameObject
+               * cc_upperJaw01: UnityEngine.GameObject
+                 * grp_loc_bn_upperTeeth01: UnityEngine.GameObject
+                   * cc_upperTeeth01: UnityEngine.GameObject
+                     * loc_bn_upperTeeth01: UnityEngine.GameObject
+                 * locOri_upperJaw01: UnityEngine.GameObject
+               * locOri_head_b01: UnityEngine.GameObject
+             * locOri_head_a01: UnityEngine.GameObject
+           * locOri_neck01: UnityEngine.GameObject
+       * cc_eyes01: UnityEngine.GameObject
+         * cc_l_eye01: UnityEngine.GameObject
+         * cc_r_eye01: UnityEngine.GameObject
+       * cc_helmet01: UnityEngine.GameObject
+         * locOri_helmet01: UnityEngine.GameObject
+       * cc_l_elbow01: UnityEngine.GameObject
+       * cc_l_foot01: UnityEngine.GameObject
+         * cc_l_ball01: UnityEngine.GameObject
+           * locOri_l_ball01: UnityEngine.GameObject
+         * jntDrv_l_foot01: UnityEngine.GameObject
+           * jntDrv_l_toe01: UnityEngine.GameObject
+             * jntDrv_l_ball01: UnityEngine.GameObject
+               * jntDrv_l_ankle01: UnityEngine.GameObject
+       * cc_l_handPos01: UnityEngine.GameObject
+         * locPos_l_hand01: UnityEngine.GameObject
+           * cc_l_handOri01: UnityEngine.GameObject
+             * locOri_l_wrist01: UnityEngine.GameObject
+       * cc_l_knee01: UnityEngine.GameObject
+       * cc_l_shld01: UnityEngine.GameObject
+         * locOri_l_shld01: UnityEngine.GameObject
+       * cc_lowerLip01: UnityEngine.GameObject
+         * grp_cc_l_mouthLow_b01: UnityEngine.GameObject
+           * grpSDK_grp_loc_l_mouthLow_b01: UnityEngine.GameObject
+             * grp_loc_l_mouthLow_b_jaw01: UnityEngine.GameObject
+               * cc_l_mouthLow_b01: UnityEngine.GameObject
+                 * loc_l_mouthLow_b_jaw01: UnityEngine.GameObject
+         * grp_cc_l_mouthLow_c01: UnityEngine.GameObject
+           * grpSDK_grp_loc_l_mouthLow_c01: UnityEngine.GameObject
+             * grp_loc_l_mouthLow_c_jaw01: UnityEngine.GameObject
+               * cc_l_mouthLow_c01: UnityEngine.GameObject
+                 * loc_l_mouthLow_c_jaw01: UnityEngine.GameObject
+         * grp_cc_l_mouthLow_d01: UnityEngine.GameObject
+           * grpSDK_grp_loc_l_mouthLow_d01: UnityEngine.GameObject
+             * grp_loc_l_mouthLow_d_jaw01: UnityEngine.GameObject
+               * cc_l_mouthLow_d01: UnityEngine.GameObject
+                 * loc_l_mouthLow_d_jaw01: UnityEngine.GameObject
+         * grp_cc_mouthMidLow_a01: UnityEngine.GameObject
+           * grpSDK_grp_loc_l_mouthLow_a01: UnityEngine.GameObject
+             * grp_loc_l_mouthLow_a_jaw01: UnityEngine.GameObject
+               * cc_mouthMidLow_a01: UnityEngine.GameObject
+                 * loc_l_mouthLow_a_jaw01: UnityEngine.GameObject
+         * grp_cc_r_mouthLow_b01: UnityEngine.GameObject
+           * grpSDK_grp_loc_r_mouthLow_b01: UnityEngine.GameObject
+             * grp_loc_r_mouthLow_b_jaw01: UnityEngine.GameObject
+               * cc_r_mouthLow_b01: UnityEngine.GameObject
+                 * loc_r_mouthLow_b_jaw01: UnityEngine.GameObject
+         * grp_cc_r_mouthLow_c01: UnityEngine.GameObject
+           * grpSDK_grp_loc_r_mouthLow_c01: UnityEngine.GameObject
+             * grp_loc_r_mouthLow_c_jaw01: UnityEngine.GameObject
+               * cc_r_mouthLow_c01: UnityEngine.GameObject
+                 * loc_r_mouthLow_c_jaw01: UnityEngine.GameObject
+         * grp_cc_r_mouthLow_d01: UnityEngine.GameObject
+           * grpSDK_grp_loc_r_mouthLow_d01: UnityEngine.GameObject
+             * grp_loc_r_mouthLow_d_jaw01: UnityEngine.GameObject
+               * cc_r_mouthLow_d01: UnityEngine.GameObject
+                 * loc_r_mouthLow_d_jaw01: UnityEngine.GameObject
+       * cc_r_elbow01: UnityEngine.GameObject
+       * cc_r_foot01: UnityEngine.GameObject
+         * cc_r_ball01: UnityEngine.GameObject
+           * locOri_l_ball01 1: UnityEngine.GameObject
+         * jntDrv_r_foot01: UnityEngine.GameObject
+           * jntDrv_r_toe01: UnityEngine.GameObject
+             * jntDrv_r_ball01: UnityEngine.GameObject
+               * jntDrv_r_ankle01: UnityEngine.GameObject
+       * cc_r_handPos01: UnityEngine.GameObject
+         * locPos_l_hand01 1: UnityEngine.GameObject
+           * cc_r_handOri01: UnityEngine.GameObject
+             * locOri_l_wrist01 1: UnityEngine.GameObject
+       * cc_r_knee01: UnityEngine.GameObject
+       * cc_r_shld01: UnityEngine.GameObject
+         * locOri_r_shld01: UnityEngine.GameObject
+       * cc_upperLip01: UnityEngine.GameObject
+         * grp_cc_l_mouthCorner_e01: UnityEngine.GameObject
+           * grpSDK_grp_loc_l_mouthUp_e01: UnityEngine.GameObject
+             * grp_loc_l_mouthUp_e_jaw01: UnityEngine.GameObject
+               * cc_l_mouthCorner_e01: UnityEngine.GameObject
+                 * loc_l_mouthUp_e_jaw01: UnityEngine.GameObject
+         * grp_cc_l_mouthUp_c01: UnityEngine.GameObject
+           * grpSDK_grp_loc_l_mouthUp_c01: UnityEngine.GameObject
+             * grp_loc_l_mouthUp_c_jaw01: UnityEngine.GameObject
+               * cc_l_mouthUp_c01: UnityEngine.GameObject
+                 * loc_l_mouthUp_c_jaw01: UnityEngine.GameObject
+         * grp_cc_l_mouthUp_d01: UnityEngine.GameObject
+           * grpSDK_grp_loc_l_mouthUp_d01: UnityEngine.GameObject
+             * grp_loc_l_mouthUp_d_jaw01: UnityEngine.GameObject
+               * cc_l_mouthUp_d01: UnityEngine.GameObject
+                 * loc_l_mouthUp_d_jaw01: UnityEngine.GameObject
+         * grp_cc_mouthMidUp_a01: UnityEngine.GameObject
+           * grpSDK_grp_loc_l_mouthUp_a01: UnityEngine.GameObject
+             * grp_loc_l_mouthUp_a_jaw01: UnityEngine.GameObject
+               * cc_mouthMidUp_a01: UnityEngine.GameObject
+                 * loc_l_mouthUp_a_jaw01: UnityEngine.GameObject
+         * grp_cc_r_mouthUp_b01: UnityEngine.GameObject
+           * grpSDK_grp_loc_r_mouthUp_b01: UnityEngine.GameObject
+             * grp_loc_r_mouthUp_b_jaw01: UnityEngine.GameObject
+               * cc_r_mouthUp_b01: UnityEngine.GameObject
+                 * loc_r_mouthUp_b_jaw01: UnityEngine.GameObject
+         * grp_cc_r_mouthUp_c01: UnityEngine.GameObject
+           * grpSDK_grp_loc_r_mouthUp_c01: UnityEngine.GameObject
+             * grp_loc_r_mouthUp_c_jaw01: UnityEngine.GameObject
+               * cc_r_mouthUp_c01: UnityEngine.GameObject
+                 * loc_r_mouthUp_c_jaw01: UnityEngine.GameObject
+         * grp_cc_r_mouthUp_d01: UnityEngine.GameObject
+           * grpSDK_grp_loc_r_mouthUp_d01: UnityEngine.GameObject
+             * grp_loc_r_mouthUp_d_jaw01: UnityEngine.GameObject
+               * cc_r_mouthUp_d01: UnityEngine.GameObject
+                 * loc_r_mouthUp_d_jaw01: UnityEngine.GameObject
+         * grpSDK_grp_loc_l_mouthUp_b01: UnityEngine.GameObject
+           * grp_loc_l_mouthUp_b_jaw01: UnityEngine.GameObject
+             * cc_l_mouthUp_b01: UnityEngine.GameObject
+               * loc_l_mouthUp_b_jaw01: UnityEngine.GameObject
+         * grpSDK_grp_loc_r_mouthUp_e01: UnityEngine.GameObject
+           * grp_loc_r_mouthUp_e_jaw01: UnityEngine.GameObject
+             * cc_r_mouthCorner_e01: UnityEngine.GameObject
+               * loc_r_mouthUp_e_jaw01: UnityEngine.GameObject
+     * iks01: UnityEngine.GameObject
+       * rp_l_arm01: UnityEngine.GameObject
+       * rp_l_eye01: UnityEngine.GameObject
+       * rp_l_foot01: UnityEngine.GameObject
+       * rp_l_handle01: UnityEngine.GameObject
+       * rp_r_arm01: UnityEngine.GameObject
+       * rp_r_eye01: UnityEngine.GameObject
+       * rp_r_foot01: UnityEngine.GameObject
+       * rp_r_handle01: UnityEngine.GameObject
+       * spIK_spine01: UnityEngine.GameObject
+     * jetpackControls01: UnityEngine.GameObject
+       * cc_l_armJP01: UnityEngine.GameObject
+         * cc_l_elbowJP01: UnityEngine.GameObject
+           * cc_l_controls01: UnityEngine.GameObject
+             * grp_cc_l_jpCtrls01: UnityEngine.GameObject
+               * cc_l_jpCtrls01: UnityEngine.GameObject
+             * locMatch_l_ctrls01: UnityEngine.GameObject
+           * locMatch_l_elbowJP01: UnityEngine.GameObject
+         * locMatch_l_armJP01: UnityEngine.GameObject
+       * cc_r_armJP01: UnityEngine.GameObject
+         * cc_r_elbowJP01: UnityEngine.GameObject
+           * cc_r_controls01: UnityEngine.GameObject
+             * grp_cc_r_jpCtrls01: UnityEngine.GameObject
+               * cc_r_jpCtrls01: UnityEngine.GameObject
+             * locMatch_r_ctrls01: UnityEngine.GameObject
+           * locMatch_r_armJP02: UnityEngine.GameObject
+         * locMatch_r_armJP01: UnityEngine.GameObject
+     * joints01: UnityEngine.GameObject
+       * bn_spA01: UnityEngine.GameObject
+         * bn_l_hip01: UnityEngine.GameObject
+           * bn_l_knee_a01: UnityEngine.GameObject
+             * bn_l_knee_b01: UnityEngine.GameObject
+               * bn_l_foot01: UnityEngine.GameObject
+                 * bn_l_ball01: UnityEngine.GameObject
+                   * be_l_footEnd01: UnityEngine.GameObject
+                   * footCollider_l: UnityEngine.GameObject
+         * bn_r_hip01: UnityEngine.GameObject
+           * bn_r_knee_a01: UnityEngine.GameObject
+             * bn_r_knee_b01: UnityEngine.GameObject
+               * bn_r_foot01: UnityEngine.GameObject
+                 * bn_r_ball01: UnityEngine.GameObject
+                   * be_r_footEnd01: UnityEngine.GameObject
+                   * footCollider_r: UnityEngine.GameObject
+         * bn_spB01: UnityEngine.GameObject
+           * bn_spc01: UnityEngine.GameObject
+             * bn_spD01: UnityEngine.GameObject
+               * be_spE01: UnityEngine.GameObject
+                 * bn_helmet01: UnityEngine.GameObject
+                   * be_helmetEnd01: UnityEngine.GameObject
+                   * helmetColliderRig: UnityEngine.GameObject
+                 * bn_neck01: UnityEngine.GameObject
+                   * be_neck01: UnityEngine.GameObject
+                     * bn_headPivot_a01: UnityEngine.GameObject
+                       * bn_headPivot_b01: UnityEngine.GameObject
+                         * bn_lowerJaw01: UnityEngine.GameObject
+                           * be_lowerJawEnd01: UnityEngine.GameObject
+                           * bn_l_mouthCorner01: UnityEngine.GameObject
+                           * bn_l_mouthLow_b01: UnityEngine.GameObject
+                           * bn_l_mouthLow_c01: UnityEngine.GameObject
+                           * bn_l_mouthLow_d01: UnityEngine.GameObject
+                           * bn_l_mouthLowMid_a01: UnityEngine.GameObject
+                           * bn_lowerTeeth01: UnityEngine.GameObject
+                           * bn_r_mouthCorner01: UnityEngine.GameObject
+                           * bn_r_mouthLow_b01: UnityEngine.GameObject
+                           * bn_r_mouthLow_c01: UnityEngine.GameObject
+                           * bn_r_mouthLow_d01: UnityEngine.GameObject
+                         * bn_upperJaw01: UnityEngine.GameObject
+                           * be_upperJawEnd01: UnityEngine.GameObject
+                           * bn_l_mouthUp_b01: UnityEngine.GameObject
+                           * bn_l_mouthUp_c01: UnityEngine.GameObject
+                           * bn_l_mouthUp_d01: UnityEngine.GameObject
+                           * bn_l_mouthUpMid_a01: UnityEngine.GameObject
+                           * bn_r_mouthUp_b01: UnityEngine.GameObject
+                           * bn_r_mouthUp_c01: UnityEngine.GameObject
+                           * bn_r_mouthUp_d01: UnityEngine.GameObject
+                           * bn_upperTeet01: UnityEngine.GameObject
+                           * jntDrv_l_eye01: UnityEngine.GameObject
+                             * jntDrv_l_eyeEnd01: UnityEngine.GameObject
+                           * jntDrv_mouthCenter01: UnityEngine.GameObject
+                           * jntDrv_r_eye01: UnityEngine.GameObject
+                             * jntDrv_r_eyeEnd01: UnityEngine.GameObject
+                           * trackHeadlamps: UnityEngine.GameObject
+                     * headCollider: UnityEngine.GameObject
+               * bn_jetpack01: UnityEngine.GameObject
+                 * bn_l_arm01: UnityEngine.GameObject
+                   * bn_l_armElbow01: UnityEngine.GameObject
+                     * bn_l_armEnd01: UnityEngine.GameObject
+                       * be_l_handlePivot01: UnityEngine.GameObject
+                         * bn_l_handle01: UnityEngine.GameObject
+                           * be_l_handleEnd01: UnityEngine.GameObject
+                 * bn_r_arm01: UnityEngine.GameObject
+                   * bn_r_armElbow01: UnityEngine.GameObject
+                     * bn_r_armEnd01: UnityEngine.GameObject
+                       * be_r_handlePivot01: UnityEngine.GameObject
+                         * bn_r_handle01: UnityEngine.GameObject
+                           * be_r_handleEnd01: UnityEngine.GameObject
+                 * jetpackColliderRig: UnityEngine.GameObject
+               * bn_l_shld01: UnityEngine.GameObject
+                 * be_l_shldEnd01: UnityEngine.GameObject
+                   * bn_l_arm01 1: UnityEngine.GameObject
+                     * bn_l_elbow_a01: UnityEngine.GameObject
+                       * bn_l_elbow_b01: UnityEngine.GameObject
+                         * bn_l_wrist01: UnityEngine.GameObject
+                           * bn_l_mid_a01: UnityEngine.GameObject
+                             * bn_l_mid_b01: UnityEngine.GameObject
+                               * be_l_mid_c01: UnityEngine.GameObject
+                           * bn_l_thumb_a01: UnityEngine.GameObject
+                             * bn_l_thumb_b01: UnityEngine.GameObject
+                               * bn_l_thumb_c01: UnityEngine.GameObject
+                                 * be_l_thumb_d01: UnityEngine.GameObject
+                         * handCollider_l: UnityEngine.GameObject
+               * bn_r_shld01: UnityEngine.GameObject
+                 * be_r_shldEnd01: UnityEngine.GameObject
+                   * bn_r_arm01 1: UnityEngine.GameObject
+                     * bn_r_elbow_a01: UnityEngine.GameObject
+                       * bn_r_elbow_b01: UnityEngine.GameObject
+                         * bn_r_wrist01: UnityEngine.GameObject
+                           * bn_r_mid_a01: UnityEngine.GameObject
+                             * bn_r_mid_b01: UnityEngine.GameObject
+                               * be_r_mid_c01: UnityEngine.GameObject
+                           * bn_r_thumb_a01: UnityEngine.GameObject
+                             * bn_r_thumb_b01: UnityEngine.GameObject
+                               * bn_r_thumb_c01: UnityEngine.GameObject
+                                 * be_r_thumb_d01: UnityEngine.GameObject
+                         * handCollider_r: UnityEngine.GameObject
+       * jntDrv_spA01: UnityEngine.GameObject
+         * grp_locAim_bn_spA01: UnityEngine.GameObject
+           * locAim_bn_spA01: UnityEngine.GameObject
+         * jntDrv_spB01: UnityEngine.GameObject
+           * grp_locAim_bn_spB01: UnityEngine.GameObject
+             * locAim_bn_spB01: UnityEngine.GameObject
+           * jntDrv_spC01: UnityEngine.GameObject
+             * grp_locAim_bn_spC01: UnityEngine.GameObject
+               * locAim_bn_spC01: UnityEngine.GameObject
+             * jntDrv_spD01: UnityEngine.GameObject
+               * grp_locAim_bn_spD01: UnityEngine.GameObject
+                 * locAim_bn_spD01: UnityEngine.GameObject
+               * jntDrv_spE01: UnityEngine.GameObject
+     * to_transform01: UnityEngine.GameObject
+       * trns_toHide01: UnityEngine.GameObject
+       * trns_toShow01: UnityEngine.GameObject
+   * model01: UnityEngine.GameObject
+     * body01: UnityEngine.GameObject
+        material: MissionEditorEVABodyAlternate (Instance)
+        shader:   KSP/Bumped Specular (UnityEngine.Shader)
+        maintex:  me_suit_difuse_blue (UnityEngine.Texture2D)
+        bumpmap:  kerbalMainNRM (UnityEngine.Texture2D)
+     * head02: UnityEngine.GameObject
+       * eyeballLeft: UnityEngine.GameObject
+          material: mat_eyeballs (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  
+       * eyeballRight: UnityEngine.GameObject
+          material: mat_eyeballs (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  
+       * headMesh01: UnityEngine.GameObject
+          material: kerbalHead (Instance)
+          shader:   Mobile/Diffuse (UnityEngine.Shader)
+          maintex:  kerbalHead (UnityEngine.Texture2D)
+       * pupilLeft: UnityEngine.GameObject
+          material: mat_eyes01 (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  
+       * pupilRight: UnityEngine.GameObject
+          material: mat_eyes01 (Instance)
+          shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+          maintex:  
+       * upTeeth01: UnityEngine.GameObject
+          material: kerbalHead (Instance)
+          shader:   Mobile/Diffuse (UnityEngine.Shader)
+          maintex:  kerbalHead (UnityEngine.Texture2D)
+       * upTeeth02: UnityEngine.GameObject
+          material: kerbalHead (Instance)
+          shader:   Mobile/Diffuse (UnityEngine.Shader)
+          maintex:  kerbalHead (UnityEngine.Texture2D)
+     * helmet01: UnityEngine.GameObject
+       * helmet: UnityEngine.GameObject
+          material: MissionEditorEVAHelmet (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  me_suit_difuse_blue (UnityEngine.Texture2D)
+          bumpmap:  kerbalMainNRM (UnityEngine.Texture2D)
+       * visor: UnityEngine.GameObject
+          material: pasted__visor1 (Instance)
+          shader:   Standard (Specular setup) (UnityEngine.Shader)
+          maintex:  
+          bumpmap:  
+       * EVALight: UnityEngine.GameObject
+          material: MissionEditorEVABody (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  me_suit_difuse_orange (UnityEngine.Texture2D)
+          bumpmap:  kerbalMainNRM (UnityEngine.Texture2D)
+       * headlamp: UnityEngine.GameObject
+         * lightPlane: UnityEngine.GameObject
+            material: MissionEditorEVALight (Instance)
+            shader:   Particles/Additive (UnityEngine.Shader)
+            maintex:  EVALight (UnityEngine.Texture2D)
+     * jetpack01: UnityEngine.GameObject
+       * grp_l_arm01: UnityEngine.GameObject
+         * arm_l_arm_a01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_l_arm_b01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_l_handle01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_l_handleCtrl01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_l_pivotA01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+       * grp_r_arm01: UnityEngine.GameObject
+         * arm_r_arm_a01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_r_arm_b01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_r_handle01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_r_handleCtrl01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_r_pivotA01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+       * jetpack_base01: UnityEngine.GameObject
+          material: MissionEditorEVAJetpack (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+          bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+       * tank1: UnityEngine.GameObject
+          material: MissionEditorEVAJetpack (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+          bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+       * tank2: UnityEngine.GameObject
+          material: MissionEditorEVAJetpack (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+          bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+       * thrusters_l: UnityEngine.GameObject
+         * thruster_l01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l02: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l03: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l04: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l05: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l06: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l07: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l08: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l09: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+       * thrusters_r: UnityEngine.GameObject
+         * thruster_r01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r02: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r03: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r04: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r05: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r06: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r07: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r08: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r09: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+       * jetpackColliderModel: UnityEngine.GameObject
+       * FXGroupHolder: UnityEngine.GameObject
+         * X-: UnityEngine.GameObject
+           * fx_gasJet_b_x-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_t_x-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * X+: UnityEngine.GameObject
+           * fx_gasJet_b_x+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_t_x+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * Y-: UnityEngine.GameObject
+           * fx_gasJet_l_y-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_r_y-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * Y+: UnityEngine.GameObject
+           * fx_gasJet_r_y+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_l_y+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * Z-: UnityEngine.GameObject
+           * fx_gasJet_bl_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_br_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_tr_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_tl_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * Z+: UnityEngine.GameObject
+           * fx_gasJet_tr_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_tl_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_br_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_bl_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+   * model: UnityEngine.GameObject
+     * kbEVA_flagDecals: UnityEngine.GameObject
+        material: flagSurface (Instance)
+        shader:   Legacy Shaders/Transparent/Diffuse (UnityEngine.Shader)
+        maintex:  flagbase (UnityEngine.Texture2D)
+     * EVAparachute: UnityEngine.GameObject
+       * base: UnityEngine.GameObject
+          material: backpack_Diff (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  backpack_Diff (UnityEngine.Texture2D)
+          bumpmap:  backpack_NM (UnityEngine.Texture2D)
+       * canopyrot: UnityEngine.GameObject
+         * canopy: UnityEngine.GameObject
+            material: canopy_Diff (Instance)
+            shader:   KSP/Bumped Specular (Stencil) (UnityEngine.Shader)
+            maintex:  canopy_Diff (UnityEngine.Texture2D)
+            bumpmap:  canopy_NR (UnityEngine.Texture2D)
+           * flag: UnityEngine.GameObject
+              material: flag_mat (Instance)
+              shader:   KSP/Scenery/Decal/Multiply (UnityEngine.Shader)
+              maintex:  
+       * collider: UnityEngine.GameObject
+          material: Default_Material (Instance)
+          shader:   Legacy Shaders/Bumped Diffuse (UnityEngine.Shader)
+          maintex:  
+          bumpmap:  
+		  
+Female IVA Hierarchy
+ * kerbalFemale: UnityEngine.GameObject
+   * globalMove01: UnityEngine.GameObject
+     * joints01: UnityEngine.GameObject
+       * bn_spA01: UnityEngine.GameObject
+         * bn_l_hip01: UnityEngine.GameObject
+           * bn_l_knee_a01: UnityEngine.GameObject
+             * bn_l_knee_b01: UnityEngine.GameObject
+               * bn_l_foot01: UnityEngine.GameObject
+                 * bn_l_ball01: UnityEngine.GameObject
+                   * be_l_footEnd01: UnityEngine.GameObject
+         * bn_r_hip01: UnityEngine.GameObject
+           * bn_r_knee_a01: UnityEngine.GameObject
+             * bn_r_knee_b01: UnityEngine.GameObject
+               * bn_r_foot01: UnityEngine.GameObject
+                 * bn_r_ball01: UnityEngine.GameObject
+                   * be_r_footEnd01: UnityEngine.GameObject
+         * bn_spB01: UnityEngine.GameObject
+           * bn_spc01: UnityEngine.GameObject
+             * bn_spD01: UnityEngine.GameObject
+               * be_spE01: UnityEngine.GameObject
+                 * bn_helmet01: UnityEngine.GameObject
+                   * be_helmetEnd01: UnityEngine.GameObject
+                 * bn_neck01: UnityEngine.GameObject
+                   * be_neck01: UnityEngine.GameObject
+                     * bn_headPivot_a01: UnityEngine.GameObject
+                       * bn_headPivot_b01: UnityEngine.GameObject
+                         * bn_lowerJaw01: UnityEngine.GameObject
+                           * be_lowerJawEnd01: UnityEngine.GameObject
+                           * bn_l_mouthCorner01: UnityEngine.GameObject
+                           * bn_l_mouthLow_b01: UnityEngine.GameObject
+                           * bn_l_mouthLow_c01: UnityEngine.GameObject
+                           * bn_l_mouthLow_d01: UnityEngine.GameObject
+                           * bn_l_mouthLowMid_a01: UnityEngine.GameObject
+                           * bn_lowerTeeth01: UnityEngine.GameObject
+                           * bn_r_mouthCorner01: UnityEngine.GameObject
+                           * bn_r_mouthLow_b01: UnityEngine.GameObject
+                           * bn_r_mouthLow_c01: UnityEngine.GameObject
+                           * bn_r_mouthLow_d01: UnityEngine.GameObject
+                         * bn_upperJaw01: UnityEngine.GameObject
+                           * be_upperJawEnd01: UnityEngine.GameObject
+                           * bn_l_mouthUp_b01: UnityEngine.GameObject
+                           * bn_l_mouthUp_c01: UnityEngine.GameObject
+                           * bn_l_mouthUp_d01: UnityEngine.GameObject
+                           * bn_l_mouthUpMid_a01: UnityEngine.GameObject
+                           * bn_r_mouthUp_b01: UnityEngine.GameObject
+                           * bn_r_mouthUp_c01: UnityEngine.GameObject
+                           * bn_r_mouthUp_d01: UnityEngine.GameObject
+                           * bn_upperTeet01: UnityEngine.GameObject
+                           * jntDrv_l_eye01: UnityEngine.GameObject
+                             * jntDrv_l_eyeEnd01: UnityEngine.GameObject
+                           * jntDrv_mouthCenter01: UnityEngine.GameObject
+                           * jntDrv_r_eye01: UnityEngine.GameObject
+                             * jntDrv_r_eyeEnd01: UnityEngine.GameObject
+               * bn_l_shld01: UnityEngine.GameObject
+                 * be_l_shldEnd01: UnityEngine.GameObject
+                   * bn_l_arm01: UnityEngine.GameObject
+                     * bn_l_elbow_a01: UnityEngine.GameObject
+                       * bn_l_elbow_b01: UnityEngine.GameObject
+                         * bn_l_wrist01: UnityEngine.GameObject
+                           * bn_l_mid_a01: UnityEngine.GameObject
+                             * bn_l_mid_b01: UnityEngine.GameObject
+                               * be_l_mid_c01: UnityEngine.GameObject
+                           * bn_l_thumb_a01: UnityEngine.GameObject
+                             * bn_l_thumb_b01: UnityEngine.GameObject
+                               * bn_l_thumb_c01: UnityEngine.GameObject
+                                 * be_l_thumb_d01: UnityEngine.GameObject
+               * bn_r_shld01: UnityEngine.GameObject
+                 * be_r_shldEnd01: UnityEngine.GameObject
+                   * bn_r_arm01: UnityEngine.GameObject
+                     * bn_r_elbow_a01: UnityEngine.GameObject
+                       * bn_r_elbow_b01: UnityEngine.GameObject
+                         * bn_r_wrist01: UnityEngine.GameObject
+                           * bn_r_mid_a01: UnityEngine.GameObject
+                             * bn_r_mid_b01: UnityEngine.GameObject
+                               * be_r_mid_c01: UnityEngine.GameObject
+                           * bn_r_thumb_a01: UnityEngine.GameObject
+                             * bn_r_thumb_b01: UnityEngine.GameObject
+                               * bn_r_thumb_c01: UnityEngine.GameObject
+                                 * be_r_thumb_d01: UnityEngine.GameObject
+   * model01: UnityEngine.GameObject
+     * female01: UnityEngine.GameObject
+       * mesh_female_kerbalAstronaut01_body01: UnityEngine.GameObject
+          material: orangeSuite_diffuse (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  paleBlueSuite_diffuse (UnityEngine.Texture2D)
+          bumpmap:  orangeSuite_normal (UnityEngine.Texture2D)
+       * mesh_female_kerbalAstronaut01_helmet01: UnityEngine.GameObject
+         * mesh_female_kerbalAstronaut01_helmet: UnityEngine.GameObject
+            material: orangeSuite_diffuse (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  paleBlueSuite_diffuse (UnityEngine.Texture2D)
+            bumpmap:  orangeSuite_normal (UnityEngine.Texture2D)
+         * mesh_female_kerbalAstronaut01_visor: UnityEngine.GameObject
+            material: mesh_female_kerbalAstronaut01_pasted__visor1 (Instance)
+            shader:   Legacy Shaders/Transparent/Diffuse (UnityEngine.Shader)
+            maintex:  
+       * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_kerbalGirl_base: UnityEngine.GameObject
+         * mesh_female_kerbalAstronaut01_grp_mesh_eyes: UnityEngine.GameObject
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_eyeballLeft: UnityEngine.GameObject
+              material: mesh_female_kerbalAstronaut01_kerbalGirl_export_15_lambert2 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_eyeballRight: UnityEngine.GameObject
+              material: mesh_female_kerbalAstronaut01_kerbalGirl_export_15_lambert2 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_pupilLeft: UnityEngine.GameObject
+              material: mesh_female_kerbalAstronaut01_kerbalGirl_export_15_lambert4 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_pupilRight: UnityEngine.GameObject
+              material: mesh_female_kerbalAstronaut01_kerbalGirl_export_15_lambert4 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+         * mesh_female_kerbalAstronaut01_grp_mesh_head: UnityEngine.GameObject
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_pCube1: UnityEngine.GameObject
+              material: kerbalGirl_06_BaseColor (Instance)
+              shader:   Mobile/Diffuse (UnityEngine.Shader)
+              maintex:  kerbalGirl_06_BaseColor (UnityEngine.Texture2D)
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_polySurface51: UnityEngine.GameObject
+              material: kerbalGirl_06_BaseColor (Instance)
+              shader:   Mobile/Diffuse (UnityEngine.Shader)
+              maintex:  kerbalGirl_06_BaseColor (UnityEngine.Texture2D)
+         * mesh_female_kerbalAstronaut01_grp_mesh_teeth: UnityEngine.GameObject
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_downTeeth01: UnityEngine.GameObject
+              material: mesh_female_kerbalAstronaut01_kerbalGirl_export_15_lambert2 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_upTeeth01: UnityEngine.GameObject
+              material: mesh_female_kerbalAstronaut01_kerbalGirl_export_15_lambert2 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+   * IVA EyeTransform: UnityEngine.GameObject
+   * kerbalCam: UnityEngine.GameObject
+
+Female EVA Hierarchy
+ * femaleEVA(Clone): UnityEngine.GameObject
+   * referenceTransform: UnityEngine.GameObject
+   * capsuleCollider: UnityEngine.GameObject
+   * ladderCollider: UnityEngine.GameObject
+   * helmetAndHeadCollider: UnityEngine.GameObject
+   * globalMove01: UnityEngine.GameObject
+     * joints01: UnityEngine.GameObject
+       * bn_spA01: UnityEngine.GameObject
+         * bn_l_hip01: UnityEngine.GameObject
+           * bn_l_knee_a01: UnityEngine.GameObject
+             * bn_l_knee_b01: UnityEngine.GameObject
+               * bn_l_foot01: UnityEngine.GameObject
+                 * bn_l_ball01: UnityEngine.GameObject
+                   * be_l_footEnd01: UnityEngine.GameObject
+                   * footCollider_l: UnityEngine.GameObject
+         * bn_r_hip01: UnityEngine.GameObject
+           * bn_r_knee_a01: UnityEngine.GameObject
+             * bn_r_knee_b01: UnityEngine.GameObject
+               * bn_r_foot01: UnityEngine.GameObject
+                 * bn_r_ball01: UnityEngine.GameObject
+                   * be_r_footEnd01: UnityEngine.GameObject
+                   * footCollider_r: UnityEngine.GameObject
+         * bn_spB01: UnityEngine.GameObject
+           * bn_spc01: UnityEngine.GameObject
+             * bn_spD01: UnityEngine.GameObject
+               * be_spE01: UnityEngine.GameObject
+                 * bn_helmet01: UnityEngine.GameObject
+                   * be_helmetEnd01: UnityEngine.GameObject
+                   * helmetColliderRig: UnityEngine.GameObject
+                 * bn_neck01: UnityEngine.GameObject
+                   * be_neck01: UnityEngine.GameObject
+                     * bn_headPivot_a01: UnityEngine.GameObject
+                       * bn_headPivot_b01: UnityEngine.GameObject
+                         * bn_lowerJaw01: UnityEngine.GameObject
+                           * be_lowerJawEnd01: UnityEngine.GameObject
+                           * bn_l_mouthCorner01: UnityEngine.GameObject
+                           * bn_l_mouthLow_b01: UnityEngine.GameObject
+                           * bn_l_mouthLow_c01: UnityEngine.GameObject
+                           * bn_l_mouthLow_d01: UnityEngine.GameObject
+                           * bn_l_mouthLowMid_a01: UnityEngine.GameObject
+                           * bn_lowerTeeth01: UnityEngine.GameObject
+                           * bn_r_mouthCorner01: UnityEngine.GameObject
+                           * bn_r_mouthLow_b01: UnityEngine.GameObject
+                           * bn_r_mouthLow_c01: UnityEngine.GameObject
+                           * bn_r_mouthLow_d01: UnityEngine.GameObject
+                         * bn_upperJaw01: UnityEngine.GameObject
+                           * be_upperJawEnd01: UnityEngine.GameObject
+                           * bn_l_mouthUp_b01: UnityEngine.GameObject
+                           * bn_l_mouthUp_c01: UnityEngine.GameObject
+                           * bn_l_mouthUp_d01: UnityEngine.GameObject
+                           * bn_l_mouthUpMid_a01: UnityEngine.GameObject
+                           * bn_r_mouthUp_b01: UnityEngine.GameObject
+                           * bn_r_mouthUp_c01: UnityEngine.GameObject
+                           * bn_r_mouthUp_d01: UnityEngine.GameObject
+                           * bn_upperTeet01: UnityEngine.GameObject
+                           * jntDrv_l_eye01: UnityEngine.GameObject
+                             * jntDrv_l_eyeEnd01: UnityEngine.GameObject
+                           * jntDrv_mouthCenter01: UnityEngine.GameObject
+                           * jntDrv_r_eye01: UnityEngine.GameObject
+                             * jntDrv_r_eyeEnd01: UnityEngine.GameObject
+                         * headCollider: UnityEngine.GameObject
+               * bn_jetpack01: UnityEngine.GameObject
+                 * bn_l_arm01: UnityEngine.GameObject
+                   * bn_l_armElbow01: UnityEngine.GameObject
+                     * bn_l_armEnd01: UnityEngine.GameObject
+                       * be_l_handlePivot01: UnityEngine.GameObject
+                         * bn_l_handle01: UnityEngine.GameObject
+                           * be_l_handleEnd01: UnityEngine.GameObject
+                 * bn_r_arm01: UnityEngine.GameObject
+                   * bn_r_armElbow01: UnityEngine.GameObject
+                     * bn_r_armEnd01: UnityEngine.GameObject
+                       * be_r_handlePivot01: UnityEngine.GameObject
+                         * bn_r_handle01: UnityEngine.GameObject
+                           * be_r_handleEnd01: UnityEngine.GameObject
+                 * jetpackColliderRig: UnityEngine.GameObject
+               * bn_l_shld01: UnityEngine.GameObject
+                 * be_l_shldEnd01: UnityEngine.GameObject
+                   * bn_l_arm01 1: UnityEngine.GameObject
+                     * bn_l_elbow_a01: UnityEngine.GameObject
+                       * bn_l_elbow_b01: UnityEngine.GameObject
+                         * bn_l_wrist01: UnityEngine.GameObject
+                           * bn_l_mid_a01: UnityEngine.GameObject
+                             * bn_l_mid_b01: UnityEngine.GameObject
+                               * be_l_mid_c01: UnityEngine.GameObject
+                           * bn_l_thumb_a01: UnityEngine.GameObject
+                             * bn_l_thumb_b01: UnityEngine.GameObject
+                               * bn_l_thumb_c01: UnityEngine.GameObject
+                                 * be_l_thumb_d01: UnityEngine.GameObject
+                         * handCollider_l: UnityEngine.GameObject
+               * bn_r_shld01: UnityEngine.GameObject
+                 * be_r_shldEnd01: UnityEngine.GameObject
+                   * bn_r_arm01 1: UnityEngine.GameObject
+                     * bn_r_elbow_a01: UnityEngine.GameObject
+                       * bn_r_elbow_b01: UnityEngine.GameObject
+                         * bn_r_wrist01: UnityEngine.GameObject
+                           * bn_r_mid_a01: UnityEngine.GameObject
+                             * bn_r_mid_b01: UnityEngine.GameObject
+                               * be_r_mid_c01: UnityEngine.GameObject
+                           * bn_r_thumb_a01: UnityEngine.GameObject
+                             * bn_r_thumb_b01: UnityEngine.GameObject
+                               * bn_r_thumb_c01: UnityEngine.GameObject
+                                 * be_r_thumb_d01: UnityEngine.GameObject
+                         * handCollider_r: UnityEngine.GameObject
+   * model01: UnityEngine.GameObject
+     * female01: UnityEngine.GameObject
+       * mesh_female_kerbalAstronaut01_body01: UnityEngine.GameObject
+          material: orangeSuite_diffuse (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  whiteSuite_diffuse (UnityEngine.Texture2D)
+          bumpmap:  orangeSuite_normal (UnityEngine.Texture2D)
+         * neckRing: UnityEngine.GameObject
+            material: orangeSuite_diffuse (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  whiteSuite_diffuse (UnityEngine.Texture2D)
+            bumpmap:  orangeSuite_normal (UnityEngine.Texture2D)
+       * mesh_female_kerbalAstronaut01_helmet01: UnityEngine.GameObject
+         * mesh_female_kerbalAstronaut01_helmet: UnityEngine.GameObject
+            material: orangeSuite_diffuse (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  whiteSuite_diffuse (UnityEngine.Texture2D)
+            bumpmap:  orangeSuite_normal (UnityEngine.Texture2D)
+         * mesh_female_kerbalAstronaut01_visor: UnityEngine.GameObject
+            material: pasted_visor (Instance)
+            shader:   Standard (Specular setup) (UnityEngine.Shader)
+            maintex:  
+            bumpmap:  
+         * headlamp: UnityEngine.GameObject
+           * flare1R: UnityEngine.GameObject
+              material: Default-Particle (Instance)
+              shader:   Particles/Alpha Blended Premultiply (UnityEngine.Shader)
+              maintex:  Default-Particle (UnityEngine.Texture2D)
+           * flare1L: UnityEngine.GameObject
+              material: Default-Particle (Instance)
+              shader:   Particles/Alpha Blended Premultiply (UnityEngine.Shader)
+              maintex:  Default-Particle (UnityEngine.Texture2D)
+           * flare2L: UnityEngine.GameObject
+              material: Default-Particle (Instance)
+              shader:   Particles/Alpha Blended Premultiply (UnityEngine.Shader)
+              maintex:  Default-Particle (UnityEngine.Texture2D)
+           * flare2R: UnityEngine.GameObject
+              material: Default-Particle (Instance)
+              shader:   Particles/Alpha Blended Premultiply (UnityEngine.Shader)
+              maintex:  Default-Particle (UnityEngine.Texture2D)
+       * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_kerbalGirl_base: UnityEngine.GameObject
+         * mesh_female_kerbalAstronaut01_grp_mesh_eyes: UnityEngine.GameObject
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_eyeballLeft: UnityEngine.GameObject
+              material: mesh_female_kerbalAstronaut01_kerbalGirl_export_15_lambert17 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_eyeballRight: UnityEngine.GameObject
+              material: mesh_female_kerbalAstronaut01_kerbalGirl_export_15_lambert17 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_pupilLeft: UnityEngine.GameObject
+              material: mesh_female_kerbalAstronaut01_kerbalGirl_export_15_lambert18 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_pupilRight: UnityEngine.GameObject
+              material: mesh_female_kerbalAstronaut01_kerbalGirl_export_15_lambert18 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+         * mesh_female_kerbalAstronaut01_grp_mesh_head: UnityEngine.GameObject
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_pCube1: UnityEngine.GameObject
+              material: kerbalGirl_06_BaseColor (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  kerbalGirl_06_BaseColor (UnityEngine.Texture2D)
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_polySurface51: UnityEngine.GameObject
+              material: kerbalGirl_06_BaseColor (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  kerbalGirl_06_BaseColor (UnityEngine.Texture2D)
+         * mesh_female_kerbalAstronaut01_grp_mesh_teeth: UnityEngine.GameObject
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_downTeeth01: UnityEngine.GameObject
+              material: mesh_female_kerbalAstronaut01_kerbalGirl_export_15_lambert17 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_upTeeth01: UnityEngine.GameObject
+              material: mesh_female_kerbalAstronaut01_kerbalGirl_export_15_lambert17 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+     * jetpack01: UnityEngine.GameObject
+       * grp_l_arm01: UnityEngine.GameObject
+         * arm_l_arm_a01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_l_arm_b01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_l_handle01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_l_handleCtrl01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_l_pivotA01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+       * grp_r_arm01: UnityEngine.GameObject
+         * arm_r_arm_a01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_r_arm_b01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_r_handle01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_r_handleCtrl01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * arm_r_pivotA01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+       * jetpack_base01: UnityEngine.GameObject
+          material: EVAjetpack (Instance)
+          shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+          maintex:  EVAjetpack (UnityEngine.Texture2D)
+          bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+       * tank1: UnityEngine.GameObject
+          material: EVAjetpack (Instance)
+          shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+          maintex:  EVAjetpack (UnityEngine.Texture2D)
+          bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+       * tank2: UnityEngine.GameObject
+          material: EVAjetpack (Instance)
+          shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+          maintex:  EVAjetpack (UnityEngine.Texture2D)
+          bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+       * thrusters_l: UnityEngine.GameObject
+         * thruster_l01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l02: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l03: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l04: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l05: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l06: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l07: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l08: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_l09: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+       * thrusters_r: UnityEngine.GameObject
+         * thruster_r01: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r02: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r03: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r04: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r05: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r06: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r07: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r08: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+         * thruster_r09: UnityEngine.GameObject
+            material: EVAjetpack (Instance)
+            shader:   KSP/Emissive/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpack (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpackNRM (UnityEngine.Texture2D)
+       * jetpackColliderModel: UnityEngine.GameObject
+       * FXGroupHolder: UnityEngine.GameObject
+         * Z+: UnityEngine.GameObject
+           * fx_gasJet_tr_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_tl_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_br_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_bl_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * Z-: UnityEngine.GameObject
+           * fx_gasJet_br_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_bl_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_tr_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_tl_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * Y+: UnityEngine.GameObject
+           * fx_gasJet_r_y+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_l_y+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_br_y+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_bl_y+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * Y-: UnityEngine.GameObject
+           * fx_gasJet_l_y-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_r_y-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * X+: UnityEngine.GameObject
+           * fx_gasJet_b_x+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_t_x+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * X-: UnityEngine.GameObject
+           * fx_gasJet_b_x-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_t_x-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+   * model: UnityEngine.GameObject
+     * kbEVA_flagDecals: UnityEngine.GameObject
+        material: flagSurface (Instance)
+        shader:   Legacy Shaders/Transparent/Diffuse (UnityEngine.Shader)
+        maintex:  flagbase (UnityEngine.Texture2D)
+     * EVAparachute: UnityEngine.GameObject
+       * base: UnityEngine.GameObject
+          material: backpack_Diff (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  backpack_Diff (UnityEngine.Texture2D)
+          bumpmap:  backpack_NM (UnityEngine.Texture2D)
+       * canopyrot: UnityEngine.GameObject
+         * canopy: UnityEngine.GameObject
+            material: canopy_Diff (Instance)
+            shader:   KSP/Bumped Specular (Stencil) (UnityEngine.Shader)
+            maintex:  canopy_Diff (UnityEngine.Texture2D)
+            bumpmap:  canopy_NR (UnityEngine.Texture2D)
+           * flag: UnityEngine.GameObject
+              material: flag_mat (Instance)
+              shader:   KSP/Scenery/Decal/Multiply (UnityEngine.Shader)
+              maintex:  
+       * collider: UnityEngine.GameObject
+          material: Default_Material (Instance)
+          shader:   Legacy Shaders/Bumped Diffuse (UnityEngine.Shader)
+          maintex:  
+          bumpmap:  
+
+Female EVA Vintage Hierarchy
+ * kerbalEVA_female_Exp(Clone): UnityEngine.GameObject
+   * referenceTransform: UnityEngine.GameObject
+   * capsuleCollider: UnityEngine.GameObject
+   * ladderCollider: UnityEngine.GameObject
+   * helmetAndHeadCollider: UnityEngine.GameObject
+   * globalMove01: UnityEngine.GameObject
+     * joints01: UnityEngine.GameObject
+       * bn_spA01: UnityEngine.GameObject
+         * bn_l_hip01: UnityEngine.GameObject
+           * bn_l_knee_a01: UnityEngine.GameObject
+             * bn_l_knee_b01: UnityEngine.GameObject
+               * bn_l_foot01: UnityEngine.GameObject
+                 * bn_l_ball01: UnityEngine.GameObject
+                   * be_l_footEnd01: UnityEngine.GameObject
+                   * footCollider_l: UnityEngine.GameObject
+         * bn_r_hip01: UnityEngine.GameObject
+           * bn_r_knee_a01: UnityEngine.GameObject
+             * bn_r_knee_b01: UnityEngine.GameObject
+               * bn_r_foot01: UnityEngine.GameObject
+                 * bn_r_ball01: UnityEngine.GameObject
+                   * be_r_footEnd01: UnityEngine.GameObject
+                   * footCollider_r: UnityEngine.GameObject
+         * bn_spB01: UnityEngine.GameObject
+           * bn_spc01: UnityEngine.GameObject
+             * bn_spD01: UnityEngine.GameObject
+               * be_spE01: UnityEngine.GameObject
+                 * bn_helmet01: UnityEngine.GameObject
+                   * be_helmetEnd01: UnityEngine.GameObject
+                   * helmetColliderRig: UnityEngine.GameObject
+                 * bn_neck01: UnityEngine.GameObject
+                   * be_neck01: UnityEngine.GameObject
+                     * bn_headPivot_a01: UnityEngine.GameObject
+                       * bn_headPivot_b01: UnityEngine.GameObject
+                         * bn_lowerJaw01: UnityEngine.GameObject
+                           * be_lowerJawEnd01: UnityEngine.GameObject
+                           * bn_l_mouthCorner01: UnityEngine.GameObject
+                           * bn_l_mouthLow_b01: UnityEngine.GameObject
+                           * bn_l_mouthLow_c01: UnityEngine.GameObject
+                           * bn_l_mouthLow_d01: UnityEngine.GameObject
+                           * bn_l_mouthLowMid_a01: UnityEngine.GameObject
+                           * bn_lowerTeeth01: UnityEngine.GameObject
+                           * bn_r_mouthCorner01: UnityEngine.GameObject
+                           * bn_r_mouthLow_b01: UnityEngine.GameObject
+                           * bn_r_mouthLow_c01: UnityEngine.GameObject
+                           * bn_r_mouthLow_d01: UnityEngine.GameObject
+                         * bn_upperJaw01: UnityEngine.GameObject
+                           * be_upperJawEnd01: UnityEngine.GameObject
+                           * bn_l_mouthUp_b01: UnityEngine.GameObject
+                           * bn_l_mouthUp_c01: UnityEngine.GameObject
+                           * bn_l_mouthUp_d01: UnityEngine.GameObject
+                           * bn_l_mouthUpMid_a01: UnityEngine.GameObject
+                           * bn_r_mouthUp_b01: UnityEngine.GameObject
+                           * bn_r_mouthUp_c01: UnityEngine.GameObject
+                           * bn_r_mouthUp_d01: UnityEngine.GameObject
+                           * bn_upperTeet01: UnityEngine.GameObject
+                           * jntDrv_l_eye01: UnityEngine.GameObject
+                             * jntDrv_l_eyeEnd01: UnityEngine.GameObject
+                           * jntDrv_mouthCenter01: UnityEngine.GameObject
+                           * jntDrv_r_eye01: UnityEngine.GameObject
+                             * jntDrv_r_eyeEnd01: UnityEngine.GameObject
+                           * trackHeadlamps: UnityEngine.GameObject
+                       * headCollider: UnityEngine.GameObject
+               * bn_jetpack01: UnityEngine.GameObject
+                 * bn_l_arm01: UnityEngine.GameObject
+                   * bn_l_armElbow01: UnityEngine.GameObject
+                     * bn_l_armEnd01: UnityEngine.GameObject
+                       * be_l_handlePivot01: UnityEngine.GameObject
+                         * bn_l_handle01: UnityEngine.GameObject
+                           * be_l_handleEnd01: UnityEngine.GameObject
+                 * bn_r_arm01: UnityEngine.GameObject
+                   * bn_r_armElbow01: UnityEngine.GameObject
+                     * bn_r_armEnd01: UnityEngine.GameObject
+                       * be_r_handlePivot01: UnityEngine.GameObject
+                         * bn_r_handle01: UnityEngine.GameObject
+                           * be_r_handleEnd01: UnityEngine.GameObject
+                 * jetpackColliderModel: UnityEngine.GameObject
+               * bn_l_shld01: UnityEngine.GameObject
+                 * be_l_shldEnd01: UnityEngine.GameObject
+                   * bn_l_arm01 1: UnityEngine.GameObject
+                     * bn_l_elbow_a01: UnityEngine.GameObject
+                       * bn_l_elbow_b01: UnityEngine.GameObject
+                         * bn_l_wrist01: UnityEngine.GameObject
+                           * bn_l_mid_a01: UnityEngine.GameObject
+                             * bn_l_mid_b01: UnityEngine.GameObject
+                               * be_l_mid_c01: UnityEngine.GameObject
+                           * bn_l_thumb_a01: UnityEngine.GameObject
+                             * bn_l_thumb_b01: UnityEngine.GameObject
+                               * bn_l_thumb_c01: UnityEngine.GameObject
+                                 * be_l_thumb_d01: UnityEngine.GameObject
+                         * handCollider_l: UnityEngine.GameObject
+               * bn_r_shld01: UnityEngine.GameObject
+                 * be_r_shldEnd01: UnityEngine.GameObject
+                   * bn_r_arm01 1: UnityEngine.GameObject
+                     * bn_r_elbow_a01: UnityEngine.GameObject
+                       * bn_r_elbow_b01: UnityEngine.GameObject
+                         * bn_r_wrist01: UnityEngine.GameObject
+                           * bn_r_mid_a01: UnityEngine.GameObject
+                             * bn_r_mid_b01: UnityEngine.GameObject
+                               * be_r_mid_c01: UnityEngine.GameObject
+                           * bn_r_thumb_a01: UnityEngine.GameObject
+                             * bn_r_thumb_b01: UnityEngine.GameObject
+                               * bn_r_thumb_c01: UnityEngine.GameObject
+                                 * be_r_thumb_d01: UnityEngine.GameObject
+                         * handCollider_r: UnityEngine.GameObject
+   * model01: UnityEngine.GameObject
+     * female01: UnityEngine.GameObject
+       * body01: UnityEngine.GameObject
+          material: MissionEditorEVABodyAlternate (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  me_suit_difuse_blue (UnityEngine.Texture2D)
+          bumpmap:  kerbalMainNRM (UnityEngine.Texture2D)
+       * helmet01: UnityEngine.GameObject
+         * helmet: UnityEngine.GameObject
+            material: MissionEditorEVAHelmet (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  me_suit_difuse_blue (UnityEngine.Texture2D)
+            bumpmap:  kerbalMainNRM (UnityEngine.Texture2D)
+         * visor: UnityEngine.GameObject
+            material: pasted__visor1 (Instance)
+            shader:   Standard (Specular setup) (UnityEngine.Shader)
+            maintex:  
+            bumpmap:  
+         * headlamp: UnityEngine.GameObject
+           * lightPlane: UnityEngine.GameObject
+              material: MissionEditorEVALight (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  EVALight (UnityEngine.Texture2D)
+         * EVALight: UnityEngine.GameObject
+            material: MissionEditorEVABody (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  me_suit_difuse_orange (UnityEngine.Texture2D)
+            bumpmap:  kerbalMainNRM (UnityEngine.Texture2D)
+       * kerbalGirl_base: UnityEngine.GameObject
+         * mesh_female_kerbalAstronaut01_grp_mesh_eyes: UnityEngine.GameObject
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_eyeballLeft: UnityEngine.GameObject
+              material: eyeWhite01 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_eyeballRight: UnityEngine.GameObject
+              material: eyeWhite01 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_pupilLeft: UnityEngine.GameObject
+              material: mat_eyes01 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_pupilRight: UnityEngine.GameObject
+              material: mat_eyes01 (Instance)
+              shader:   Legacy Shaders/Diffuse (UnityEngine.Shader)
+              maintex:  
+         * mesh_female_kerbalAstronaut01_grp_mesh_head: UnityEngine.GameObject
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_pCube1: UnityEngine.GameObject
+              material: kerbalGirl_BaseColor (Instance)
+              shader:   KSP/Scenery/Diffuse (UnityEngine.Shader)
+              maintex:  kerbalGirl_06_BaseColor (UnityEngine.Texture2D)
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_polySurface51: UnityEngine.GameObject
+              material: kerbalGirl_BaseColor (Instance)
+              shader:   KSP/Scenery/Diffuse (UnityEngine.Shader)
+              maintex:  kerbalGirl_06_BaseColor (UnityEngine.Texture2D)
+         * mesh_female_kerbalAstronaut01_grp_mesh_teeth: UnityEngine.GameObject
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_downTeeth01: UnityEngine.GameObject
+              material: kerbalHead (Instance)
+              shader:   Mobile/Diffuse (UnityEngine.Shader)
+              maintex:  kerbalHead (UnityEngine.Texture2D)
+           * mesh_female_kerbalAstronaut01_kerbalGirl_mesh_upTeeth01: UnityEngine.GameObject
+              material: kerbalHead (Instance)
+              shader:   Mobile/Diffuse (UnityEngine.Shader)
+              maintex:  kerbalHead (UnityEngine.Texture2D)
+     * jetpack01: UnityEngine.GameObject
+       * grp_l_arm01: UnityEngine.GameObject
+         * arm_l_arm_a01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_l_arm_b01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_l_handle01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_l_handleCtrl01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_l_pivotA01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+       * grp_r_arm01: UnityEngine.GameObject
+         * arm_r_arm_a01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_r_arm_b01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_r_handle01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_r_handleCtrl01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * arm_r_pivotA01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+       * jetpack_base01: UnityEngine.GameObject
+          material: MissionEditorEVAJetpack (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+          bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+       * tank1: UnityEngine.GameObject
+          material: MissionEditorEVAJetpack (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+          bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+       * tank2: UnityEngine.GameObject
+          material: MissionEditorEVAJetpack (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+          bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+       * thrusters_l: UnityEngine.GameObject
+         * thruster_l01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l02: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l03: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l04: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l05: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l06: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l07: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l08: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_l09: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+       * thrusters_r: UnityEngine.GameObject
+         * thruster_r01: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r02: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r03: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r04: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r05: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r06: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r07: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r08: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+         * thruster_r09: UnityEngine.GameObject
+            material: MissionEditorEVAJetpack (Instance)
+            shader:   KSP/Bumped Specular (UnityEngine.Shader)
+            maintex:  EVAjetpackscondary (UnityEngine.Texture2D)
+            bumpmap:  EVAjetpacksecondary_N (UnityEngine.Texture2D)
+       * jetpackColliderModel: UnityEngine.GameObject
+       * FXGroupHolder: UnityEngine.GameObject
+         * Z+: UnityEngine.GameObject
+           * fx_gasJet_tr_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_tl_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_br_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_bl_z+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * Z-: UnityEngine.GameObject
+           * fx_gasJet_br_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_bl_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_tr_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_tl_z-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * Y+: UnityEngine.GameObject
+           * fx_gasJet_r_y+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_l_y+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * Y+: UnityEngine.GameObject
+           * fx_gasJet_l_y-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_r_y-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * X+: UnityEngine.GameObject
+           * fx_gasJet_b_x+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_t_x+: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+         * X-: UnityEngine.GameObject
+           * fx_gasJet_b_x-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+           * fx_gasJet_t_x-: UnityEngine.GameObject
+              material: Fairy Dust (Instance)
+              shader:   Particles/Additive (UnityEngine.Shader)
+              maintex:  fairydust (UnityEngine.Texture2D)
+   * model: UnityEngine.GameObject
+     * kbEVA_flagDecals: UnityEngine.GameObject
+        material: flagSurface (Instance)
+        shader:   Legacy Shaders/Transparent/Diffuse (UnityEngine.Shader)
+        maintex:  flagbase (UnityEngine.Texture2D)
+     * EVAparachute: UnityEngine.GameObject
+       * base: UnityEngine.GameObject
+          material: backpack_Diff (Instance)
+          shader:   KSP/Bumped Specular (UnityEngine.Shader)
+          maintex:  backpack_Diff (UnityEngine.Texture2D)
+          bumpmap:  backpack_NM (UnityEngine.Texture2D)
+       * canopyrot: UnityEngine.GameObject
+         * canopy: UnityEngine.GameObject
+            material: canopy_Diff (Instance)
+            shader:   KSP/Bumped Specular (Stencil) (UnityEngine.Shader)
+            maintex:  canopy_Diff (UnityEngine.Texture2D)
+            bumpmap:  canopy_NR (UnityEngine.Texture2D)
+           * flag: UnityEngine.GameObject
+              material: flag_mat (Instance)
+              shader:   KSP/Scenery/Decal/Multiply (UnityEngine.Shader)
+              maintex:  
+       * collider: UnityEngine.GameObject
+          material: Default_Material (Instance)
+          shader:   Legacy Shaders/Bumped Diffuse (UnityEngine.Shader)
+          maintex:  
+          bumpmap:  

@@ -34,7 +34,7 @@ namespace KerbalAnimation
 			set
 			{
 				_animationClip = value;
-				OnNewAnimationClip.Fire (value);
+				OnNewAnimationClip.Fire(value);
 			}
 		}
 
@@ -45,7 +45,7 @@ namespace KerbalAnimation
 			set
 			{
 				_kerbal = value;
-				OnKerbalSelected.Fire (value);
+				OnKerbalSelected.Fire(value);
 			}
 		}
 
@@ -56,7 +56,7 @@ namespace KerbalAnimation
 			set
 			{
 				_currentBone = value;
-				OnBoneSelected.Fire (value);
+				OnBoneSelected.Fire(value);
 			}
 		}
 
@@ -75,10 +75,8 @@ namespace KerbalAnimation
 			get {return MusicWrapper.MusicIsPlaying;}
 			set
 			{
-				if (value && Settings.AllowEditorMusic)
-					MusicWrapper.StartPlaylist (0.5f);
-				else
-					MusicWrapper.StopPlaylist (0.5f);
+				if (value && Settings.AllowEditorMusic) MusicWrapper.StartPlaylist(0.5f);
+				else MusicWrapper.StopPlaylist(0.5f);
 			}
 		}
 
@@ -99,13 +97,13 @@ namespace KerbalAnimation
 			Instance = this;
 
 			//load settings
-			Settings = new KerbalAnimationSettings ();
+			Settings = new KerbalAnimationSettings();
 
 			//instantiate windows
-			Master = new MasterWindow ();
-			Hierarchy = new HierarchyWindow ();
-			Manipulation = new ManipulationWindow ();
-			Animation = new AnimationWindow ();
+			Master = new MasterWindow();
+			Hierarchy = new HierarchyWindow();
+			Manipulation = new ManipulationWindow();
+			Animation = new AnimationWindow();
 		}
 
         internal const string MODID = "KerbalAnimationsuite_NS";
@@ -113,16 +111,16 @@ namespace KerbalAnimation
         private void Start()
 		{
 			//load animation data
-			ConfigurationUtils.LoadAnimationNames ();
-			ConfigurationUtils.LoadReadableNames ();
+			ConfigurationUtils.LoadAnimationNames();
+			ConfigurationUtils.LoadReadableNames();
 
 			//music
-			MusicWrapper = new MusicLogicWrapper ();
+			MusicWrapper = new MusicLogicWrapper();
 
             //add AppLauncher button
 #if false
-            var buttonTexture = GameDatabase.Instance.GetTexture ("KerbalAnimationSuite/Icons/button", false);
-			Button = ApplicationLauncher.Instance.AddModApplication (EnableAnimationSuite, DisableAnimationSuite, null, null, null, null, ApplicationLauncher.AppScenes.FLIGHT, buttonTexture);
+            var buttonTexture = GameDatabase.Instance.GetTexture("KerbalAnimationSuite/Icons/button", false);
+			Button = ApplicationLauncher.Instance.AddModApplication(EnableAnimationSuite, DisableAnimationSuite, null, null, null, null, ApplicationLauncher.AppScenes.FLIGHT, buttonTexture);
 #endif
 
             toolbarControl = gameObject.AddComponent<ToolbarControl>();
@@ -144,8 +142,7 @@ namespace KerbalAnimation
             }
 #if false
             //remove AppLauncher button
-            if (Button != null)
-				ApplicationLauncher.Instance.RemoveModApplication(Button);
+            if (Button != null) ApplicationLauncher.Instance.RemoveModApplication(Button);
 #endif
 		}
 
@@ -154,17 +151,18 @@ namespace KerbalAnimation
 			var vessel = FlightGlobals.ActiveVessel;
 			if (vessel.evaController == null)
 			{
-				ScreenMessages.PostScreenMessage (new ScreenMessage ("<color=" + Colors.DefaultMessageColor + ">Active vessel must be an EVA to use the Animation Suite</color>", 3f, ScreenMessageStyle.UPPER_CENTER));
+				ScreenMessages.PostScreenMessage(new ScreenMessage("<color=" + Colors.DefaultMessageColor + ">Active vessel must be an EVA to use the Animation Suite</color>", 3f, ScreenMessageStyle.UPPER_CENTER));
 
 				//set the button back to false
-				toolbarControl.SetFalse (false);
+				toolbarControl.SetFalse(false);
 				return;
 			}
 
-			Kerbal = new SelectedKerbalEVA (vessel.evaController);
-			AnimationClip = new EditableAnimationClip (Kerbal);
+			Kerbal = new SelectedKerbalEVA(vessel.evaController);
+			AnimationClip = new EditableAnimationClip(Kerbal);
+			Animation.OnEnableSuite();
 
-			if (!Kerbal.EnterAnimationMode ())
+			if (!Kerbal.EnterAnimationMode())
 			{
 				//wipe the state
 				Kerbal = null;
@@ -172,18 +170,17 @@ namespace KerbalAnimation
 				CurrentBone = null;
 
                 //set the button back to false if it failed
-                toolbarControl.SetFalse (false);
+                toolbarControl.SetFalse(false);
 				return;
 			}
 
 			MusicIsPlaying = true;
 		}
-		public void DisableAnimationSuite ()
+		public void DisableAnimationSuite()
 		{
 			MusicIsPlaying = false;
 
-			if (Kerbal != null)
-				Kerbal.ExitAnimationMode ();
+			if (Kerbal != null) Kerbal.ExitAnimationMode();
 
 			//wipe the state
 			Kerbal = null;
@@ -195,10 +192,10 @@ namespace KerbalAnimation
 		{
 			if (Kerbal != null && Kerbal.IsAnimating)
 			{
-				Master.Update ();
-				Hierarchy.Update ();
-				Manipulation.Update ();
-				Animation.Update ();
+				Master.Update();
+				Hierarchy.Update();
+				Manipulation.Update();
+				Animation.Update();
 
 				//stop music if setting is set to false, and music is still playing
 				if (!Settings.AllowEditorMusic && MusicWrapper.MusicIsPlaying)
@@ -216,18 +213,14 @@ namespace KerbalAnimation
 		void OnGUI()
 		{
 			//don't draw when F2 is pressed
-			if (!GUIHider.ShowUI)
-				return;
+			if (!GUIHider.ShowUI) return;
 
 			if (Kerbal != null && Kerbal.IsAnimating)
 			{
-				Master.Draw ();
-				if (Master.HierarchyOpen && !Kerbal.IsAnimationPlaying && Animation.KeyframeSelected)
-					Hierarchy.Draw ();
-				if (Master.ManipulationOpen && !Kerbal.IsAnimationPlaying && Animation.KeyframeSelected)
-					Manipulation.Draw ();
-				if (Master.AnimationOpen)
-					Animation.Draw ();
+				Master.Draw();
+				if (Master.HierarchyOpen && !Kerbal.IsAnimationPlaying && Animation.KeyframeSelected) Hierarchy.Draw();
+				if (Master.ManipulationOpen && !Kerbal.IsAnimationPlaying && Animation.KeyframeSelected) Manipulation.Draw();
+				if (Master.AnimationOpen) Animation.Draw();
 			}
 		}
 	}
