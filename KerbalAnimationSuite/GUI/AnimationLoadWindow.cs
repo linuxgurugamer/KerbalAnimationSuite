@@ -116,23 +116,27 @@ namespace KerbalAnimation
 			}
 
 			customAnimPathMap.Clear();
-			foreach (var path in Directory.GetFiles(KSPUtil.ApplicationRootPath + "GameData/KerbalAnimationSuite/Output/", "*.anim"))
+			string dir = KSPUtil.ApplicationRootPath + "GameData/KerbalAnimationSuite/Output";
+			if (System.IO.Directory.Exists(dir))
 			{
-				string friendlyName;
-				// Get the actual animation name, if possible
-				var node = ConfigNode.Load(path);
-				if (node == null)
+				foreach (var path in Directory.GetFiles(dir, "*.anim"))
 				{
-					Debug.LogError("ConfigNode not found at " + path);
-					// Fallback to filename
-					friendlyName = path.Split('/').Last();
-				}
-				else
-				{
-					friendlyName = node.GetValue("Name");
-				}
+					string friendlyName;
+					// Get the actual animation name, if possible
+					var node = ConfigNode.Load(path);
+					if (node == null)
+					{
+						Debug.LogError("ConfigNode not found at " + path);
+						// Fallback to filename
+						friendlyName = path.Split('/').Last();
+					}
+					else
+					{
+						friendlyName = node.GetValue("Name");
+					}
 
-				customAnimPathMap.Add(friendlyName, path);
+					customAnimPathMap.Add(friendlyName, path);
+				}
 			}
 		}
 

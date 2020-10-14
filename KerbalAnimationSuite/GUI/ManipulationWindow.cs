@@ -9,7 +9,7 @@ namespace KerbalAnimation
 		public ManipulationWindow()
 		{
 			SetupGUIStyles();
-			WindowRect = new Rect((Screen.width / 2f) + 600f, (Screen.height / 2f) - 300f, 500f, 300f);
+			WindowRect = new Rect(Screen.width- 550, (Screen.height / 2f) - 300f, 500f, 300f);
 			WindowTitle = "Manipulation";
 			ExpandHeight = true;
 

@@ -15,3 +15,18 @@
 1.2.4.1
 	Version bump for 1.5 rebuild
 	Added the vintage kerbals
+
+1.3.0
+	Thanks to github user @nick-odell for this update to 1.10.1:
+		Working in 1.10.1
+			Fixed a bunch of bugs with the timeline / keyframes
+			Added button to reset manipulations for a keyframe to default (technically the original state when the editor was opened)
+			When saving custom animations, the backup system now works properly, and keeps up to 5 backups.
+			Loading animations now has a file selection UI, and adding common mixing transforms has been made easier
+			Can now animate the kerbal's base position (for things like jumps or dances)
+			Player now supports kerbal-specific animation choices, and enabling/disabling kerbals for when using shift. (Defaults to the standard global behavior at launch however)
+			Player module can be activated on external IVA kerbals, and specific IVA kerbals can be animated using the kerbal-specific animations
+			Other various UI and UX additions / improvements
+		Known Issues:
+			Due to the differences between male and female kerbals, animations will have some deviations when used on models other than the one they were made for originally
+			The new EVA models for the expansions were not addressed (I don't have them installed)

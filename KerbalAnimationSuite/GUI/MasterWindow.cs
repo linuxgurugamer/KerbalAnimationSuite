@@ -46,7 +46,7 @@ namespace KerbalAnimation
 			GUILayout.Space(3f);
 
 			Suite.Settings.AllowEditorMusic = GUILayout.Toggle(Suite.Settings.AllowEditorMusic, "Play Music?");
-
+			Suite.Settings.UseAltSkin = GUILayout.Toggle(Suite.Settings.UseAltSkin, "Use Alternate Skin");
 			GUILayout.EndVertical();
 		}
 		public override void Update()

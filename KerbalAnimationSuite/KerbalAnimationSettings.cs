@@ -33,12 +33,15 @@ namespace KerbalAnimation
 			}
 
 			if (node.HasValue("AllowEditorMusic")) bool.TryParse(node.GetValue("AllowEditorMusic"), out AllowEditorMusic);
+			if (node.HasValue("UseAltSkin")) bool.TryParse(node.GetValue("UseAltSkin"), out UseAltSkin);
+
 		}
 		public void Save()
 		{
 			ConfigNode node = new ConfigNode("KerbalAnimationSuite_Settings");
 
-			node.AddValue("AllowEditorMusic", AllowEditorMusic.ToString());
+			node.AddValue("AllowEditorMusic", AllowEditorMusic);
+			node.AddValue("UseAltSkin", UseAltSkin);
 
 			node.Save(Path);
 		}
@@ -52,6 +55,7 @@ namespace KerbalAnimation
 
 		//Settings
 		public bool AllowEditorMusic = true;
+		public bool UseAltSkin = true;
 	}
 }
 

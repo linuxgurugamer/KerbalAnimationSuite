@@ -21,7 +21,7 @@ namespace KerbalAnimation
 			get{return Kerbal != null ? Kerbal.IsAnimating : false;}
 		}
 
-		public GUISkin skin = HighLogic.Skin;
+		public GUISkin skin = HighLogic.Skin;		
 
 		public Dictionary<string, string> ReadableNames = new Dictionary<string, string>();
 		public Dictionary<string, string> AnimationNames = new Dictionary<string, string>();
@@ -104,6 +104,7 @@ namespace KerbalAnimation
 			Hierarchy = new HierarchyWindow();
 			Manipulation = new ManipulationWindow();
 			Animation = new AnimationWindow();
+
 		}
 
         internal const string MODID = "KerbalAnimationsuite_NS";
@@ -212,6 +213,11 @@ namespace KerbalAnimation
 
 		void OnGUI()
 		{
+			if (Settings.UseAltSkin)
+				skin = GUI.skin;
+			else
+				skin = HighLogic.Skin;
+
 			//don't draw when F2 is pressed
 			if (!GUIHider.ShowUI) return;
 
