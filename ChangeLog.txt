@@ -30,3 +30,4 @@
 		Known Issues:
 			Due to the differences between male and female kerbals, animations will have some deviations when used on models other than the one they were made for originally
 			The new EVA models for the expansions were not addressed (I don't have them installed)
+	Added additional toggle to window to switch between the stock KSP skin and the alternate (Unity) skin.
